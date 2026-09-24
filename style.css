@@ -1,0 +1,396 @@
+/* Structural Configurations */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    color: #1c1e21; /* Off-black tone from image text */
+    overflow: hidden;
+}
+
+/* Premium Bright White Preloader Wrapper */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff; /* Solid clean white background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    padding: 24px;
+    transition: opacity 0.4s cubic-bezier(0.25, 1, 0.5, 1), visibility 0.4s;
+}
+
+.preloader-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+}
+
+/* --- Vector Graphic Configurations --- */
+.vector-container {
+    width: clamp(140px, 25vw, 180px);
+    height: auto;
+    margin-bottom: 24px;
+}
+
+.vector-bg-ring {
+    fill: #f4f6f5; /* Subtle off-white cream tone */
+}
+
+/* Theme Vector Layer Coloring */
+.shape-teal {
+    fill: #046a55; /* Signature deep forest teal from behind the student */
+}
+
+.shape-orange {
+    fill: #f49b09; /* Vibrant accent orange from "Get Started" button */
+}
+
+.shape-charcoal {
+    fill: #1c1e21; /* Solid premium off-black */
+}
+
+.shape-line {
+    stroke: #ffffff;
+    stroke-width: 3;
+    stroke-linecap: round;
+    opacity: 0.8;
+}
+
+.ray-line {
+    stroke: #f49b09;
+    stroke-width: 4;
+    stroke-linecap: round;
+}
+
+/* Staggered Floating Vector Animations */
+.element-top {
+    transform-origin: 100px 55px;
+    animation: bounceObj 2s infinite ease-in-out;
+}
+
+.element-middle {
+    transform-origin: 100px 95px;
+    animation: bounceObj 2s infinite ease-in-out;
+    animation-delay: 0.3s;
+}
+
+.element-bottom {
+    transform-origin: 100px 132px;
+    animation: bounceObj 2s infinite ease-in-out;
+    animation-delay: 0.6s;
+}
+
+.ray-1, .ray-2 {
+    transform-origin: center;
+    animation: pulseRay 1.5s infinite ease-in-out;
+}
+
+@keyframes bounceObj {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-8px) scale(1.02); }
+}
+
+@keyframes pulseRay {
+    0%, 100% { opacity: 0.3; transform: scale(0.9); }
+    50% { opacity: 1; transform: scale(1.1); }
+}
+
+/* --- High-Scale Bold Typography --- */
+.brand-name {
+    font-size: clamp(2.5rem, 8vw, 3.75rem); /* Extremely high font scale */
+    font-weight: 800; /* Extra bold profile matching "Keep Learning" header */
+    letter-spacing: -0.03em;
+    color: #1c1e21;
+    margin-bottom: 32px;
+}
+
+/* --- Loader Track Controls --- */
+.loader-status {
+    width: 100%;
+    max-width: 280px;
+}
+
+.status-msg {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #68707c;
+    margin-bottom: 12px;
+}
+
+.progress-track {
+    width: 100%;
+    height: 6px;
+    background-color: #f4f6f5;
+    border-radius: 9999px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    width: 0%;
+    height: 100%;
+    background-color: #f49b09; /* Accent orange track fill */
+    border-radius: 9999px;
+    transition: width 0.03s linear;
+}
+
+/* --- Target Screen Dashboard --- */
+#main-content {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fbfbf9; /* Matching primary layout cream backdrop */
+    padding: 24px;
+}
+
+.welcome-hero {
+    text-align: center;
+    max-width: 600px;
+}
+
+.welcome-hero h1 {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 800;
+    color: #1c1e21;
+    margin-bottom: 16px;
+}
+
+.welcome-hero p {
+    color: #68707c;
+    font-size: 1.2rem;
+}
+
+/* Toggle Visibility Flags */
+.hidden { display: none !important; }
+.fade-out { opacity: 0; visibility: hidden; pointer-events: none; }
+
+
+/* Core Functional Configurations */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background-color: #fbfbf9;
+    color: #1c1e21;
+    padding-top: 80px; /* Offset spacing block prevents viewport layout cutting */
+}
+
+/* --- Fixed White Header Core Wrapper --- */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background-color: #ffffff; /* Solid premium white base background color specs */
+    border-bottom: 1px solid #eef0f2;
+    box-shadow: 0 2px 12px rgba(28, 30, 33, 0.02);
+    z-index: 2000;
+}
+
+.header-container {
+    max-width: 1280px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Brand Image Tag Formatting Controls (Left Side Positioned) */
+.logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    flex: 1; /* Pushes the nav system toward the center from the left */
+}
+
+.brand-logo-img {
+    height: 38px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Center Desktop List Navigation Controls */
+.nav-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 2; /* Allocates optimal center tracking alignment space */
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 36px;
+}
+
+.nav-item {
+    text-decoration: none;
+    font-size: 0.95rem; /* Clean professional font sizing layout array */
+    font-weight: 500;   /* Medium typography weighting metrics verified */
+    color: #68707c;
+    position: relative;
+    padding: 8px 0;
+    transition: color 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.nav-item:hover {
+    color: #046a55; /* Primary Corporate Deep Teal Highlight State */
+}
+
+/* Precision Active Status Underline Tracking Elements */
+.nav-item.active {
+    color: #1c1e21;
+    font-weight: 600;
+}
+
+.nav-item.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #f49b09; /* Warm Amber active status line display color mapping */
+    border-radius: 9999px;
+}
+
+/* Right-Side Single Authentication Action Link */
+.auth-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 24px;
+    flex: 1; /* Pushes the nav system toward the center from the right */
+}
+
+.btn-started {
+    text-decoration: none;
+    background-color: #f49b09; /* Theme layout Amber Accent Color profile */
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+
+.btn-started:hover {
+    background-color: #d68504;
+}
+
+/* Responsive Menu Hamburger UI Toggle Trigger Group */
+.hamburger-btn {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 22px;
+    height: 16px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 2500;
+}
+
+.hamburger-bar {
+    width: 100%;
+    height: 2px;
+    background-color: #1c1e21;
+    border-radius: 9999px;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
+}
+
+/* --- Mobile Slider Drawer Navigation Side Panel Menu Layout --- */
+.mobile-drawer {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 300px;
+    height: 100vh;
+    background-color: #ffffff;
+    border-left: 1px solid #eef0f2;
+    box-shadow: -8px 0 24px rgba(28, 30, 33, 0.03);
+    z-index: 1900;
+    padding: 100px 24px 40px 24px;
+    display: flex;
+    flex-direction: column;
+    transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mobile-drawer.open {
+    right: 0;
+}
+
+.mobile-nav-list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    gap: 20px;
+}
+
+.mobile-nav-item {
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #68707c;
+    display: block;
+    padding: 4px 0;
+}
+
+.mobile-nav-item.active {
+    color: #046a55;
+    font-weight: 600;
+}
+
+.mobile-auth-divider {
+    height: 1px;
+    background-color: #eef0f2;
+    margin: 8px 0;
+}
+
+.dynamic-btn {
+    text-align: center;
+    width: 100%;
+    display: block;
+}
+
+/* --- Precision Responsive Adaptive Layout Viewport Breakpoint Adjustments --- */
+@media (max-width: 992px) {
+    .nav-wrapper, .auth-wrapper {
+        display: none !important; /* Safely isolate and switch standard wide-screen systems */
+    }
+    
+    .hamburger-btn {
+        display: flex; /* Activate and fire interactive structural mobile control nodes */
+    }
+}
+
+/* Hamburger Dynamic Rotational Interaction Transitions Rules */
+.hamburger-btn.open .hamburger-bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+.hamburger-btn.open .hamburger-bar:nth-child(2) {
+    opacity: 0;
+}
+.hamburger-btn.open .hamburger-bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}

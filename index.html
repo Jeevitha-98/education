@@ -1,0 +1,2580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stackly | Welcome</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Premium Creative Preloader Overlay -->
+    <div id="preloader">
+        <div class="preloader-content">
+            
+            <!-- Creative Dynamic Vector Icon Block -->
+            <div class="vector-container">
+                <svg viewBox="0 0 200 200" xmlns="http://w3.org">
+                    <!-- Background Accent Ring -->
+                    <circle cx="100" cy="100" r="70" class="vector-bg-ring" />
+                    
+                    <!-- Top Abstract Graduation Square (Teal) -->
+                    <polygon points="100,35 150,55 100,75 50,55" class="shape-teal element-top" />
+                    
+                    <!-- Middle Stack Layer (Orange/Amber Book) -->
+                    <rect x="60" y="85" width="80" height="20" rx="4" class="shape-orange element-middle" />
+                    <line x1="75" y1="95" x2="125" y2="95" class="shape-line" />
+                    
+                    <!-- Bottom Foundational Layer (Deep Charcoal Book) -->
+                    <rect x="45" y="120" width="110" height="25" rx="5" class="shape-charcoal element-bottom" />
+                    <line x1="60" y1="132" x2="140" y2="132" class="shape-line" />
+
+                    <!-- Playful Accent Spark Lines (Like the orange rays in your image) -->
+                    <line x1="160" y1="35" x2="175" y2="25" class="ray-line ray-1" />
+                    <line x1="175" y1="55" x2="192" y2="55" class="ray-line ray-2" />
+                </svg>
+            </div>
+
+            <!-- Bold High-Scale Brand Typography -->
+            <h1 class="brand-name">Stackly</h1>
+            
+            <!-- Minimal Linear Dynamic Loader Component -->
+            <div class="loader-status">
+                <p class="status-msg">Setting up your learning track...</p>
+                <div class="progress-track">
+                    <div class="progress-fill" id="progress-bar"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Main Content Presentation Dashboard -->
+    <main id="main-content" class="hidden">
+        <section class="welcome-hero">
+            <h1>Keep Learning on Track</h1>
+            <p>Welcome back to Stackly. Your educational workspace is ready.</p>
+        </section>
+    </main>
+
+   
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const progressBar = document.getElementById("progress-bar");
+    const preloader = document.getElementById("preloader");
+
+    let progress = 0;
+
+    const loader = setInterval(function () {
+
+        progress += 2;
+
+        if (progressBar) {
+            progressBar.style.width = progress + "%";
+        }
+
+        if (progress >= 100) {
+            clearInterval(loader);
+
+            // Hide preloader
+            if (preloader) {
+                preloader.classList.add("fade-out");
+
+                setTimeout(function () {
+                    preloader.remove();
+                }, 450);
+            }
+
+            // Enable page scrolling
+            document.body.style.overflow = "auto";
+        }
+
+    }, 40);
+
+});
+</script>
+    <!-- Fixed Top Navigation Header Bar -->
+<header class="main-header">
+    <div class="header-container">
+        
+        <!-- Brand Logo Element (Positioned Left Side - Triggers Page Hard Refresh) -->
+        <a href="#" class="logo-link" id="logo-trigger">
+            <!-- Replace 'logo.png' with your verified local image file path -->
+            <img src="./assests/logo AGRI.webp" alt="Stackly Brand Logo" class="brand-logo-img" onerror="this.src='https://placehold.co'">
+        </a>
+
+        <!-- Desktop Navigation Bar Core Area (Aligned Center) -->
+        <nav class="nav-wrapper">
+            <ul class="nav-list">
+                <li><a href="#home" class="nav-item active">Home</a></li>
+                <li><a href="#courses" class="nav-item">Courses</a></li>
+                <li><a href="#teachers" class="nav-item">Teachers</a></li>
+                <li><a href="#districts" class="nav-item">Districts</a></li>
+                <li><a href="#about" class="nav-item">About Us</a></li>
+            </ul>
+        </nav>
+
+        <!-- Single Authentication Action Button (Right Aligned) -->
+        <div class="auth-wrapper">
+            <a href="#signup" class="btn-started">Get Started</a>
+        </div>
+
+        <!-- Responsive Hamburger Action Menu Toggle Icon for Compact Displays -->
+        <button class="hamburger-btn" id="mobile-toggle" aria-label="Toggle Navigation Tray Menu">
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+        </button>
+    </div>
+</header>
+
+<!-- Mobile Slider Sidebar Navigation Drawer Menu Frame Overlay -->
+<div class="mobile-drawer" id="mobile-menu-drawer">
+    <ul class="mobile-nav-list">
+        <li><a href="#home" class="mobile-nav-item active">Home</a></li>
+        <li><a href="#courses" class="mobile-nav-item">Courses</a></li>
+        <li><a href="#teachers" class="mobile-nav-item">Teachers</a></li>
+        <li><a href="#districts" class="mobile-nav-item">Districts</a></li>
+        <li><a href="#about" class="mobile-nav-item">About Us</a></li>
+        <li class="mobile-auth-divider"></li>
+        <li><a href="#signup" class="btn-started dynamic-btn">Get Started</a></li>
+    </ul>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    
+    // 1. Brand Logo Hard Document Window Refresh Functionality Execution Loop
+    const logoTrigger = document.getElementById("logo-trigger");
+    if (logoTrigger) {
+        logoTrigger.addEventListener("click", (event) => {
+            event.preventDefault(); // Halt active route address tracing routines
+            window.location.reload(); // Perform target page browser cache reload execution
+        });
+    }
+
+    // 2. Mobile Responsive Slide-Out Layout Drawer Panel Interaction Mechanics
+    const mobileToggle = document.getElementById("mobile-toggle");
+    const mobileMenuDrawer = document.getElementById("mobile-menu-drawer");
+
+    if (mobileToggle && mobileMenuDrawer) {
+        mobileToggle.addEventListener("click", (event) => {
+            event.stopPropagation();
+            mobileToggle.classList.toggle("open");
+            mobileMenuDrawer.classList.toggle("open");
+        });
+
+        // Close navigation tray framework safely when user clicks off-canvas layout boundaries
+        document.addEventListener("click", (event) => {
+            if (!mobileMenuDrawer.contains(event.target) && event.target !== mobileToggle) {
+                mobileToggle.classList.remove("open");
+                mobileMenuDrawer.classList.remove("open");
+            }
+        });
+    }
+
+    // 3. Navigation Anchor Links Menu Item Active Validation Selector Switch Tracker 
+    const navItems = document.querySelectorAll(".nav-item, .mobile-nav-item");
+
+    navItems.forEach(item => {
+        item.addEventListener("click", function() {
+            // Strip active styling layout flags off alternative choices array
+            navItems.forEach(node => node.classList.remove("active"));
+            
+            // Add active focus state flag to targeted element selection choice
+            this.classList.add("active");
+            
+            // Gracefully retract responsive canvas slide framework layout block structures
+            if (mobileMenuDrawer) {
+                mobileToggle.classList.remove("open");
+                mobileMenuDrawer.classList.remove("open");
+            }
+        });
+    });
+});
+
+</script>
+
+<!-- Fully Enhanced Premium Responsive Hero Module -->
+<section class="premium-hero">
+    
+    <!-- Contextual Floating Vector Layer -->
+    <div class="vector-universe">
+        <!-- Floating Ambient Vector Book Left -->
+        <svg class="ambient-vector book-v1" viewBox="0 0 100 80" xmlns="http://w3.org">
+            <path d="M10,20 Q35,5 50,20 Q65,5 90,20 L90,65 Q65,50 50,65 Q35,50 10,65 Z" fill="none" stroke="#046a55" stroke-width="2.5" opacity="0.12"/>
+            <path d="M50,20 L50,65" stroke="#046a55" stroke-width="2" opacity="0.12"/>
+        </svg>
+
+        <!-- Floating Ambient Vector Book Right -->
+        <svg class="ambient-vector book-v2" viewBox="0 0 100 80" xmlns="http://w3.org">
+            <path d="M15,25 Q40,10 50,25 Q60,10 85,25 L85,60 Q60,45 50,60 Q40,45 15,60 Z" fill="none" stroke="#f49b09" stroke-width="2.5" opacity="0.15"/>
+        </svg>
+
+        <!-- Hand-Drawn Wavy Path Accent -->
+        <svg class="ambient-vector graphic-squiggle" viewBox="0 0 80 40" xmlns="http://w3.org">
+            <path d="M10,25 Q30,5 45,22 T75,15" fill="none" stroke="#046a55" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+
+        <!-- Dynamic Ray Lines Cluster -->
+        <div class="ray-cluster">
+            <span class="amber-ray"></span>
+            <span class="amber-ray"></span>
+            <span class="amber-ray"></span>
+        </div>
+    </div>
+
+    <div class="hero-grid-mesh">
+        
+        <!-- Left Column: Content & Dynamic Infographics -->
+        <div class="content-panel-left">
+            <h1 class="hero-mega-title">
+                <span class="word-node slide-in-left">Keep</span>
+                <span class="word-node slide-in-right">Learning</span>
+                <span class="word-node slide-in-left accent-highlight">on</span>
+                <span class="word-node slide-in-right">Track</span>
+            </h1>
+
+            <p class="hero-descriptive-para">
+                When schools and districts have reliable access to substitute teachers and subs have the freedom to choose what and when they teach.
+            </p>
+
+            <div class="action-btn-container">
+                <a href="404.html" class="interactive-hero-btn">Get Started</a>
+            </div>
+
+            <!-- Optimized Premium Balanced Cards Container Grid -->
+            <div class="premium-cards-grid">
+                
+                <!-- Card 1: Expert Profiles (Enhanced Stretched Alignment & Left Full-Height Image) -->
+                <div class="premium-card scroll-reveal-node enhanced-full-layout">
+                    <div class="premium-card-flex-stretched">
+                        <!-- Left Side Full-Height Absolute Canvas Frame -->
+                        <div class="avatar-frame-full">
+                            <img src="./assests/education scl.webp" alt="Certified Instructor" class="avatar-graphic-full" onerror="this.src='https://placehold.co'">
+                        </div>
+                        <!-- Right Side Perfectly Distributed Column Contents -->
+                        <div class="card-info-details-stretched">
+                            <h4 class="card-headline-top">Best Certified Teacher Worldwide</h4>
+                            <div class="metrics-badge-row-bottom">
+                                <span class="badge-num-large">210+</span>
+                                <span class="badge-label-right">Experts already<br>join us</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Classroom Showcase Module -->
+                <div class="premium-card scroll-reveal-node fallback-layout-card">
+                    <div class="showcase-media-window">
+                        <img src="./assests/B 1.webp" alt="Transforming Schools Framework" class="showcase-graphic" onerror="this.src='https://placehold.co'">
+                        <a href="404.html" class="circle-route-btn" aria-label="Navigate to Platform Options">↗</a>
+                    </div>
+                    <div class="showcase-caption">
+                        <p>Transforming schools and substitute teachers</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Right Column: Interactive Layered Main Display Graphic -->
+        <div class="content-panel-right">
+            <div class="imagery-canvas-wrapper">
+                <!-- Structural Spatial Shapes -->
+                <div class="depth-frame base-solid-teal animate-mount-delayed"></div>
+                <div class="depth-frame decorative-grid-plate animate-mount-delayed"></div>
+                
+                <!-- Interactive Main Image Target Frame -->
+                <div class="interactive-image-frame animate-mount-main">
+                    <img src="./assests/G 1.webp" alt="Graduation Student Focus" class="premium-interactive-img" onerror="this.src='https://unsplash.com'">
+                    <div class="image-overlay-sheen"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<style>
+/* Color Variable Scopes */
+:root {
+    --brand-teal: #046a55;
+    --brand-amber: #f49b09;
+    --brand-dark: #1c1e21;
+    --brand-muted: #68707c;
+    --bg-cream: #fbfbf9;
+    --glass-bg: rgba(255, 255, 255, 0.95);
+    --glass-border: rgba(238, 240, 242, 0.9);
+}
+
+/* Core Document Initialization Overrides */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+}
+
+.premium-hero {
+    position: relative;
+    width: 100%;
+    min-height: calc(100vh - 80px);
+    background-color: var(--bg-cream);
+    padding: 60px 24px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* --- Fluid Main Structural Mesh Grid --- */
+.hero-grid-mesh {
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 48px;
+    align-items: center;
+    z-index: 10;
+}
+
+.content-panel-left {
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- Background Ambient Book Vectors Layer Setup --- */
+.vector-universe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.ambient-vector { position: absolute; }
+.book-v1 { top: 10%; left: 3%; width: 85px; animation: fluidFloat 6s infinite ease-in-out; }
+.book-v2 { bottom: 35%; right: 46%; width: 70px; animation: fluidFloat 7s infinite ease-in-out 1s; }
+.graphic-squiggle { bottom: 45%; left: 42%; width: 55px; animation: fluidFloat 5s infinite ease-in-out 0.5s; }
+
+.ray-cluster {
+    position: absolute;
+    top: 15%;
+    right: 44%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.amber-ray {
+    width: 22px;
+    height: 4px;
+    background-color: var(--brand-amber);
+    border-radius: 9999px;
+    display: block;
+    transform-origin: left center;
+}
+.amber-ray:nth-child(1) { transform: rotate(-25deg); }
+.amber-ray:nth-child(2) { transform: rotate(-5deg); }
+.amber-ray:nth-child(3) { transform: rotate(15deg); }
+
+@keyframes fluidFloat {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(2deg); }
+}
+
+/* --- Left Column Elements Typography & Actions --- */
+.hero-mega-title {
+    font-size: clamp(3rem, 6.2vw, 4.65rem);
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--brand-dark);
+    margin-bottom: 24px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 16px;
+}
+
+.word-node {
+    display: inline-block;
+    opacity: 0;
+    animation-duration: 0.8s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.slide-in-left { transform: translateX(-50px); animation-name: triggerRevealIn; }
+.slide-in-right { transform: translateX(50px); animation-name: triggerRevealIn; }
+
+.word-node:nth-child(1) { animation-delay: 0.08s; }
+.word-node:nth-child(2) { animation-delay: 0.2s; }
+.word-node:nth-child(3) { animation-delay: 0.32s; }
+.word-node:nth-child(4) { animation-delay: 0.44s; }
+
+.accent-highlight { position: relative; color: var(--brand-dark); }
+.accent-highlight::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 8px;
+    width: 100%;
+    height: 5px;
+    background-color: var(--brand-amber);
+    border-radius: 9999px;
+    transform: scaleX(0);
+    transform-origin: left center;
+    animation: expandStroke 0.45s forwards linear 0.85s;
+}
+
+@keyframes triggerRevealIn { to { opacity: 1; transform: translateX(0); } }
+@keyframes expandStroke { to { transform: scaleX(1); } }
+
+.hero-descriptive-para {
+    font-size: clamp(1.05rem, 2vw, 1.18rem);
+    color: var(--brand-muted);
+    max-width: 530px;
+    line-height: 1.6;
+    margin-bottom: 32px;
+    border-left: 0px solid var(--brand-teal);
+    transition: all 0.3s ease;
+}
+
+.hero-descriptive-para:hover {
+    color: var(--brand-dark);
+    padding-left: 16px;
+    border-left: 4px solid var(--brand-teal);
+}
+
+.interactive-hero-btn {
+    display: inline-block;
+    text-decoration: none;
+    background-color: var(--brand-amber);
+    color: #ffffff;
+    padding: 15px 36px;
+    border-radius: 10px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    box-shadow: 0 6px 18px rgba(244, 155, 9, 0.2);
+    transition: all 0.25s ease;
+}
+
+.interactive-hero-btn:hover {
+    background-color: #d68504;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(244, 155, 9, 0.3);
+}
+
+/* --- Optimized Premium Cards Spatial Sizing Framework --- */
+.premium-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 24px;
+    max-width: 640px;
+    align-items: stretch; /* Forces equal height matching rules between columns */
+}
+
+.premium-card {
+    background-color: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(28, 30, 33, 0.03);
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+                box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.premium-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 36px rgba(4, 106, 85, 0.07);
+    border-color: rgba(4, 106, 85, 0.18);
+}
+
+.scroll-reveal-node.active-mount-node {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Optimized Stretched Card Layout (Card 1 Fixes) --- */
+.enhanced-full-layout {
+    padding: 0 !important; /* Touch bounds perfectly */
+    overflow: hidden;
+}
+
+.premium-card-flex-stretched {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: stretch;
+}
+
+.avatar-frame-full {
+    width: 36%;
+    min-width: 95px;
+    background-color: #eef2f0;
+    overflow: hidden;
+}
+
+.avatar-graphic-full {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.premium-card:hover .avatar-graphic-full {
+    transform: scale(1.05);
+}
+
+.card-info-details-stretched {
+    flex: 1;
+    padding: 24px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Spreads structural space between components top-to-bottom */
+}
+
+.card-headline-top {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--brand-dark);
+    line-height: 1.35;
+}
+
+.metrics-badge-row-bottom {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 14px;
+}
+
+.badge-num-large { font-size: 1.6rem; font-weight: 800; color: var(--brand-teal); line-height: 1; }
+.badge-label-right { font-size: 0.76rem; color: var(--brand-muted); font-weight: 600; line-height: 1.25; }
+
+/* --- Card 2 Layout Settings --- */
+.fallback-layout-card { padding: 20px; }
+.showcase-media-window { position: relative; border-radius: 12px; overflow: hidden; margin-bottom: 12px; }
+.showcase-graphic { width: 100%; height: 110px; object-fit: cover; display: block; transition: transform 0.4s ease; }
+.premium-card:hover .showcase-graphic { transform: scale(1.06); }
+
+.circle-route-btn {
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+    width: 34px;
+    height: 34px;
+    background-color: #ffffff;
+    color: var(--brand-amber);
+    border-radius: 50%;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+}
+
+.showcase-caption p { font-size: 0.95rem; font-weight: 600; color: var(--brand-dark); line-height: 1.4; }
+
+/* --- Right Column Imagery Canvas Controls --- */
+.imagery-canvas-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 440px;
+    height: 460px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.depth-frame {
+    position: absolute;
+    border-radius: 24px;
+    opacity: 0;
+    transform: scale(0.85);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.base-solid-teal {
+    top: 6%; right: 0%; width: 85%; height: 88%;
+    background-color: var(--brand-teal); z-index: 1;
+    box-shadow: 0 15px 40px rgba(4, 106, 85, 0.2);
+}
+
+.decorative-grid-plate { bottom: -2%; left: 0%; width: 45%; height: 35%; background-color: #e2e7e4; z-index: 2; }
+
+.interactive-image-frame {
+    position: absolute;
+    width: 84%; height: 80%; top: 10%; left: 4%; z-index: 5;
+    border-radius: 20px; overflow: hidden;
+    box-shadow: 0 20px 45px rgba(28, 30, 33, 0.12);
+    opacity: 0; transform: translateY(20px) scale(0.96);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.premium-interactive-img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease; }
+
+/* --- Synchronized Graphic Interaction System --- */
+.imagery-canvas-wrapper:hover .premium-interactive-img { transform: scale(1.04); }
+.imagery-canvas-wrapper:hover .interactive-image-frame { transform: translateY(-6px) scale(1.01); }
+.imagery-canvas-wrapper:hover .base-solid-teal { transform: translateY(6px) translateX(6px); }
+
+.animate-mount-main.mounted-state, .depth-frame.mounted-state { opacity: 1; transform: translateY(0) scale(1); }
+
+/* --- Comprehensive Fluid Mobile Breakpoints --- */
+@media (max-width: 992px) {
+    .premium-hero { padding: 50px 24px; }
+    .hero-grid-mesh { grid-template-columns: 1fr; gap: 56px; text-align: center; }
+    .hero-mega-title, .hero-descriptive-para { margin-left: auto; margin-right: auto; justify-content: center; }
+    .premium-cards-grid { margin: 0 auto; }
+    .content-panel-right { order: -1; } /* Graphic appears above text elements on tablet screens */
+    .ray-cluster { display: none; }
+}
+
+@media (max-width: 540px) {
+    .premium-hero { padding: 40px 16px; }
+    .premium-cards-grid { grid-template-columns: 1fr; } /* Stack cards cleanly on narrow layouts */
+    .imagery-canvas-wrapper { height: 360px; }
+}
+
+
+</style>
+
+<script>
+ document.addEventListener("DOMContentLoaded", () => {
+    
+    // 1. Trigger Graphic Layer Elevations Upon Mounting
+    window.addEventListener("load", () => {
+        const studentFrameNode = document.querySelector(".interactive-image-frame");
+        const backdropNodes = document.querySelectorAll(".depth-frame");
+
+        if (studentFrameNode) studentFrameNode.classList.add("mounted-state");
+        backdropNodes.forEach(node => node.classList.add("mounted-state"));
+    });
+
+    // 2. Continuous Scroll Interceptor Driving Card Entrance Sequential Staggering
+    const cardScrollNodes = document.querySelectorAll(".scroll-reveal-node");
+
+    if (cardScrollNodes.length > 0) {
+        const structuralObserverOptions = {
+            root: null,
+            threshold: 0.12
+        };
+
+        const coreScrollObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const targetedCardNode = entry.target;
+                    const indexOffset = Array.from(cardScrollNodes).indexOf(targetedCardNode);
+                    
+                    // Balanced staggering cascade loop pacing
+                    setTimeout(() => {
+                        targetedCardNode.classList.add("active-mount-node");
+                    }, indexOffset * 200);
+
+                    observer.unobserve(targetedCardNode);
+                }
+            });
+        }, structuralObserverOptions);
+
+        cardScrollNodes.forEach(node => coreScrollObserver.observe(node));
+    }
+});
+
+
+</script>
+
+<!-- Continuous Seamless Partner Carousel Section -->
+<section class="partners-carousel-section">
+    <div class="partners-container">
+        
+        <!-- Letter-by-Letter Animated Title -->
+        <h2 class="partners-title" id="scroll-letter-title" data-text="Partners with Industry">
+            Partners with Industry
+        </h2>
+
+        <!-- Infinite Loop Carousel Window Tracker Container -->
+        <div class="carousel-window-wrapper">
+            <div class="carousel-track-infinite">
+                
+                <!-- ==================== LOOP TRACK GROUP 1 ==================== -->
+                
+                <!-- Skillshare Vector Item -->
+                <div class="partner-logo-item">
+                    <svg class="partner-vector-svg" viewBox="0 0 160 40" xmlns="http://w3.org">
+                        <text x="10" y="28" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="22" letter-spacing="-1">skillshare.</text>
+                    </svg>
+                </div>
+                
+                <!-- Duolingo Vector Item -->
+                <div class="partner-logo-item">
+                    <svg class="partner-vector-svg" viewBox="0 0 160 40" xmlns="http://w3.org">
+                        <text x="12" y="28" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="24" letter-spacing="-0.5">duolingo</text>
+                    </svg>
+                </div>
+                
+                <!-- Coursera Vector Item -->
+                <div class="partner-logo-item">
+                    <svg class="partner-vector-svg" viewBox="0 0 160 40" xmlns="http://w3.org">
+                        <text x="15" y="27" font-family="'Inter', sans-serif" font-weight="700" font-size="21" letter-spacing="-0.5">coursera</text>
+                    </svg>
+                </div>
+                
+                <!-- Udemy Vector Item -->
+                <div class="partner-logo-item">
+                    <svg class="partner-vector-svg" viewBox="0 0 160 40" xmlns="http://w3.org">
+                        <!-- Custom Udemy Abstract Upward Arrow Minimal Vector Representation -->
+                        <path d="M22,12 L32,22 L27,22 L27,30 L17,30 L17,22 L12,22 Z" class="vector-accent-path"/>
+                        <text x="38" y="28" font-family="'Inter', sans-serif" font-weight="700" font-size="23" letter-spacing="-0.5">ûdemy</text>
+                    </svg>
+                </div>
+
+                <!-- ==================== LOOP TRACK GROUP 2 (CLONED DUPLICATES) ==================== -->
+                
+                <div class="partner-logo-item">
+                    <svg class="partner-vector-svg" viewBox="0 0 160 40" xmlns="http://w3.org">
+                        <text x="10" y="28" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="22" letter-spacing="-1">skillshare.</text>
+                    </svg>
+                </div>
+                <div class="partner-logo-item">
+                    <svg class="partner-vector-svg" viewBox="0 0 160 40" xmlns="http://w3.org">
+                        <text x="12" y="28" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="24" letter-spacing="-0.5">duolingo</text>
+                    </svg>
+                </div>
+                <div class="partner-logo-item">
+                    <svg class="partner-vector-svg" viewBox="0 0 160 40" xmlns="http://w3.org">
+                        <text x="15" y="27" font-family="'Inter', sans-serif" font-weight="700" font-size="21" letter-spacing="-0.5">coursera</text>
+                    </svg>
+                </div>
+                <div class="partner-logo-item">
+                    <svg class="partner-vector-svg" viewBox="0 0 160 40" xmlns="http://w3.org">
+                        <path d="M22,12 L32,22 L27,22 L27,30 L17,30 L17,22 L12,22 Z" class="vector-accent-path"/>
+                        <text x="38" y="28" font-family="'Inter', sans-serif" font-weight="700" font-size="23" letter-spacing="-0.5">ûdemy</text>
+                    </svg>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    /* Styling Rules Definitions */
+:root {
+    --brand-dark: #1c1e21;
+    --brand-muted: #68707c;
+    --brand-teal: #046a55; /* Corporate Green/Teal Tone */
+    --carousel-speed: 20s;
+}
+
+/* --- Section Structural Framework --- */
+.partners-carousel-section {
+    width: 100%;
+    background-color: #ffffff;
+    /* Custom Padding Specifications: 50px Top, 30px Bottom */
+    padding-top: 50px;
+    padding-bottom: 30px;
+    padding-left: 24px;
+    padding-right: 24px;
+    overflow: hidden;
+    position: relative;
+}
+
+.partners-container {
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* --- Letter-by-Letter Animated Title --- */
+.partners-title {
+    font-size: clamp(1.15rem, 3vw, 1.45rem);
+    font-weight: 500;
+    color: var(--brand-dark);
+    margin-bottom: 36px;
+    text-align: center;
+    letter-spacing: -0.01em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.letter-node {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(12px);
+    filter: blur(1px);
+    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.letter-space { width: 0.35em; }
+
+.letter-node.letter-reveal {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+}
+
+/* Glow Effect Applied on Title Text Hover */
+.partners-title:hover .letter-node {
+    color: var(--brand-teal);
+    text-shadow: 0 0 10px rgba(4, 106, 85, 0.3), 
+                 0 0 20px rgba(4, 106, 85, 0.1);
+}
+
+/* --- Infinite Carousel Window & Gradient Fades --- */
+.carousel-window-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel-window-wrapper::before,
+.carousel-window-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 120px;
+    height: 100%;
+    z-index: 5;
+    pointer-events: none;
+}
+.carousel-window-wrapper::before { left: 0; background: linear-gradient(90deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%); }
+.carousel-window-wrapper::after { right: 0; background: linear-gradient(-90deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%); }
+
+.carousel-track-infinite {
+    display: flex;
+    width: max-content;
+    align-items: center;
+    animation: continuousScroll var(--carousel-speed) linear infinite;
+}
+
+.carousel-track-infinite:hover {
+    animation-play-state: paused; /* Pause scrolling when cursor hovers on items */
+}
+
+/* --- Responsive Vector Brand Nodes --- */
+.partner-logo-item {
+    padding: 0 clamp(20px, 4.5vw, 44px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.partner-vector-svg {
+    width: clamp(120px, 15vw, 150px);
+    height: 40px;
+}
+
+/* Vector Default Muted Styling State */
+.partner-vector-svg text {
+    fill: #a0a6b0; /* Light corporate grey matching input image layout */
+    transition: fill 0.3s ease;
+}
+
+.partner-vector-svg .vector-accent-path {
+    fill: #a0a6b0;
+    transition: fill 0.3s ease;
+}
+
+/* --- Advanced Vector Hover & Color State Glow Shifts --- */
+.partner-logo-item:hover {
+    transform: scale(1.08);
+}
+
+.partner-logo-item:hover .partner-vector-svg text {
+    fill: var(--brand-dark); /* Turns solid deep dark grey for readability */
+}
+
+.partner-logo-item:hover .partner-vector-svg .vector-accent-path {
+    fill: var(--brand-teal); /* Turns accent path elements into rich brand teal */
+    filter: drop-shadow(0 0 6px rgba(4, 106, 85, 0.4)); /* Glow effect for the vector path shape */
+}
+
+@keyframes continuousScroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+@media (max-width: 768px) {
+    .partners-carousel-section { padding-top: 40px; padding-bottom: 24px; }
+    :root { var(--carousel-speed): 14s; }
+}
+
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    const targetTitleNode = document.getElementById("scroll-letter-title");
+    
+    if (targetTitleNode) {
+        const textContentStr = targetTitleNode.getAttribute("data-text") || targetTitleNode.textContent.trim();
+        targetTitleNode.innerHTML = ""; 
+
+        Array.from(textContentStr).forEach((character) => {
+            const charSpan = document.createElement("span");
+            if (character === " ") {
+                charSpan.className = "letter-space";
+            } else {
+                charSpan.className = "letter-node";
+                charSpan.textContent = character;
+            }
+            targetTitleNode.appendChild(charSpan);
+        });
+    }
+
+    const compiledLetters = document.querySelectorAll(".letter-node");
+    if (compiledLetters.length > 0 && targetTitleNode) {
+        const intersectionObserverSettings = {
+            root: null,
+            threshold: 0.25
+        };
+
+        const titleTriggerObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    compiledLetters.forEach((spanElement, indexOrder) => {
+                        setTimeout(() => {
+                            spanElement.classList.add("letter-reveal");
+                        }, indexOrder * 30); // Fluid sequential layout wave cascade
+                    });
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, intersectionObserverSettings);
+
+        titleTriggerObserver.observe(targetTitleNode);
+    }
+});
+
+</script>
+
+
+<!-- Fully Optimized High-Contrast Features Grid Section -->
+<section class="stackly-features-section">
+    
+    <!-- Top Context Header Area -->
+    <div class="features-head-row">
+        <h2 class="features-main-heading">
+            An Easier Way to be<br>
+            <span class="heading-underline-wrap">Sub and Find Sub
+                <!-- Dynamic vector hand-drawn double loop underline path underneath text -->
+                <svg class="handdrawn-stroke-svg" viewBox="0 0 300 20" fill="none" xmlns="http://w3.org">
+                    <path d="M5,5 Q150,15 295,5 M15,12 Q150,22 280,10" stroke="#f49b09" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+            </span>
+        </h2>
+        
+        <!-- High-readability black paragraph text -->
+        <p class="features-sub-paragraph">
+            When schools and districts have reliable access to substitute teachers and subs have the freedom to choose what and when they teach, more classes are covered and student learning stays on track.
+        </p>
+
+        <!-- Dynamic Hand-Drawn Illustrated Curved Arrow Vector Accessory -->
+        <svg class="center-pointing-arrow-svg" viewBox="0 0 100 60" fill="none" xmlns="http://w3.org">
+            <path d="M80,10 Q50,45 20,25" stroke="#046a55" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M22,12 Q40,35 60,30" stroke="#046a55" stroke-width="2.5" stroke-linecap="round"/>
+            <polyline points="28,16 18,24 26,34" stroke="#046a55" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </div>
+
+    <!-- Exact Reference Layout Replicating Cards Container Mesh -->
+    <div class="reference-cards-container">
+        
+        <!-- CARD 1: Standard Card Layout Block -->
+        <div class="structural-feature-card reveal-card-node">
+            <div class="card-inner-padding-box">
+                <h3 class="card-head-text">Teacher absences <span class="amber-glow-text">disrupt student learning</span></h3>
+                <p class="card-body-text">When schools and districts have reliable access to teachers, classroom management remains seamless.</p>
+            </div>
+            
+            <!-- Bottom Graphic Row Layout Components Blocks -->
+            <div class="card-absolute-footer-row">
+                <!-- Swirling Spiral Decorative Vector Icon -->
+                <svg class="bottom-accent-vector-icon element-icon-reveal" viewBox="0 0 60 60" xmlns="http://w3.org">
+                    <path d="M30,50 C15,50 8,38 12,25 C15,12 28,8 40,15 C50,22 52,38 42,45 C35,50 25,48 22,40 C18,32 24,25 30,26 C34,26 36,30 34,34" fill="none" stroke="#046a55" stroke-width="3.5" stroke-linecap="round"/>
+                </svg>
+                
+                <!-- Breaking Edge Corner Round Navigation Arrow Button -->
+                <a href="404.html" class="breaking-corner-btn-link" aria-label="Explore Absence Solutions">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://w3.org"><path d="M6 18L18 6M18 6H10M18 6V14" stroke="#f49b09" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+            </div>
+        </div>
+
+        <!-- CARD 2: Custom Center Stepped / Notched Layout Block Variation -->
+        <div class="structural-feature-card notched-card-layout reveal-card-node">
+            <!-- Top Embedded Grid Globe Vector Icon Layer Box -->
+            <div class="notched-top-vector-box element-icon-reveal">
+                <svg viewBox="0 0 60 60" fill="none" xmlns="http://w3.org">
+                    <circle cx="30" cy="30" r="22" stroke="#046a55" stroke-width="3"/>
+                    <path d="M8,30 H52 M30,8 V52 M30,8 C38,15 38,45 30,52 M30,8 C22,15 22,45 30,52" stroke="#046a55" stroke-width="2.5"/>
+                </svg>
+            </div>
+
+            <div class="card-inner-padding-box clear-top-padding">
+                <h3 class="card-head-text">A better way to <span class="amber-glow-text">connect subs and schools</span></h3>
+                <p class="card-body-text">Instantly bridging the gap between available certified professionals and classrooms requiring optimized coverage tracks.</p>
+            </div>
+            
+            <div class="card-absolute-footer-row reverse-alignment-flex">
+                <!-- Embedded Corner Trigger Button Breaking through center card shoulder layout slot -->
+                <a href="404.html" class="breaking-corner-btn-link embedded-top-shoulder-btn" aria-label="Open Connections Dashboard">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://w3.org"><path d="M6 18L18 6M18 6H10M18 6V14" stroke="#f49b09" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+            </div>
+        </div>
+
+        <!-- CARD 3: Standard Card Layout Block -->
+        <div class="structural-feature-card reveal-card-node">
+            <div class="card-inner-padding-box">
+                <h3 class="card-head-text">Student learning <span class="amber-glow-text">stays on track</span> to meet target</h3>
+                <p class="card-body-text">Ensure core schedules remain unaffected and curriculum targets are achieved month over month effortlessly.</p>
+            </div>
+            
+            <div class="card-absolute-footer-row">
+                <!-- Target Archery Bullseye Dynamic Vector Icon -->
+                <svg class="bottom-accent-vector-icon element-icon-reveal" viewBox="0 0 60 60" xmlns="http://w3.org">
+                    <circle cx="30" cy="36" r="18" fill="none" stroke="#046a55" stroke-width="3"/>
+                    <circle cx="30" cy="36" r="10" fill="none" stroke="#046a55" stroke-width="2.5"/>
+                    <circle cx="30" cy="36" r="3" fill="#046a55"/>
+                    <path d="M42,24 L48,16 M44,16 H48 V20" fill="none" stroke="#046a55" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                
+                <a href="404.html" class="breaking-corner-btn-link" aria-label="Analyze Performance Tracks">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://w3.org"><path d="M6 18L18 6M18 6H10M18 6V14" stroke="#f49b09" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+
+<style>
+ /* Color System Layout Configurations matching input template palette rules */
+:root {
+    --brand-dark: #111314;       /* Enhanced high-contrast crisp deep black tone */
+    --brand-text-black: #1a1d20; /* Verified dark font face for body descriptions */
+    --brand-teal: #046a55;
+    --brand-amber: #f49b09;
+    --stronger-card-bg: #eaedea; /* Stronger gray-cream backdrop fill to define cards firmly */
+    --section-base-bg: #fbfbf9;
+}
+
+.stackly-features-section {
+    width: 100%;
+    padding: 50px 24px 30px 24px;
+    background-color: var(--section-base-bg);
+    position: relative;
+}
+
+/* --- Top Header Structural Content Row Controls --- */
+.features-head-row {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 48px;
+    align-items: flex-start;
+    margin-bottom: 64px;
+    position: relative;
+}
+
+.features-main-heading {
+    font-size: clamp(2.25rem, 4.5vw, 3.25rem);
+    font-weight: 800;
+    color: var(--brand-dark);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+}
+
+.heading-underline-wrap {
+    position: relative;
+    display: inline-block;
+}
+
+.handdrawn-stroke-svg {
+    position: absolute;
+    left: 0;
+    bottom: -12px;
+    width: 100%;
+    height: 22px;
+    pointer-events: none;
+}
+
+/* Paragraph text explicitly updated to high-contrast black format */
+.features-sub-paragraph {
+    font-size: clamp(0.98rem, 2vw, 1.05rem);
+    color: var(--brand-text-black);
+    line-height: 1.6;
+    padding-top: 12px;
+    font-weight: 500;
+}
+
+.center-pointing-arrow-svg {
+    position: absolute;
+    bottom: -50px;
+    left: 45%;
+    width: 65px;
+    height: auto;
+    pointer-events: none;
+}
+
+/* --- Perfect Copy Reference Matrix Cards Layout --- */
+.reference-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+    gap: 36px;
+    align-items: stretch;
+}
+
+/* Stronger Structural Feature Card Styling Rules */
+.structural-feature-card {
+    background-color: var(--stronger-card-bg); /* Enforced stronger background tint */
+    border-radius: 24px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    /* Reduced empty bottom blank space by optimizing min-height boundaries */
+    min-height: 240px; 
+    
+    /* Scroll animation initial values variables properties */
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1),
+                transform 0.6s cubic-bezier(0.25, 1, 0.5, 1),
+                background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Active State dynamic injection configuration flag via JS entries loop observer */
+.structural-feature-card.node-revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Dynamic Performance Glow & Scale Shift on Card hover state tracking */
+.structural-feature-card:hover {
+    background-color: #ffffff; /* Whitens card layout interior perfectly on hover metrics tracking */
+    box-shadow: 0 20px 40px rgba(28, 30, 33, 0.04);
+}
+
+/* Reduced bottom interior spacing padding limits to restrict dead visual space */
+.card-inner-padding-box {
+    padding: 36px 36px 12px 36px;
+}
+
+.card-head-text {
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: var(--brand-dark);
+    line-height: 1.35;
+    margin-bottom: 12px;
+}
+
+.amber-glow-text {
+    color: var(--brand-amber);
+    transition: text-shadow 0.3s ease;
+}
+
+.structural-feature-card:hover .amber-glow-text {
+    text-shadow: 0 0 8px rgba(244, 155, 9, 0.25);
+}
+
+/* Card bodies updated explicitly to crisp black tone */
+.card-body-text {
+    font-size: 0.95rem;
+    color: var(--brand-text-black);
+    line-height: 1.55;
+    font-weight: 500;
+}
+
+/* --- Footer Row & Exact Breaking Edge Corner Buttons --- */
+.card-absolute-footer-row {
+    position: relative;
+    width: 100%;
+    /* Snug padding constraints ensure zero blank space remains at base of text */
+    padding: 0 36px 28px 36px; 
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.reverse-alignment-flex { justify-content: flex-end; }
+
+.bottom-accent-vector-icon {
+    width: 52px;
+    height: 52px;
+    opacity: 0;
+    transform: scale(0.7) rotate(-15deg);
+    transition: opacity 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+                transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Breaking-Edge Navigation Button (Breaks outer card container profile cleanly) */
+.breaking-corner-btn-link {
+    position: absolute;
+    bottom: -16px;
+    right: 28px;
+    width: 52px;
+    height: 52px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 4px 14px rgba(28, 30, 33, 0.06);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    z-index: 15;
+    transition: background-color 0.25s, transform 0.25s, box-shadow 0.25s;
+}
+.breaking-corner-btn-link svg { width: 18px; height: 18px; transition: transform 0.25s; }
+
+.breaking-corner-btn-link:hover {
+    background-color: var(--brand-amber);
+    transform: scale(1.05);
+    box-shadow: 0 6px 18px rgba(244, 155, 9, 0.3);
+}
+.breaking-corner-btn-link:hover svg path { stroke: #ffffff; }
+
+/* --- Special Stepped Center Card Notched Styling Adjustments --- */
+.notched-card-layout {
+    border-radius: 0 24px 24px 24px; /* Eliminates top-left curve rounding matching sample style shape sheet */
+}
+
+.notched-top-vector-box {
+    position: absolute;
+    top: -46px;
+    left: 0;
+    width: 72px;
+    height: 48px;
+    background-color: var(--stronger-card-bg); /* Sits as an extension neck structure overlay */
+    border-radius: 20px 20px 0 0;
+    padding: 12px 16px 0 20px;
+    opacity: 0;
+    transform: translateY(15px);
+    transition: opacity 0.5s ease, transform 0.5s ease, background-color 0.3s ease;
+    z-index: 5;
+}
+.notched-top-vector-box svg { width: 100%; height: 100%; }
+
+.structural-feature-card:hover .notched-top-vector-box {
+    background-color: #ffffff; /* Fades color values along card container profile on hover */
+}
+
+.clear-top-padding { padding-top: 48px; }
+
+/* Shoulder Break Navigation Button Override positioning on Center Notch Card variation */
+.embedded-top-shoulder-btn {
+    top: -26px;
+    bottom: auto;
+    right: -16px; /* Pops out past the right layout edge profile border margin constraints */
+}
+
+/* --- Inline Vectors Scroll active indicator states --- */
+.element-icon-reveal.active-icon-state {
+    opacity: 1;
+    transform: scale(1) rotate(0deg) translateY(0);
+}
+
+/* --- Fluid Adaptability Layout Responsive Breakpoints Matrices --- */
+@media (max-width: 992px) {
+    .features-head-row { grid-template-columns: 1fr; gap: 24px; margin-bottom: 48px; }
+    .features-sub-paragraph { padding-top: 0; }
+    .center-pointing-arrow-svg { display: none; } /* Clear asset load footprint volume on small screens */
+}
+@media (max-width: 480px) {
+    .card-inner-padding-box { padding: 36px 24px 12px 24px; }
+    .notched-card-layout { border-radius: 24px; margin-top: 24px; }
+    .notched-top-vector-box { left: 24px; }
+    .embedded-top-shoulder-btn { top: auto; bottom: -16px; right: 24px; } /* Converts button placement back down safely on tight view matrices grid slots */
+}
+
+</style>
+
+<script>
+ document.addEventListener("DOMContentLoaded", () => {
+    
+    // Continuous Scroll Intersection Interceptor for Sequential Cascade Card Entrance
+    const operationalCards = document.querySelectorAll(".reveal-card-node");
+
+    if (operationalCards.length > 0) {
+        const componentObserverOptions = {
+            root: null,
+            threshold: 0.12
+        };
+
+        const featuresLayoutScrollObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const targetedCard = entry.target;
+                    const cardIndexLocation = Array.from(operationalCards).indexOf(targetedCard);
+                    
+                    // Controlled cascading delay loop calculation metrics
+                    setTimeout(() => {
+                        targetedCard.classList.add("node-revealed");
+                        
+                        // Internal vector child graphic nodes lookup pipeline trigger
+                        const graphicalVectorElements = targetedCard.querySelectorAll(".element-icon-reveal");
+                        graphicalVectorElements.forEach(vectorIcon => {
+                            setTimeout(() => {
+                                vectorIcon.classList.add("active-icon-state");
+                            }, 200); // 200ms delay offset trailing card reveal animations
+                        });
+                    }, cardIndexLocation * 180); // 180ms cascade gap step speed matching request properties
+
+                    observer.unobserve(targetedCard);
+                }
+            });
+        }, componentObserverOptions);
+
+        operationalCards.forEach(cardItem => featuresLayoutScrollObserver.observe(cardItem));
+    }
+});
+
+
+</script>
+
+<!-- Interactive Statistics & Platform Overview Section -->
+<section class="stackly-overview-section">
+    <div class="overview-grid-container">
+        
+        <!-- Top Hero Typography Block (Triggers word-by-word from bottom on scroll) -->
+        <div class="overview-header-row">
+            <span class="decorative-quote-mark">“</span>
+            
+            <h2 class="overview-animated-headline" id="scroll-word-headline">
+                <span class="view-word">Platform</span>
+                <span class="view-word">that</span>
+                
+                <!-- Overlapping Avatars Cluster Group -->
+                <span class="inline-avatar-cluster view-word">
+                    <img src="student1.png" alt="Student Profile 1" class="hover-avatar" onerror="this.src='https://placehold.co'">
+                    <img src="student2.png" alt="Student Profile 2" class="hover-avatar" onerror="this.src='https://placehold.co'">
+                    <img src="student3.png" alt="Student Profile 3" class="hover-avatar" onerror="this.src='https://placehold.co'">
+                </span>
+
+                <span class="view-word">helps</span>
+                <span class="view-word">curious</span>
+
+                <!-- Infinite Blinking Star Vector Badge Component -->
+                <span class="inline-vector-badge blink-toggle-node view-word">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://w3.org">
+                        <path d="M12,2 L15,9 L22,9 L17,14 L19,21 L12,17 L5,21 L7,14 L2,9 L9,9 Z" fill="#f49b09"/>
+                    </svg>
+                </span>
+
+                <span class="view-word">minds</span>
+                <span class="view-word">learn</span>
+                <span class="view-word">faster</span>
+                <span class="view-word">build</span>
+                <span class="view-word">skills</span>
+                <span class="view-word">and</span>
+                <span class="view-word">succeed</span>
+
+                <!-- Infinite Blinking Thumbs Up Vector Badge Component -->
+                <span class="inline-vector-badge blink-toggle-node view-word">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://w3.org">
+                        <path d="M2,10 H5 V21 H2 Z M20,11 A2,2 0 0,0 18,9 H13 L14,4 Q14,2 12,2 Q10,2 10,4 L7,10 V21 H18 A2,2 0 0,0 20,19 Z" fill="#111314"/>
+                    </svg>
+                </span>
+
+                <span class="view-word">anywhere</span>
+            </h2>
+        </div>
+
+        <!-- Lower Section Content Row Dashboard Matrix Layout -->
+        <div class="overview-dashboard-matrix">
+            
+            <!-- Left Grid Pane: Sequenced Performance Analytical Metric Cards -->
+            <div class="metrics-cards-column">
+                <div class="metric-strong-card scroll-reveal-card">
+                    <div class="metric-header-flex">
+                        <span class="metric-num-highlight">2x</span>
+                        <span class="metric-label-tag">Faster Skills</span>
+                    </div>
+                    <p class="metric-body-desc">Learn core frontend engineering and framework concepts quicker with structured lessons and guided programming practice.</p>
+                </div>
+
+                <div class="metric-strong-card scroll-reveal-card">
+                    <div class="metric-header-flex">
+                        <span class="metric-num-highlight">30%</span>
+                        <span class="metric-label-tag">Course Completion</span>
+                    </div>
+                    <p class="metric-body-desc">Stay constantly motivated with interactive progress tracking dashboard metrics and milestone-based structured learning targets.</p>
+                </div>
+            </div>
+
+            <!-- Center Grid Pane: Stretched Full Height Vector Image Canvas Frame -->
+            <div class="graphics-showcase-pane scroll-reveal-side-img">
+                <div class="blue-graphic-backdrop-box">
+                    <!-- Crisp full-height layout mapping image -->
+                    <img src="./assests/B 1.webp" alt="Interactive Student Illustration" class="center-mascot-img" onerror="this.src='https://placehold.co'">
+                </div>
+                
+                <!-- Flying Paper Airplane Floating Accent Vector Graphic -->
+                <svg class="airplane-floating-vector" viewBox="0 0 40 40" xmlns="http://w3.org">
+                    <path d="M5,18 L35,5 L22,35 L18,22 Z M18,22 L35,5" fill="none" stroke="#4f46e5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+
+            <!-- Right Grid Pane: Descriptive Guidance Card Panels & Actions Bar Layer -->
+            <div class="guidance-cards-column">
+                <div class="metric-strong-card scroll-reveal-card">
+                    <p class="metric-body-desc bold-paragraph-text">
+                        Work on practical live exercises and real-world projects designed to reinforce specialized technical skills and boost professional confidence.
+                    </p>
+                </div>
+
+                <div class="metric-strong-card scroll-reveal-card content-actions-alignment-card">
+                    <p class="metric-body-desc bold-paragraph-text">
+                        Gain unrestricted access to our verified global network of subject matter mentors and interactive coding sandboxes from anywhere.
+                    </p>
+                    <div class="action-btn-row-wrapper">
+                        <a href="404.html" class="pill-action-btn-black">Join Now</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<style>
+/* Core Styling Rules Initialization */
+:root {
+    --brand-dark-black: #111314;   
+    --brand-teal: #046a55;
+    --brand-amber: #f49b09;
+    --strong-card-bg-tint: #eaedea; 
+    --section-base-bg: #ffffff;
+}
+
+.stackly-overview-section {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 30px;
+    padding-left: 24px;
+    padding-right: 24px;
+    background-color: var(--section-base-bg);
+    position: relative;
+}
+
+.overview-grid-container {
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- Top Header Typography Block --- */
+.overview-header-row {
+    position: relative;
+    max-width: 950px;
+    margin-bottom: 60px;
+    padding-left: 36px;
+}
+
+.decorative-quote-mark {
+    position: absolute;
+    top: -24px;
+    left: 0;
+    font-size: 5rem;
+    font-family: Georgia, serif;
+    color: #cbd5e1;
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+}
+
+.overview-animated-headline {
+    font-size: clamp(2.2rem, 4.5vw, 3.45rem);
+    font-weight: 800;
+    color: var(--brand-dark-black); 
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 14px;
+    align-items: center;
+}
+
+/* --- Word-By-Word Bottom Mounting Animation --- */
+.view-word {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(35px); 
+    animation-duration: 0.75s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
+.view-word.active-word-reveal {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Inline Avatar Graphics Cluster --- */
+.inline-avatar-cluster {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    padding: 0 6px;
+    vertical-align: middle;
+}
+
+.hover-avatar {
+    width: clamp(38px, 4.5vw, 46px);
+    height: clamp(38px, 4.5vw, 46px);
+    border-radius: 50%;
+    border: 3px solid #ffffff;
+    object-fit: cover;
+    margin-left: -14px; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+    position: relative;
+    z-index: 5;
+}
+.hover-avatar:first-child { margin-left: 0; }
+
+.hover-avatar:hover {
+    transform: scale(1.22) translateY(-4px);
+    box-shadow: 0 8px 20px rgba(4, 106, 85, 0.15);
+    z-index: 10; 
+}
+
+/* --- Infinite 1-Second Disappear / Appear Vector Toggle Nodes --- */
+.inline-vector-badge {
+    width: clamp(36px, 4vw, 44px);
+    height: clamp(36px, 4vw, 44px);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    background-color: #f1f5f9;
+    border-radius: 50%;
+    padding: 8px;
+    margin: 0 4px;
+}
+
+.inline-vector-badge svg { width: 100%; height: 100%; }
+.blink-toggle-node { animation: alternateOpacityBlink 1s infinite steps(1, end); }
+
+@keyframes alternateOpacityBlink {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0; transform: scale(0.9); } 
+}
+
+/* --- Lower Dashboard 3-Column Mesh Layout Grid --- */
+.overview-dashboard-matrix {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Rigid clean multi-column distribution grids */
+    gap: 32px;
+    align-items: stretch; /* Forces equal height matching rules between columns */
+}
+
+.metrics-cards-column, .guidance-cards-column {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    justify-content: space-between; /* Spreads cards out cleanly to balance height */
+}
+
+.metric-strong-card {
+    background-color: var(--strong-card-bg-tint); 
+    border-radius: 24px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(210, 215, 212, 0.5);
+    flex: 1; /* Lets card expand to fill equal column shares */
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1),
+                transform 0.6s cubic-bezier(0.25, 1, 0.5, 1),
+                background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.metric-strong-card.card-revealed-node {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.metric-strong-card:hover {
+    background-color: #ffffff; 
+    box-shadow: 0 15px 35px rgba(4, 106, 85, 0.04);
+}
+
+.metric-header-flex {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.metric-num-highlight {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--brand-dark-black);
+    line-height: 1;
+}
+
+.metric-label-tag {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--brand-teal);
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+.metric-body-desc {
+    font-size: 0.95rem;
+    color: var(--brand-dark-black); 
+    line-height: 1.55;
+    font-weight: 500;
+}
+
+.bold-paragraph-text {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    font-weight: 600;
+}
+
+.content-actions-alignment-card {
+    justify-content: space-between;
+}
+
+.action-btn-row-wrapper {
+    margin-top: 24px;
+}
+
+.pill-action-btn-black {
+    display: inline-block;
+    text-decoration: none;
+    background-color: var(--brand-dark-black);
+    color: #ffffff;
+    padding: 12px 28px;
+    border-radius: 9999px; 
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: background-color 0.25s, transform 0.25s;
+    box-shadow: 0 4px 12px rgba(17, 19, 20, 0.15);
+}
+
+.pill-action-btn-black:hover {
+    background-color: var(--brand-teal); 
+    transform: translateY(-1px);
+}
+
+/* --- FIXED CENTER PANE: Stretched Full-Height Image Wrapper --- */
+.graphics-showcase-pane {
+    display: flex;
+    position: relative;
+    height: 100%; /* Injects 100% true vertical expansion scale mapping rules */
+    opacity: 0;
+    transform: translateX(60px); 
+    transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.graphics-showcase-pane.side-img-revealed-node {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Base graphic square scales cleanly over total height matrix shares */
+.blue-graphic-backdrop-box {
+    background-color: #e0f2fe; 
+    border-radius: 24px;
+    width: 100%;
+    height: 100%; /* Stretches block completely vertically to fill column void */
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
+    overflow: visible; /* Strips bottom clipping and blur operations completely */
+}
+
+.center-mascot-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Guarantees image elements cover full space cleanly without blur distortions */
+    border-radius: 24px;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.graphics-showcase-pane:hover .center-mascot-img {
+    transform: scale(1.03); 
+}
+
+.airplane-floating-vector {
+    position: absolute;
+    top: 15%;
+    right: 5%;
+    width: 44px;
+    height: auto;
+    pointer-events: none;
+    animation: gentleWigglePath 5s infinite ease-in-out;
+}
+
+@keyframes gentleWigglePath {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-14px) rotate(6deg) translateX(-4px); }
+}
+
+/* --- Fluid Adaptability Layout Responsive Breakpoints Matrices --- */
+@media (max-width: 1024px) {
+    .overview-dashboard-matrix {
+        grid-template-columns: 1fr 1fr; 
+        gap: 28px;
+    }
+    .graphics-showcase-pane {
+        grid-column: span 2; 
+        order: 5;
+        height: 380px; /* Provides elegant constant height parameters when dropped to mobile footer */
+    }
+}
+
+@media (max-width: 768px) {
+    .overview-header-row { padding-left: 0; margin-bottom: 40px; }
+    .decorative-quote-mark { display: none; }
+    .overview-dashboard-matrix { grid-template-columns: 1fr; }
+    .graphics-showcase-pane { grid-column: span 1; height: 320px; }
+}
+
+</style>
+
+<script>
+ document.addEventListener("DOMContentLoaded", () => {
+    
+    // Headline Stagger word components loop tracking
+    const headlineContainer = document.getElementById("scroll-word-headline");
+    if (headlineContainer) {
+        const structuralWordNodes = headlineContainer.querySelectorAll(".view-word");
+        const headlineObserverOptions = { root: null, threshold: 0.15 };
+
+        const headlineScrollObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    structuralWordNodes.forEach((wordNode, indexLocation) => {
+                        setTimeout(() => {
+                            wordNode.classList.add("active-word-reveal");
+                        }, indexLocation * 75); 
+                    });
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, headlineObserverOptions);
+        headlineScrollObserver.observe(headlineContainer);
+    }
+
+    // Scroll Analytical Metric Card & Center Side Image Trigger Activation
+    const animatedCardsList = document.querySelectorAll(".scroll-reveal-card");
+    const targetSideImagePane = document.querySelector(".scroll-reveal-side-img");
+
+    if (animatedCardsList.length > 0) {
+        const genericObserverOptions = { root: null, threshold: 0.1, rootMargin: "0px 0px -20px 0px" };
+
+        const coreDashboardObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const intersectedNode = entry.target;
+                    
+                    if (intersectedNode.classList.contains("scroll-reveal-card")) {
+                        const indexOffset = Array.from(animatedCardsList).indexOf(intersectedNode);
+                        setTimeout(() => {
+                            intersectedNode.classList.add("card-revealed-node");
+                        }, indexOffset * 150); 
+                    } 
+                    else if (intersectedNode.classList.contains("scroll-reveal-side-img")) {
+                        intersectedNode.classList.add("side-img-revealed-node");
+                    }
+                    observer.unobserve(intersectedNode);
+                }
+            });
+        }, genericObserverOptions);
+
+        animatedCardsList.forEach(cardNode => coreDashboardObserver.observe(cardNode));
+        if (targetSideImagePane) coreDashboardObserver.observe(targetSideImagePane);
+    }
+});
+
+</script>
+
+<!-- Stackly Featured Slider Carousel Grid Section -->
+<section class="stackly-slider-section">
+    <div class="slider-section-container">
+        
+        <!-- Section Header Area -->
+        <div class="slider-section-header">
+            
+            <!-- Left Side Tucked Content & Precise Navigation Arrows Corner Controls -->
+            <div class="header-left-group">
+                <span class="section-subtitle-tag">Our Carousel Stream</span>
+                <h2 class="slider-static-headline">Explore Popular Courses</h2>
+                
+                <!-- Corner Tucked Directional Navigation Handles -->
+                <div class="carousel-navigation-handles-left">
+                    <button class="handle-btn" id="carousel-prev" aria-label="Slide Left">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                    </button>
+                    <button class="handle-btn" id="carousel-next" aria-label="Slide Right">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Right Side Simple Context Description text -->
+            <p class="slider-section-desc">
+                Swipe through job-ready dynamic tracks engineered to accelerate technical knowledge and build production capabilities.
+            </p>
+        </div>
+
+        <!-- Carousel Mask Outer Window Container Frame Track -->
+        <div class="carousel-mask-window">
+            <div class="carousel-linear-track" id="carousel-track">
+                
+                <!-- CARD 1: AI & Automation -->
+                <div class="carousel-slide-card card-gradient-green">
+                    <div class="card-media-backdrop">
+                        <div class="badge-row"><span class="card-badge bg-popular">Popular</span></div>
+                        <img src="ai.png" alt="AI & Automation" class="card-main-illustration" onerror="this.src='https://placehold.co'">
+                    </div>
+                    <div class="card-content-body">
+                        <h3 class="course-card-title">AI & Automation</h3>
+                        <!-- Enhanced One-Line Summary Sentence -->
+                        <p class="course-card-one-liner">Build intelligent software prompts, neural workflows, and system automations.</p>
+                        <div class="course-meta-metrics-row"><span>★ 4.8</span><span>⏱ 14h</span></div>
+                        <div class="card-instructor-footer-row">
+                            <span class="instructor-name">Bessie Cooper</span>
+                            <a href="404.html" class="course-action-btn-hover-black">Join</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 2: Product Design -->
+                <div class="carousel-slide-card card-gradient-orange">
+                    <div class="card-media-backdrop">
+                        <div class="badge-row"><span class="card-badge bg-popular">Popular</span></div>
+                        <img src="design.png" alt="Product Design" class="card-main-illustration" onerror="this.src='https://placehold.co'">
+                    </div>
+                    <div class="card-content-body">
+                        <h3 class="course-card-title">Product Design</h3>
+                        <!-- Enhanced One-Line Summary Sentence -->
+                        <p class="course-card-one-liner">Master global end-to-end consumer product mechanics from concept to production.</p>
+                        <div class="course-meta-metrics-row"><span>★ 4.7</span><span>⏱ 18h</span></div>
+                        <div class="card-instructor-footer-row">
+                            <span class="instructor-name">Floyd Miles</span>
+                            <a href="404.html" class="course-action-btn-hover-black">Join</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 3: UI/UX Essentials -->
+                <div class="carousel-slide-card card-gradient-pink">
+                    <div class="card-media-backdrop">
+                        <div class="badge-row"><span class="card-badge bg-popular">Popular</span></div>
+                        <img src="uiux.png" alt="UI/UX Essentials" class="card-main-illustration" onerror="this.src='https://placehold.co'">
+                    </div>
+                    <div class="card-content-body">
+                        <h3 class="course-card-title">UI/UX Essentials</h3>
+                        <!-- Enhanced One-Line Summary Sentence -->
+                        <p class="course-card-one-liner">Create seamless high-fidelity digital interfaces and map visual user journeys.</p>
+                        <div class="course-meta-metrics-row"><span>★ 4.9</span><span>⏱ 16h</span></div>
+                        <div class="card-instructor-footer-row">
+                            <span class="instructor-name">Jane Cooper</span>
+                            <a href="404.html" class="course-action-btn-hover-black">Join</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 4: Web Development -->
+                <div class="carousel-slide-card card-gradient-purple">
+                    <div class="card-media-backdrop">
+                        <div class="badge-row"><span class="card-badge bg-popular">Popular</span></div>
+                        <img src="webdev.png" alt="Web Development" class="card-main-illustration" onerror="this.src='https://placehold.co'">
+                    </div>
+                    <div class="card-content-body">
+                        <h3 class="course-card-title">Web Development</h3>
+                        <!-- Enhanced One-Line Summary Sentence -->
+                        <p class="course-card-one-liner">Code responsive web applications using foundational modern frontend technologies.</p>
+                        <div class="course-meta-metrics-row"><span>★ 4.8</span><span>⏱ 22h</span></div>
+                        <div class="card-instructor-footer-row">
+                            <span class="instructor-name">Leslie Alexander</span>
+                            <a href="404.html" class="course-action-btn-hover-black">Join</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 5: Data Analytics -->
+                <div class="carousel-slide-card card-gradient-blue">
+                    <div class="card-media-backdrop">
+                        <div class="badge-row"><span class="card-badge bg-popular">Popular</span></div>
+                        <img src="data.png" alt="Data Analytics" class="card-main-illustration" onerror="this.src='https://placehold.co'">
+                    </div>
+                    <div class="card-content-body">
+                        <h3 class="course-card-title">Data Analytics</h3>
+                        <!-- Enhanced One-Line Summary Sentence -->
+                        <p class="course-card-one-liner">Analyze raw complex production databases and build actionable charts metrics.</p>
+                        <div class="course-meta-metrics-row"><span>★ 4.6</span><span>⏱ 10h</span></div>
+                        <div class="card-instructor-footer-row">
+                            <span class="instructor-name">Courtney Henry</span>
+                            <a href="404.html" class="course-action-btn-hover-black">Join</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<style>
+/* Color System Layout Configurations */
+:root {
+    --text-black: #111314;
+    --text-muted: #555c66;
+    --brand-teal: #046a55;
+    --brand-amber: #f49b09;
+    --card-radius: 16px;
+}
+
+.stackly-slider-section {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 30px;
+    padding-left: 24px;
+    padding-right: 24px;
+    background-color: #f8fafc;
+    overflow: hidden;
+}
+
+.slider-section-container {
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- Split-Row Layout Header Component --- */
+.slider-section-header {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 40px;
+    align-items: flex-end;
+    margin-bottom: 40px;
+}
+
+.header-left-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.section-subtitle-tag {
+    font-size: 0.95rem; /* Enhanced text weight scaling */
+    font-weight: 700;
+    color: var(--brand-teal);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
+}
+
+.slider-static-headline {
+    font-size: clamp(2.1rem, 4.5vw, 2.75rem); /* Enhanced Headline Size */
+    font-weight: 800;
+    color: var(--text-black);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+}
+
+/* --- Tucked Corner Controls --- */
+.carousel-navigation-handles-left {
+    display: flex;
+    gap: 12px;
+}
+
+.handle-btn {
+    width: 46px;
+    height: 44px;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--text-black);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.handle-btn svg {
+    width: 18px;
+    height: 18px;
+}
+
+.handle-btn:hover {
+    background-color: var(--text-black);
+    color: #ffffff;
+    border-color: var(--text-black);
+}
+
+.slider-section-desc {
+    font-size: 1.05rem; /* Enhanced baseline scale */
+    font-weight: 500;
+    color: var(--text-muted);
+    line-height: 1.55;
+    padding-bottom: 4px;
+}
+
+/* --- Sliding Hardware Track Mask Windows --- */
+.carousel-mask-window {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 8px 0;
+}
+
+.carousel-linear-track {
+    display: flex;
+    gap: 24px; /* Enhanced gutter spacing */
+    transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: transform;
+}
+
+/* --- Adaptive Card Block Share Configurations (4 to 5 in one row) --- */
+.carousel-slide-card {
+    background-color: #ffffff;
+    border-radius: var(--card-radius);
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 12px rgba(17, 19, 20, 0.01);
+    
+    /* Partitions width into 4.2 visible elements for standard wide setups */
+    flex: 0 0 calc((100% - (24px * 4)) / 4.2); 
+    width: calc((100% - (24px * 4)) / 4.2);
+    
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.carousel-slide-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(4, 106, 85, 0.15);
+    box-shadow: 0 12px 24px rgba(4, 106, 85, 0.04);
+}
+
+.card-media-backdrop {
+    position: relative;
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 140px;
+}
+
+/* Pastel Palette Gradients */
+.card-gradient-green .card-media-backdrop { background: linear-gradient(135deg, #f0fdf4 0%, #bbf7d0 100%); }
+.card-gradient-orange .card-media-backdrop { background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%); }
+.card-gradient-pink .card-media-backdrop { background: linear-gradient(135deg, #fdf2f8 0%, #fbcfe8 100%); }
+.card-gradient-purple .card-media-backdrop { background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%); }
+.card-gradient-blue .card-media-backdrop { background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); }
+
+.card-main-illustration {
+    max-height: 95px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.badge-row { position: absolute; top: 12px; left: 12px; }
+.card-badge { font-size: 0.72rem; font-weight: 700; padding: 3px 8px; border-radius: 9999px; text-transform: uppercase; }
+.bg-popular { background-color: #ffffff; color: var(--text-black); }
+
+.card-content-body {
+    padding: 20px; /* Enhanced Padding spacing properties */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+}
+
+.course-card-title {
+    font-size: 1.35rem; /* Enhanced Card Title Size */
+    font-weight: 700;
+    color: var(--text-black);
+    line-height: 1.3;
+    margin-bottom: 6px;
+}
+
+/* New CSS style mapping for the short course sentence description */
+.course-card-one-liner {
+    font-size: 0.98rem; /* Clean readable description typography profile */
+    color: var(--text-muted);
+    line-height: 1.45;
+    margin-bottom: 12px;
+}
+
+.course-meta-metrics-row {
+    display: flex;
+    gap: 12px;
+    font-size: 0.88rem; /* Enhanced Metadata metrics readability size */
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-bottom: 14px;
+}
+
+.card-instructor-footer-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.instructor-name { 
+    font-size: 0.92rem; /* Enhanced Instructor Name font scale */
+    font-weight: 700; 
+    color: var(--text-black); 
+}
+
+/* Button hover track styles properties */
+.course-action-btn-hover-black {
+    text-decoration: none;
+    font-size: 0.85rem; /* Enhanced button visual label scaling */
+    font-weight: 700;
+    color: var(--text-black);
+    background-color: transparent;
+    border: 1px solid #e2e8f0;
+    padding: 6px 14px;
+    border-radius: 9999px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.course-action-btn-hover-black:hover {
+    background-color: var(--text-black);
+    color: #ffffff;
+    border-color: var(--text-black);
+}
+
+/* --- Fluid Adaptability Metrics Responsive Breakpoints --- */
+@media (max-width: 1120px) {
+    .carousel-slide-card {
+        flex: 0 0 calc((100% - (24px * 2)) / 2.4); /* Adapts to 2.4 visible cards on tablet views */
+        width: calc((100% - (24px * 2)) / 2.4);
+    }
+}
+
+@media (max-width: 768px) {
+    .slider-section-header { grid-template-columns: 1fr; gap: 20px; }
+    .slider-section-desc { padding-bottom: 0; }
+}
+
+@media (max-width: 580px) {
+    .carousel-slide-card {
+        flex: 0 0 calc(100% - 24px); /* Showcases single main card focus block tracking cleanly on mobile devices */
+        width: calc(100% - 24px);
+    }
+}
+
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    
+    const track = document.getElementById("carousel-track");
+    const prevBtn = document.getElementById("carousel-prev");
+    const nextBtn = document.getElementById("carousel-next");
+    const slides = document.querySelectorAll(".carousel-slide-card");
+
+    if (!track || slides.length === 0) return;
+
+    let currentIndex = 0;
+    const AUTOMATIC_CYCLE_MS = 4000; 
+
+    function getMaxIndex() {
+        const viewportWidth = window.innerWidth;
+        if (viewportWidth > 1120) return slides.length - 4; /* desktop constraints boundaries */
+        if (viewportWidth > 580) return slides.length - 2;  /* tablet constraints boundaries */
+        return slides.length - 1;                           /* mobile constraints boundaries */
+    }
+
+    function updateCarouselPosition() {
+        const slideNode = slides[0];
+        const slideWidth = slideNode.getBoundingClientRect().width;
+        const gapOffset = 24; 
+        
+        const totalTranslateAmount = currentIndex * (slideWidth + gapOffset);
+        track.style.transform = `translateX(-${totalTranslateAmount}px)`;
+    }
+
+    function moveNext() {
+        const maxLimit = getMaxIndex();
+        if (currentIndex < maxLimit) {
+            currentIndex++;
+        } else {
+            currentIndex = 0; 
+        }
+        updateCarouselPosition();
+    }
+
+    function movePrev() {
+        if (currentIndex > 0) {
+            currentIndex--;
+        } else {
+            currentIndex = getMaxIndex(); 
+        }
+        updateCarouselPosition();
+    }
+
+    if (nextBtn) nextBtn.addEventListener("click", () => { clearInterval(autoCycleInterval); moveNext(); });
+    if (prevBtn) prevBtn.addEventListener("click", () => { clearInterval(autoCycleInterval); movePrev(); });
+
+    let autoCycleInterval = setInterval(moveNext, AUTOMATIC_CYCLE_MS);
+
+    window.addEventListener("resize", () => {
+        currentIndex = Math.min(currentIndex, getMaxIndex());
+        updateCarouselPosition();
+    });
+});
+
+</script>
+
+<!-- Fully Redesigned Solid Green CTA Section Container -->
+<section class="stackly-solid-cta-section">
+    <div class="cta-solid-container">
+        
+        <!-- Unified Solid Green Box Element Framework -->
+        <div class="cta-full-green-box">
+            
+            <!-- Left Side Picture Frame Compartment Layer -->
+            <div class="cta-image-side-canvas">
+                <!-- Replace 'portrait-student.png' with your local saved student image asset -->
+                <img src="portrait-student.png" alt="Smiling Student with Backpack" class="cta-portrait-element scroll-reveal-left-img" onerror="this.src='https://placehold.co'">
+            </div>
+
+            <!-- Right Side Content Presentation Compartment Layer -->
+            <div class="cta-content-solid-panel">
+                
+                <span class="cta-mini-gold-title">Get in Touch</span>
+                
+                <!-- Word-by-word scrolling headline content blocks -->
+                <h2 class="cta-main-headline" id="cta-scroll-headline">
+                    <span class="cta-word">Join</span>
+                    <span class="cta-word">our</span>
+                    <span class="cta-word">community</span>
+                    <span class="cta-word">of</span>
+                    <span class="cta-word">school</span>
+                    <span class="cta-word">partners</span>
+                </h2>
+
+                <p class="cta-descriptive-paragraph">
+                    Looking to become a certified instructor or partner school? Our educational framework tracks are now servicing digital learning workspaces worldwide!
+                </p>
+
+                <!-- BOTTOM: Strong, Flickering/Pulsing Call To Action Button -->
+                <div class="cta-action-button-row">
+                    <a href="404.html" class="cta-strong-pulsing-btn">
+                        <span class="btn-text-node">Get Started Now</span>
+                        <svg class="btn-arrow-icon" viewBox="0 0 24 24" fill="none" xmlns="http://w3.org">
+                            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Floating Hand-drawn Starburst Asterisk Accent Vector -->
+                <div class="cta-floating-asterisk-box">
+                    <svg viewBox="0 0 100 100" xmlns="http://w3.org">
+                        <path d="M50,15 L50,85 M15,50 L85,50 M25,25 L75,75 M25,75 L75,25" stroke="#f49b09" stroke-width="8" stroke-linecap="round"/>
+                    </svg>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<style>
+    /* Color System Layout Configurations matching template branding profiles */
+:root {
+    --brand-dark-black: #111314;
+    --brand-teal-solid: #046a55; /* Signature deep forest teal from backend graphics */
+    --brand-amber: #f49b09;
+    --bg-canvas-cream: #fbfbf9;
+}
+
+.stackly-solid-cta-section {
+    width: 100%;
+    /* Requested Specific Padding Configurations: 50px Top, 30px Bottom */
+    padding-top: 50px;
+    padding-bottom: 30px;
+    padding-left: 24px;
+    padding-right: 24px;
+    background-color: var(--bg-canvas-cream);
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-solid-container {
+    max-width: 1140px; 
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* --- REengineered UNIFIED SOLID FULL BOX --- */
+.cta-full-green-box {
+    position: relative;
+    background-color: var(--brand-teal-solid); /* Full green box tint override */
+    border-radius: 28px;
+    display: grid;
+    grid-template-columns: 0.75fr 1.25fr; /* Fluid split dividing image from text layer fields */
+    align-items: stretch;
+    min-height: 340px;
+    box-shadow: 0 12px 35px rgba(4, 106, 85, 0.15);
+    overflow: hidden; /* Clears any raw edge cut overshoots */
+}
+
+/* --- Left Side picture compartment --- */
+.cta-image-side-canvas {
+    position: relative;
+    background-color: #f3f5f3; 
+    overflow: hidden;
+}
+
+/* Forms the clean slanted geometric divider slice line separating blocks */
+.cta-image-side-canvas::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -40px;
+    width: 80px;
+    height: 100%;
+    background-color: var(--brand-teal-solid);
+    transform: skewX(-15deg); 
+    z-index: 2;
+}
+
+.cta-portrait-element {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    position: relative;
+    z-index: 1;
+    opacity: 0;
+    transform: translateX(-60px);
+    transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.cta-portrait-element.active-left-reveal {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* --- Right Side content layout compartment --- */
+.cta-content-solid-panel {
+    padding: 48px 52px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 5;
+}
+
+.cta-mini-gold-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--brand-amber); 
+    margin-bottom: 12px;
+    display: block;
+}
+
+.cta-main-headline {
+    font-size: clamp(1.85rem, 3.5vw, 2.75rem);
+    font-weight: 800;
+    color: #ffffff; 
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 12px;
+}
+
+/* --- Headline Word-by-word Bottom Entrance --- */
+.cta-word {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(25px); 
+    animation-duration: 0.65s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.cta-word.active-word-rise {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.cta-descriptive-paragraph {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.85); 
+    line-height: 1.6;
+    max-width: 540px;
+    margin-bottom: 28px; /* Breathing room gutters above lower button track */
+}
+
+/* --- BOTTOM STRONGLY FLICKERING / PULSING ACTION BUTTON --- */
+.cta-action-button-row {
+    width: 100%;
+    text-align: left;
+}
+
+.cta-strong-pulsing-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    background-color: var(--brand-amber); /* Strong contrast amber base fill color */
+    padding: 14px 32px;
+    border-radius: 9999px; /* Premium absolute pill geometry */
+    box-shadow: 0 6px 20px rgba(244, 155, 9, 0.35);
+    
+    /* Requested 1-second automatic soft flickering pulse state loop */
+    animation: ctaFlickerPulse 1s infinite alternate ease-in-out;
+    
+    transition: background-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.btn-text-node {
+    color: #ffffff;
+    font-size: 1.05rem;
+    font-weight: 700;
+}
+
+.btn-arrow-icon {
+    width: 18px;
+    height: auto;
+}
+
+/* Automatic infinite 1s flicker-pulse physics calculation rules loop */
+@keyframes ctaFlickerPulse {
+    0% {
+        box-shadow: 0 4px 14px rgba(244, 155, 9, 0.25);
+        transform: scale(1);
+    }
+    100% {
+        box-shadow: 0 10px 28px rgba(244, 155, 9, 0.55);
+        transform: scale(1.03); /* Gently grows and glows infinitely every 1s once */
+    }
+}
+
+/* Hover override halts flicker automatically to give user precise solid feedback control */
+.cta-strong-pulsing-btn:hover {
+    animation-play-state: paused; 
+    background-color: var(--brand-dark-black); /* Switches cleanly to dark black look on hover tracking */
+    box-shadow: 0 8px 24px rgba(17, 19, 20, 0.25);
+    transform: translateY(-2px) scale(1.03);
+}
+
+/* --- Floating Asterisk Vector Physics Accent --- */
+.cta-floating-asterisk-box {
+    position: absolute;
+    bottom: 24px;
+    right: 48px;
+    width: 55px;
+    height: 55px;
+    pointer-events: none;
+    animation: continuousWiggle 6s infinite ease-in-out;
+}
+
+@keyframes continuousWiggle {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-8px) rotate(15deg); } 
+}
+
+/* --- Fluid Adaptability Metrics Responsive Breakpoints --- */
+@media (max-width: 868px) {
+    .cta-full-green-box {
+        grid-template-columns: 1fr; /* Stack picture over text container column on tablet browsers */
+        min-height: auto;
+    }
+    
+    .cta-image-side-canvas {
+        border-radius: 28px 28px 0 0;
+        height: 260px;
+    }
+    .cta-image-side-canvas::after { display: none; } 
+    
+    .cta-content-solid-panel {
+        padding: 40px 28px;
+        text-align: center;
+    }
+    
+    .cta-action-button-row {
+        text-align: center; /* Center balances button placement for tap targeting targets */
+    }
+    
+    .cta-floating-asterisk-box { display: none; } 
+}
+
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    
+    const ctaHeadlineNode = document.getElementById("cta-scroll-headline");
+    const targetLeftImage = document.querySelector(".scroll-reveal-left-img");
+
+    if (ctaHeadlineNode && targetLeftImage) {
+        const structuralWordSpans = ctaHeadlineNode.querySelectorAll(".cta-word");
+        const ctaIntersectionOptions = { root: null, threshold: 0.15 };
+
+        const ctaViewObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    
+                    // A. Trigger Student Image Slide Immediately
+                    targetLeftImage.classList.add("active-left-reveal");
+
+                    // B. Stagger Words Cascades Up From Bottom
+                    structuralWordSpans.forEach((wordNode, indexLocation) => {
+                        setTimeout(() => {
+                            wordNode.classList.add("active-word-rise");
+                        }, indexLocation * 85); 
+                    });
+
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, ctaIntersectionOptions);
+
+        ctaViewObserver.observe(ctaHeadlineNode);
+    }
+});
+
+</script>
+</body>
+</html>
