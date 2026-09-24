@@ -2576,5 +2576,689 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 </script>
+
+<!-- Premium Instructor Spotlight Section -->
+<section class="stackly-spotlight-section">
+    <div class="spotlight-grid-container">
+        
+        <!-- Left Column Pane: Multi-Directional Word-by-Word Text Core Area -->
+        <div class="spotlight-content-column">
+            
+            <span class="spotlight-badge">Expert Mentors</span>
+            
+            <!-- Headline Title: Alternating Word-by-Word Entrance from Left/Right Horizons -->
+            <h2 class="spotlight-mega-heading" id="spotlight-animated-title">
+                <span class="spot-word slide-from-left">Learn</span>
+                <span class="spot-word slide-from-right">From</span>
+                <span class="spot-word slide-from-left highlight-teal-ink">The</span>
+                <span class="spot-word slide-from-right highlight-teal-ink">Best</span>
+                <span class="spot-word slide-from-left">Certified</span>
+                <span class="spot-word slide-from-right">Teachers</span>
+            </h2>
+
+            <!-- Paragraph Content: Alternating Word-by-Word Entrance on Scroll -->
+            <p class="spotlight-descriptive-para" id="spotlight-animated-para">
+                <span class="para-word slide-from-left">Our</span>
+                <span class="para-word slide-from-right">instructors</span>
+                <span class="para-word slide-from-left">are</span>
+                <span class="para-word slide-from-right">industry</span>
+                <span class="para-word slide-from-left">experts,</span>
+                <span class="para-word slide-from-right">vetted</span>
+                <span class="para-word slide-from-left">professionals,</span>
+                <span class="para-word slide-from-right">and</span>
+                <span class="para-word slide-from-left">passionate</span>
+                <span class="para-word slide-from-right">educators</span>
+                <span class="para-word slide-from-left">dedicated</span>
+                <span class="para-word slide-from-right">to</span>
+                <span class="para-word slide-from-left">keeping</span>
+                <span class="para-word slide-from-right">your</span>
+                <span class="para-word slide-from-left">learning</span>
+                <span class="para-word slide-from-right">on</span>
+                <span class="para-word slide-from-left">the</span>
+                <span class="para-word slide-from-right">right</span>
+                <span class="para-word slide-from-left">track.</span>
+            </p>
+
+            <!-- Bottom Floating Rising Action Button Track Area -->
+            <div class="spotlight-btn-track scroll-reveal-bottom-node">
+                <a href="404.html" class="spotlight-glowing-cta-btn">
+                    <span class="btn-text">Meet Our Faculty</span>
+                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" xmlns="http://w3.org">
+                        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+            </div>
+
+        </div>
+
+        <!-- Right Column Pane: Full Rising Bottom Graphic Showcase Canvas Frame -->
+        <div class="spotlight-graphic-column">
+            <div class="instructor-canvas-frame scroll-reveal-bottom-node">
+                <!-- Outer background pattern asset block -->
+                <div class="canvas-pastel-backdrop"></div>
+                
+                <!-- Main Core Focus Instructor Image Component -->
+                <img src="instructor-showcase.png" alt="Expert Educator leading lesson block" class="main-instructor-graphic" onerror="this.src='https://placehold.co'">
+                
+                <!-- Ambient Floating Learning Shield Accent Vector Icon -->
+                <div class="floating-vector-shield">
+                    <svg viewBox="0 0 100 100" xmlns="http://w3.org">
+                        <path d="M50,15 L80,25 L80,55 C80,75 50,90 50,90 C50,90 20,75 20,55 L20,25 Z" fill="#f49b09" stroke="#ffffff" stroke-width="4"/>
+                        <path d="M35,50 L45,60 L65,40" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    /* Color System Layout Configurations matching template branding profiles */
+:root {
+    --brand-dark-charcoal: #111314; /* Font content strictly mapped to black format */
+    --brand-teal: #046a55;
+    --brand-amber: #f49b09;
+    --stronger-card-bg: #eaedea;    /* High-contrast matching layout frames block fill */
+    --section-base-white: #ffffff;
+}
+
+.stackly-spotlight-section {
+    width: 100%;
+    /* Requested Specific Padding Configurations: 50px Top, 30px Bottom */
+    padding-top: 50px;
+    padding-bottom: 30px;
+    padding-left: 24px;
+    padding-right: 24px;
+    background-color: var(--section-base-white);
+    position: relative;
+    overflow: hidden;
+}
+
+.spotlight-grid-container {
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr; /* Proportional dual-column split rows canvas */
+    gap: 56px;
+    align-items: center;
+}
+
+.spotlight-content-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.spotlight-badge {
+    display: inline-block;
+    color: var(--brand-teal);
+    background-color: var(--stronger-card-bg);
+    padding: 6px 14px;
+    border-radius: 9999px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 20px;
+}
+
+/* --- Left Area Title: Multi-Side Word Entry Systems --- */
+.spotlight-mega-heading {
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+    font-weight: 800;
+    color: var(--brand-dark-charcoal);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 14px;
+}
+
+.highlight-teal-ink {
+    color: var(--brand-teal);
+    position: relative;
+}
+
+.spot-word, .para-word {
+    display: inline-block;
+    opacity: 0;
+    transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1), 
+                transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Side Tracking Horizons Initial Coordinates Setup */
+.slide-from-left { transform: translateX(-40px); }
+.slide-from-right { transform: translateX(40px); }
+
+/* Active Class trigger flag values pushed smoothly via script view match intercept observers loops */
+.active-side-reveal {
+    opacity: 1 !important;
+    transform: translateX(0) !important;
+}
+
+/* --- Left Area Body Paragraph: Word-by-Word Side Entrance --- */
+.spotlight-descriptive-para {
+    font-size: clamp(1rem, 2vw, 1.1rem);
+    color: var(--brand-dark-charcoal); /* Paragraph font color set strictly black format */
+    line-weight: 1.6;
+    font-weight: 500;
+    max-width: 560px;
+    margin-bottom: 36px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 8px;
+}
+
+/* --- BOTTOM RISING DYNAMIC BUTTON TRACK FRAME --- */
+.spotlight-btn-track {
+    opacity: 0;
+    transform: translateY(30px); /* Initial base coordinates targeting bottom axis emergence */
+    transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), 
+                transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.spotlight-glowing-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    background-color: var(--brand-dark-charcoal);
+    padding: 14px 32px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(17, 19, 20, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.btn-text { color: #ffffff; font-size: 1rem; font-weight: 700; }
+.btn-icon { width: 18px; height: auto; }
+
+/* Interactive Hover State Content Glow Expansion profiles */
+.spotlight-glowing-cta-btn:hover {
+    background-color: var(--brand-teal); /* Shifts cleanly into rich focus teal */
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(4, 106, 85, 0.25); /* Content glowing vector path shade mask overlay */
+}
+
+/* --- Right Side Column: Bottom Rising Image Showcase Frame Canvas --- */
+.spotlight-graphic-column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.instructor-canvas-frame {
+    position: relative;
+    width: 100%;
+    max-width: 380px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    
+    /* Initial base coordinates setup for bottom entry layout path trigger rules */
+    opacity: 0;
+    transform: translateY(60px);
+    transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), 
+                transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.canvas-pastel-backdrop {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 85%;
+    background-color: var(--stronger-card-bg); /* Stronger definition layout backdrop frame */
+    border-radius: 28px;
+    z-index: 1;
+}
+
+.main-instructor-graphic {
+    width: 105%;
+    height: auto;
+    display: block;
+    position: relative;
+    z-index: 5;
+    transform: translateY(0) scale(1);
+    transition: transform 0.4s ease;
+}
+
+/* Graphic subtle parallax response scaling tweaks triggered on focus */
+.instructor-canvas-frame:hover .main-instructor-graphic {
+    transform: translateY(-6px) scale(1.02);
+}
+
+/* Active Class injected on scroll views intersection matches updates loops */
+.active-bottom-reveal {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+/* Floating Accessory Vector elements physics layout settings */
+.floating-vector-shield {
+    position: absolute;
+    top: 15%;
+    left: -20px;
+    width: 52px;
+    height: 52px;
+    z-index: 10;
+    animation: constantFloat 5s infinite ease-in-out;
+}
+.floating-vector-shield svg { width: 100%; height: 100%; }
+
+@keyframes constantFloat {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(4deg); }
+}
+
+/* --- Precision Responsive Adaptive Layout Viewport Breakpoint Adjustments --- */
+@media (max-width: 992px) {
+    .spotlight-grid-container {
+        grid-template-columns: 1fr; /* Switch architecture columns down into simple column layout stack */
+        gap: 48px;
+    }
+    
+    .spotlight-content-column {
+        align-items: center;
+        text-align: center;
+    }
+    
+    .spotlight-mega-heading, .spotlight-descriptive-para {
+        justify-content: center;
+    }
+    
+    .spotlight-graphic-column {
+        order: -1; /* Raises spotlight illustration over text strings on mobile display windows profiles */
+    }
+    
+    .instructor-canvas-frame {
+        height: 340px;
+    }
+}
+
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    
+    // 1. Alternating Word-by-Word Linkage Switching Parser Pipeline Engine
+    function triggerAlternatingReveal(wordsQuerySelector) {
+        const structuralNodesList = document.querySelectorAll(wordsQuerySelector);
+        
+        if (structuralNodesList.length > 0) {
+            // Fetch parent wrapper boundaries to attach master lookups tracking
+            const parentContainerFrame = structuralNodesList[0].parentElement;
+            
+            const textIntersectionOptions = {
+                root: null,
+                threshold: 0.12
+            };
+
+            const textScrollObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        
+                        // Push granular side translation class triggers sequentially
+                        structuralNodesList.forEach((wordSpanNode, indexLocation) => {
+                            setTimeout(() => {
+                                wordSpanNode.classList.add("active-side-reveal");
+                            }, indexLocation * 60); // 60ms fine-tuned slide spacing cascade speed tracking
+                        });
+                        
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, textIntersectionOptions);
+
+            if (parentContainerFrame) textScrollObserver.observe(parentContainerFrame);
+        }
+    }
+
+    // Fire text segmentation loops tracking parameters registers
+    triggerAlternatingReveal(".spot-word");
+    triggerAlternatingReveal(".para-word");
+
+    // 2. Secondary Bottom Rising Components Viewport Monitor Interceptor Loops
+    const bottomRisingComponents = document.querySelectorAll(".scroll-reveal-bottom-node");
+
+    if (bottomRisingComponents.length > 0) {
+        const bottomObserverSettings = {
+            root: null,
+            threshold: 0.1,
+            rootMargin: "0px 0px -10px 0px"
+        };
+
+        const bottomTriggerObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const intersectedComponent = entry.target;
+                    
+                    // Injects target active bottom reveal state mapping rules values
+                    intersectedComponent.classList.add("active-bottom-reveal");
+                    
+                    observer.unobserve(intersectedComponent);
+                }
+            });
+        }, bottomObserverSettings);
+
+        bottomRisingComponents.forEach(nodeElement => bottomTriggerObserver.observe(nodeElement));
+    }
+});
+
+</script>
+
+<!-- Fully Optimized Full-Width Video Spotlight Section -->
+<section class="stackly-video-spotlight-section">
+    
+    <!-- Immersive Curved Teal Background (Stretches 100% full-width to remove right-side gaps) -->
+    <div class="spotlight-curved-backdrop">
+        
+        <!-- Large Decorative Background Vector Icons (Muted Background Watermarks) -->
+        <svg class="bg-watermark watermark-left" viewBox="0 0 100 100" xmlns="http://w3.org">
+            <path d="M20,20 Q50,5 80,20 T50,80 Z" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="6"/>
+        </svg>
+        <svg class="bg-watermark watermark-right" viewBox="0 0 100 100" xmlns="http://w3.org">
+            <path d="M10,50 L90,50 M50,10 L50,90" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="8"/>
+        </svg>
+
+        <div class="spotlight-inner-container">
+            
+            <!-- Top Content Block: Staggered side entrance title strings -->
+            <div class="spotlight-text-header">
+                <span class="spotlight-micro-tag">Performance Showcase</span>
+                
+                <h2 class="spotlight-split-headline" id="spotlight-scroll-title">
+                    <span class="title-node side-left">One</span>
+                    <span class="title-node side-right">of</span>
+                    <span class="title-node side-left">the</span>
+                    <span class="title-node side-right">only</span>
+                    <span class="title-node side-left highlight-amber-text">coding</span>
+                    <span class="title-node side-right highlight-amber-text">tracks</span>
+                    <span class="title-node side-left">of</span>
+                    <span class="title-node side-right">its</span>
+                    <span class="title-node side-left">kind</span>
+                </h2>
+            </div>
+
+            <!-- Main Interactive Video Preview Block (Slides in from the side on scroll) -->
+            <div class="video-window-container scroll-reveal-side-img">
+                <div class="video-preview-inner-frame">
+                    
+                    <!-- Main Showcase Action Image Component -->
+                    <img src="classroom-video-preview.jpg" alt="Mentors and students collaborating on hardware tracks" class="video-backdrop-graphic" onerror="this.src='https://unsplash.com'">
+                    
+                    <!-- Darkened readability mask sheen overlay -->
+                    <div class="video-dark-sheen"></div>
+
+                    <!-- Centered Golden Play Trigger Action Button (Targets 404 Panel View) -->
+                    <a href="404.html" class="video-play-action-btn" aria-label="Play Workspace Video Overview">
+                        <span class="play-icon-vector">▶</span>
+                        <span class="play-btn-label">Play Video</span>
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Color System Layout Configurations matching template branding profiles */
+:root {
+    --brand-teal-banner: #046a55; 
+    --brand-amber: #f49b09;
+    --brand-dark-charcoal: #111314;
+    --canvas-cream-bg: #fbfbf9;
+}
+
+.stackly-video-spotlight-section {
+    width: 100%;
+    /* Strict padding assignments to compress vertical profile volume */
+    padding-top: 50px;
+    padding-bottom: 30px;
+    padding-left: 0;  /* Flattens horizontal padding to let background expand fully edge-to-edge */
+    padding-right: 0; 
+    background-color: var(--canvas-cream-bg);
+    position: relative;
+    overflow: hidden;
+}
+
+/* --- TRUE EDGE-TO-EDGE CURVED TEAL BANNER CARD BACKDROP --- */
+.spotlight-curved-backdrop {
+    background-color: var(--brand-teal-banner);
+    width: 100vw;       /* Forces complete viewport width mapping to remove right side spaces */
+    max-width: 100%;    /* Retains layout bounds integrity inside flex streams */
+    position: relative;
+    
+    /* Reduced top and bottom padding values to significantly reduce section height */
+    padding: 40px 24px 48px 24px; 
+    
+    /* Precision horizontal wave path clip mask matching reference layout image */
+    clip-path: path("M 0,30 Q 360,0 720,20 Q 1080,45 1440,15 L 1440,1000 Q 1080,980 720,990 Q 360,1000 0,980 Z");
+}
+
+.spotlight-inner-container {
+    max-width: 1040px; 
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+}
+
+/* --- Top Header Center-Aligned Text Blocks --- */
+.spotlight-text-header {
+    text-align: center;
+    max-width: 650px;
+    margin-bottom: 24px; /* Reduced margin to tighten up overall section height profile */
+}
+
+.spotlight-micro-tag {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--brand-amber);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    display: block;
+    margin-bottom: 8px;
+    opacity: 0.9;
+}
+
+.spotlight-split-headline {
+    font-size: clamp(1.85rem, 4.2vw, 2.6rem); /* Snug font scale coordinates prevent line cluttering */
+    font-weight: 800;
+    color: #ffffff; 
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0 12px;
+}
+
+.highlight-amber-text {
+    color: var(--brand-amber) !important;
+}
+
+/* --- Multi-Side Word Entry Initial Parameters --- */
+.title-node {
+    display: inline-block;
+    opacity: 0;
+    transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1), 
+                transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.side-left { transform: translateX(-45px); }
+.side-right { transform: translateX(45px); }
+
+.active-word-reveal {
+    opacity: 1 !important;
+    transform: translateX(0) !important;
+}
+
+/* --- Main Video Window Frame: Side Slide-In --- */
+.video-window-container {
+    width: 100%;
+    max-width: 700px; /* Snug width scale matches tight section depth parameters */
+    background-color: #ffffff;
+    padding: 10px; 
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(17, 19, 20, 0.15);
+    
+    opacity: 0;
+    transform: translateX(80px);
+    transition: opacity 0.85s cubic-bezier(0.25, 1, 0.5, 1), 
+                transform 0.85s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.video-window-container.side-img-revealed {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.video-preview-inner-frame {
+    position: relative;
+    width: 100%;
+    height: 300px; /* Reduced box height strictly as specified to minimize total vertical footprint */
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.video-backdrop-graphic {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.video-dark-sheen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(17, 19, 20, 0.15); 
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* --- INTERACTIVE CENTER PLAY BUTTON --- */
+.video-play-action-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    background-color: var(--brand-amber); 
+    padding: 10px 20px;
+    border-radius: 9999px; 
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    box-shadow: 0 6px 16px rgba(244, 155, 9, 0.35);
+    z-index: 5;
+    transition: background-color 0.25s, transform 0.25s, box-shadow 0.25s;
+}
+
+.play-icon-vector {
+    color: #ffffff;
+    font-size: 0.8rem;
+    line-height: 1;
+}
+
+.play-btn-label {
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.video-window-container:hover .video-backdrop-graphic {
+    transform: scale(1.03); 
+}
+
+.video-play-action-btn:hover {
+    background-color: var(--brand-dark-charcoal); 
+    transform: translate(-50%, -55%) scale(1.04); 
+    box-shadow: 0 8px 20px rgba(17, 19, 20, 0.25);
+}
+
+/* --- Muted Background Watermarks Vector Assets --- */
+.bg-watermark {
+    position: absolute;
+    pointer-events: none;
+    z-index: 1;
+}
+.watermark-left { top: 12%; left: -20px; width: 110px; height: auto; }
+.watermark-right { bottom: 12%; right: -20px; width: 130px; height: auto; }
+
+/* --- Full Fluid Mobile Responsiveness Breakpoints --- */
+@media (max-width: 768px) {
+    .spotlight-curved-backdrop {
+        padding: 36px 16px 40px 16px;
+        clip-path: none; /* Flattens wave clipping paths on small screens to maintain layout bounds */
+        border-radius: 0; /* Fully squares edges to look solid edge-to-edge on mobile pipelines */
+    }
+    .video-preview-inner-frame {
+        height: 200px; /* Further tightens depth on tight smartphone screens */
+    }
+    .bg-watermark { display: none; } 
+}
+
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    
+    // Headline Stagger Word Array parsing
+    const titleParentNode = document.getElementById("spotlight-scroll-title");
+    
+    if (titleParentNode) {
+        const compiledTitleNodes = titleParentNode.querySelectorAll(".title-node");
+        const titleIntersectionOptions = { root: null, threshold: 0.15 };
+
+        const splitTitleObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    compiledTitleNodes.forEach((wordSpan, indexOrder) => {
+                        setTimeout(() => {
+                            wordSpan.classList.add("active-word-reveal");
+                        }, indexOrder * 70); 
+                    });
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, titleIntersectionOptions);
+
+        splitTitleObserver.observe(titleParentNode);
+    }
+
+    // High-Performance Intersection Monitor for Side Video Frame Slide Entrance
+    const videoTargetFrame = document.querySelector(".scroll-reveal-side-img");
+
+    if (videoTargetFrame) {
+        const frameObserverSettings = { root: null, threshold: 0.12, rootMargin: "0px 0px -20px 0px" };
+
+        const imageSlideObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("side-img-revealed");
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, frameObserverSettings);
+
+        imageSlideObserver.observe(videoTargetFrame);
+    }
+});
+
+</script>
 </body>
+
 </html>
