@@ -1,0 +1,2520 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stackly Portal - Master Admin Workspace</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dashboard-root-body">
+
+    <!-- MASTER TOP HEADER VIEWPORT MESH -->
+    <header class="dashboard-main-header">
+        <div class="header-left-pane">
+            <!-- Hamburger Icon Trigger for Responsive Sidebar Drawer -->
+            <button class="hamburger-menu-toggle-btn" id="mobile-hamburger-trigger" aria-label="Toggle Administration Drawer">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+
+            <!-- Brand Logo/Name Function as Page Layout Refresh Trigger -->
+            <div class="header-brand-refresh-trigger" id="brand-refresh-node" title="Refresh Admin Metrics Channel">
+                <img src="logo.png" alt="Stackly Master Corporate Logo" class="header-brand-logo-img" onerror="this.src='https://placehold.co'">
+                <span class="header-brand-name-string">Admin Center</span>
+            </div>
+        </div>
+
+        <div class="header-right-pane">
+            <!-- Dynamic Parsed Name Greeting String Message -->
+            <div class="header-user-welcome-message">
+                Hello, <span class="dynamic-parsed-username-node" id="header-display-username">Administrator</span>!
+            </div>
+
+            <!-- Active Bell Notification Handle (Targets 404 Fallback View) -->
+            <a href="404.html" class="header-icon-bell-notification-btn" aria-label="System Activity Logs">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+                <span class="notification-indicator-dot"></span>
+            </a>
+
+            <!-- Admin Profile Avatar Window Button (Targets 404 Fallback View) -->
+            <a href="404.html" class="header-profile-avatar-window-btn" title="Master Configuration Scopes">
+                <img src="admin-avatar.jpg" alt="Master Administrator Profile Photo" class="header-profile-avatar-img" onerror="this.src='https://placehold.co'">
+            </a>
+        </div>
+    </header>
+
+    <!-- MAIN DASHBOARD CONTENT GRID WORKSPACE MESH -->
+    <div class="dashboard-workspace-mesh">
+        
+        <!-- SIDEBAR PANEL TRACK SYSTEM (Exactly 4 Menus Arrays Stacked Section-Wise) -->
+        <aside class="dashboard-sidebar-navigation-panel" id="dashboard-sidebar-node">
+            <nav class="sidebar-scrollable-nav-menu">
+                
+                <!-- SECTION GROUP 1: CONTROL CENTER -->
+                <div class="sidebar-section-menu-group-wrapper">
+                    <span class="sidebar-section-meta-headline">System Control</span>
+                    <ul class="sidebar-links-pipeline-list">
+                        <li class="sidebar-item-row active-menu-row" data-target-section="admin-overview">
+                            <span class="sidebar-row-vector-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="7" height="9"></rect><rect x="14" y="3" width="7" height="5"></rect><rect x="14" y="12" width="7" height="9"></rect><rect x="3" y="16" width="7" height="5"></rect></svg>
+                            </span>
+                            <span class="sidebar-item-label-text">Master Dashboard</span>
+                        </li>
+                        <li class="sidebar-item-row" data-target-section="admin-users">
+                            <span class="sidebar-row-vector-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 21V19C17 17.94 16.58 16.92 15.83 16.17C15.08 15.42 14.06 15 13 15H5C3.94 15 2.92 15.42 2.17 16.17C1.42 16.92 1 17.94 1 19V21"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21V19C23 17.94 22.58 16.92 21.83 16.17"></path><path d="M16 3.13A4 4 0 0 1 16 10.88"></path></svg>
+                            </span>
+                            <span class="sidebar-item-label-text">User Matrix</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- SECTION GROUP 2: ACADEMIC LOGISTICS -->
+                <div class="sidebar-section-menu-group-wrapper">
+                    <span class="sidebar-section-meta-headline">Academic Logistics</span>
+                    <ul class="sidebar-links-pipeline-list">
+                        <li class="sidebar-item-row" data-target-section="admin-courses">
+                            <span class="sidebar-row-vector-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"></path></svg>
+                            </span>
+                            <span class="sidebar-item-label-text">Syllabus Management</span>
+                        </li>
+                        <li class="sidebar-item-row" data-target-section="admin-classes">
+                            <span class="sidebar-row-vector-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                            </span>
+                            <span class="sidebar-item-label-text">Live Streams</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </nav>
+
+            <!-- CORE SYSTEM DISCONNECT TRIGGER -->
+            <div class="sidebar-system-logout-action-box">
+                <button class="sidebar-logout-pill-btn" id="portal-logout-trigger">
+                    <span class="logout-vector-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                    </span>
+                    <span class="logout-btn-label">Disconnect Admin</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- MOBILE RESPONSIVE SIDEBAR BACKDROP SCREEN SHIELD -->
+        <div class="mobile-sidebar-backdrop-mask-overlay hidden-mask" id="mobile-sidebar-mask"></div>
+
+        <!-- VIEWPORT DISPLAY CONTAINER MAIN WORKSPACE STAGE -->
+        <main class="dashboard-viewport-main-content-stage">
+            <div class="stage-internal-scroller-box">
+
+              <!-- SECTION 1: MASTER DASHBOARD (Active Baseline Default Command Center Block) -->
+<div class="workspace-section-view-node active-section-node" id="admin-overview">
+    
+    <!-- A. Section Introduction Header Pane -->
+    <div class="admin-section-intro-bar">
+        <h2 class="workspace-section-main-title">Master Dashboard</h2>
+        <p class="overview-section-subtitle">Real-time system matrix over ongoing course streams, user registration logs, global finance payouts, and active infrastructure server loads.</p>
+    </div>
+
+    <!-- B. Creative 4-Column Quick-Stats Analytics Grid -->
+    <div class="admin-analytics-metrics-grid">
+        
+        <!-- CARD 1: GLOBAL PARTNERS COUNTER -->
+        <div class="admin-metric-card hover-lift-glow-halo">
+            <div class="card-glow-halo-layer"></div>
+            <div class="metric-card-inner-box">
+                <div class="metric-card-top-row">
+                    <span class="metric-icon-circle-badge badge-teal-tint">🤝</span>
+                    <span class="trend-percentage-pill positive-growth">↗ +8.4%</span>
+                </div>
+                <div class="metric-card-numerical-display">124</div>
+                <h3 class="metric-card-label-title">Active Partners</h3>
+                <p class="metric-card-supporting-desc">Verified schools &amp; institution hubs onboarded.</p>
+            </div>
+        </div>
+
+        <!-- CARD 2: REVENUE FLOW GENERATION MATRIX -->
+        <div class="admin-metric-card hover-lift-glow-halo">
+            <div class="card-glow-halo-layer"></div>
+            <div class="metric-card-inner-box">
+                <div class="metric-card-top-row">
+                    <span class="metric-icon-circle-badge badge-amber-tint">💰</span>
+                    <span class="trend-percentage-pill positive-growth">↗ +21.2%</span>
+                </div>
+                <div class="metric-card-numerical-display">₹4.8M</div>
+                <h3 class="metric-card-label-title">Gross Revenue Pipeline</h3>
+                <p class="metric-card-supporting-desc">Accumulated student course matrix purchases.</p>
+            </div>
+        </div>
+
+        <!-- CARD 3: ACTIVE SYSTEM STREAMS -->
+        <div class="admin-metric-card hover-lift-glow-halo">
+            <div class="card-glow-halo-layer"></div>
+            <div class="metric-card-inner-box">
+                <div class="metric-card-top-row">
+                    <span class="metric-icon-circle-badge badge-purple-tint">🎥</span>
+                    <span class="trend-percentage-pill stable-growth">● Live</span>
+                </div>
+                <div class="metric-card-numerical-display">18</div>
+                <h3 class="metric-card-label-title">Live Sandbox Streams</h3>
+                <p class="metric-card-supporting-desc">Asynchronous masterclasses running concurrently.</p>
+            </div>
+        </div>
+
+        <!-- CARD 4: PENDING TICKETS COUNTER -->
+        <div class="admin-metric-card hover-lift-glow-halo">
+            <div class="card-glow-halo-layer"></div>
+            <div class="metric-card-inner-box">
+                <div class="metric-card-top-row">
+                    <span class="metric-icon-circle-badge badge-red-tint">🎫</span>
+                    <span class="trend-percentage-pill critical-alert">⚡ Action</span>
+                </div>
+                <div class="metric-card-numerical-display">03<span class="unit-suffix"> / 142</span></div>
+                <h3 class="metric-card-label-title">Pending Help Tickets</h3>
+                <p class="metric-card-supporting-desc">Awaiting architecture support team assignments.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- C. Asymmetrical Dual-Pane Layout (Infrastructure Monitors + System Audit Ledgers) -->
+    <div class="admin-dual-pane-layout">
+        
+        <!-- LEFT SUB-PANE: Infrastructure Server System Resource Rails -->
+        <div class="admin-sub-pane-card server-load-monitor-box hover-lift-glow-halo">
+            <div class="card-glow-halo-layer"></div>
+            <div class="pane-content-inner-wrap">
+                <h3 class="sub-pane-main-title">Infrastructure Resource Rails</h3>
+                
+                <div class="server-rails-stack-pipeline">
+                    <!-- RAIL 1: CPU CORE ENGINE -->
+                    <div class="rail-row-item">
+                        <div class="rail-row-metadata">
+                            <span class="rail-name-label">API Gateway Processors Load</span>
+                            <span class="rail-percentage-value">42%</span>
+                        </div>
+                        <div class="rail-progressbar-base-rail">
+                            <div class="rail-progressbar-fill-line fill-teal-color" style="width: 42%;"></div>
+                        </div>
+                    </div>
+                    <!-- RAIL 2: STREAMING BANDWIDTH LOCK -->
+                    <div class="rail-row-item">
+                        <div class="rail-row-metadata">
+                            <span class="rail-name-label">Live Sandbox Video Transcoding Pipeline</span>
+                            <span class="rail-percentage-value">78%</span>
+                        </div>
+                        <div class="rail-progressbar-base-rail">
+                            <div class="rail-progressbar-fill-line fill-amber-color" style="width: 78%;"></div>
+                        </div>
+                    </div>
+                    <!-- RAIL 3: REDIS DATA MATRIX CACHE -->
+                    <div class="rail-row-item">
+                        <div class="rail-row-metadata">
+                            <span class="rail-name-label">Database Session Layer Memory Ingestion</span>
+                            <span class="rail-percentage-value">19%</span>
+                        </div>
+                        <div class="rail-progressbar-base-rail">
+                            <div class="rail-progressbar-fill-line fill-purple-color" style="width: 19%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT SUB-PANE: Live Registration Audit Log Sheets -->
+        <div class="admin-sub-pane-card system-audit-ledgers-box hover-lift-glow-halo">
+            <div class="card-glow-halo-layer"></div>
+            <div class="pane-content-inner-wrap">
+                <h3 class="sub-pane-main-title">Live Registration Logs</h3>
+                
+                <div class="responsive-table-overflow-window">
+                    <table class="audit-data-log-table">
+                        <thead>
+                            <tr>
+                                <th class="table-head-cell text-left">ACCOUNT ACCESS DATA ENTRY</th>
+                                <th class="table-head-cell text-center">ROLE CLASS</th>
+                                <th class="table-head-cell text-right">TIMESTAMP</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="table-body-row-item">
+                                <td class="table-body-cell text-left">
+                                    <div class="audit-primary-label">jeevi@gmail.com</div>
+                                    <span class="audit-sub-meta-tag">UID: #STK-94820</span>
+                                </td>
+                                <td class="table-body-cell text-center">
+                                    <span class="role-badge-pill badge-teal-fill">Partner Hub</span>
+                                </td>
+                                <td class="table-body-cell text-right table-time-text">16:12:05</td>
+                            </tr>
+                            <tr class="table-body-row-item">
+                                <td class="table-body-cell text-left">
+                                    <div class="audit-primary-label">vikram.r@stackly.com</div>
+                                    <span class="audit-sub-meta-tag">UID: #STK-00142</span>
+                                </td>
+                                <td class="table-body-cell text-center">
+                                    <span class="role-badge-pill badge-dark-fill">Master Admin</span>
+                                </td>
+                                <td class="table-body-cell text-right table-time-text">15:44:32</td>
+                            </tr>
+                            <tr class="table-body-row-item">
+                                <td class="table-body-cell text-left">
+                                    <div class="audit-primary-label">student_alpha@outlook.com</div>
+                                    <span class="audit-sub-meta-tag">UID: #STK-72911</span>
+                                </td>
+                                <td class="table-body-cell text-center">
+                                    <span class="role-badge-pill badge-amber-fill">Client User</span>
+                                </td>
+                                <td class="table-body-cell text-right table-time-text">14:02:19</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<style>
+    /* --- ENHANCED ADMIN MASTER DASHBOARD SECTION STYLING --- */
+
+.admin-section-intro-bar {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 32px;
+}
+
+.overview-section-subtitle {
+    font-size: 0.96rem;
+    font-weight: 500;
+    color: #64748b;
+    line-height: 1.5;
+    margin-top: 6px;
+}
+
+/* --- Creative 4-Column Quick-Stats Analytics Grid --- */
+.admin-analytics-metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Exactly 4 column nodes distributed across widescreen desktop rows */
+    gap: 24px;
+    margin-bottom: 32px;
+    width: 100%;
+}
+
+.admin-metric-card {
+    position: relative;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.3s ease;
+}
+
+.admin-metric-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(4, 106, 85, 0.18);
+}
+.admin-metric-card:hover .card-glow-halo-layer {
+    box-shadow: 0 14px 32px rgba(4, 106, 85, 0.04), 0 4px 12px rgba(17, 19, 20, 0.01);
+}
+
+.metric-card-inner-box {
+    padding: 24px;
+    position: relative;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.metric-card-top-row {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.metric-icon-circle-badge {
+    width: 42px; height: 42px;
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.25rem; flex-shrink: 0;
+}
+
+/* Pastel color variants mappings */
+.badge-teal-tint { background-color: #e6f0ed; color: #046a55; }
+.badge-amber-tint { background-color: #ffedd5; color: #f97316; }
+.badge-purple-tint { background-color: #f3e8ff; color: #a855f7; }
+.badge-red-tint { background-color: #fee2e2; color: #dc2626; }
+
+.trend-percentage-pill {
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 9999px;
+    white-space: nowrap;
+}
+.positive-growth { background-color: #f0fdf4; color: #16a34a; }
+.stable-growth { background-color: #f8fafc; color: #64748b; }
+.critical-alert { background-color: #fef2f2; color: #dc2626; }
+
+.admin-numerical-display {
+    font-size: 2.15rem;
+    font-weight: 800;
+    color: var(--brand-dark-black); /* Font explicitly black format verified */
+    line-height: 1;
+    margin-bottom: 8px;
+    letter-spacing: -0.02em;
+}
+
+.unit-suffix {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #94a3b8;
+    margin-left: 2px;
+}
+
+.metric-card-label-title {
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: var(--brand-dark-black);
+    margin-bottom: 4px;
+    line-height: 1.3;
+}
+
+.metric-card-supporting-desc {
+    font-size: 0.82rem;
+    color: #64748b;
+    line-height: 1.4;
+    text-align: left;
+}
+
+/* --- Asymmetrical Dual-Pane Layout Section Row --- */
+.admin-dual-pane-layout {
+    display: grid;
+    grid-template-columns: 0.95fr 1.05fr;
+    gap: 28px;
+    width: 100%;
+    align-items: start;
+}
+
+.admin-sub-pane-card {
+    position: relative;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.pane-content-inner-wrap {
+    padding: 32px 28px;
+    position: relative;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.sub-pane-main-title {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--brand-dark-black);
+    margin-bottom: 24px;
+    letter-spacing: -0.01em;
+}
+
+/* --- Left Sub-Pane Resource Rails Internals --- */
+.server-rails-stack-pipeline {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+.rail-row-item {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.rail-row-metadata {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.rail-name-label {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: #475569;
+    text-align: left;
+}
+
+.rail-percentage-value {
+    font-size: 0.88rem;
+    font-weight: 800;
+    color: var(--brand-dark-black);
+}
+
+.rail-progressbar-base-rail {
+    width: 100%;
+    height: 8px;
+    background-color: #f1f5f9;
+    border-radius: 9999px;
+    overflow: hidden;
+}
+
+.rail-progressbar-fill-line {
+    height: 100%;
+    border-radius: 9999px;
+}
+
+.fill-teal-color { background-color: var(--brand-teal); }
+.fill-amber-color { background-color: #f97316; }
+.fill-purple-color { background-color: #a855f7; }
+
+/* --- Right Sub-Pane Registration Audit Table Internals --- */
+.responsive-table-overflow-window {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.audit-data-log-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-head-cell {
+    font-size: 0.72rem;
+    font-weight: 800;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.table-body-row-item {
+    border-bottom: 1px solid #f8fafc;
+    transition: background-color 0.2s ease;
+}
+.table-body-row-item:last-child { border-bottom: none; }
+.table-body-row-item:hover { background-color: #f8fafc; }
+
+.table-body-cell {
+    padding: 14px 0;
+    vertical-align: middle;
+}
+
+.audit-primary-label {
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--brand-dark-black);
+    line-height: 1.3;
+}
+
+.audit-sub-meta-tag {
+    font-size: 0.76rem;
+    font-weight: 500;
+    color: #64748b;
+    display: block;
+    margin-top: 2px;
+    font-family: monospace;
+}
+
+.role-badge-pill {
+    font-size: 0.74rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 6px;
+    white-space: nowrap;
+}
+.badge-teal-fill { background-color: #e6f0ed; color: var(--brand-teal); }
+.badge-dark-fill { background-color: #f1f5f9; color: var(--brand-dark-black); }
+.badge-amber-fill { background-color: #fff7ed; color: #f97316; }
+
+.table-time-text {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #64748b;
+    white-space: nowrap;
+    font-family: monospace;
+}
+
+/* --- Comprehensive Fluid Mobile Responsiveness Breakpoints --- */
+@media (max-width: 1200px) {
+    .admin-analytics-metrics-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2x2 grid array structure for standard tablet devices monitors */
+        gap: 20px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .admin-dual-pane-layout {
+        grid-template-columns: 1fr; /* Collapses split dual-pane layout down to single stacked column format */
+        gap: 24px;
+    }
+}
+
+@media (max-width: 640px) {
+    .admin-analytics-metrics-grid {
+        grid-template-columns: 1fr; /* Forms single entry vertical card matrix stack track on phones viewports */
+        gap: 16px;
+    }
+    .pane-content-inner-wrap { padding: 24px 16px; }
+}
+
+</style>
+
+               <!-- SECTION 2: USER MATRIX ACCOUNTS (Full-Width Administration Database Matrix Block) -->
+<div class="workspace-section-view-node" id="admin-users">
+    
+    <!-- A. Section Introduction Header Pane -->
+    <div class="admin-section-intro-bar">
+        <h2 class="workspace-section-main-title">User Matrix Accounts</h2>
+        <p class="overview-section-subtitle">Manage, verify, and monitor credential access rules across the entire platform ecosystem including clients, educational partners, and master system architects.</p>
+    </div>
+
+    
+    <div class="user-matrix-snapshot-grid">
+        
+        <!-- CARD 1: CLIENT COUNT -->
+        <div class="matrix-stat-card hover-lift-glow-halo">
+            <div class="card-glow-halo-layer"></div>
+            <div class="stat-card-content-wrap">
+                <span class="stat-icon-badge color-teal-tint">👥</span>
+                <div class="stat-numerical-display">10,248</div>
+                <h3 class="stat-label-title">Registered Clients</h3>
+                <p class="stat-supporting-desc">Active students executing script tracks inside sandboxes.</p>
+            </div>
+        </div>
+
+        <!-- CARD 2: PARTNERS COUNT -->
+        <div class="matrix-stat-card hover-lift-glow-halo">
+            <div class="card-glow-halo-layer"></div>
+            <div class="stat-card-content-wrap">
+                <span class="stat-icon-badge color-amber-tint">🏫</span>
+                <div class="stat-numerical-display">342</div>
+                <h3 class="stat-label-title">Onboarded Partners</h3>
+                <p class="stat-supporting-desc">Certified institution centers and corporate mentoring hubs.</p>
+            </div>
+        </div>
+
+        <!-- CARD 3: ADMIN SECURITY NODE COUNT -->
+        <div class="matrix-stat-card hover-lift-glow-halo">
+            <div class="card-glow-halo-layer"></div>
+            <div class="stat-card-content-wrap">
+                <span class="stat-icon-badge color-purple-tint">🛡️</span>
+                <div class="stat-numerical-display">12</div>
+                <h3 class="stat-label-title">Security Nodes</h3>
+                <p class="stat-supporting-desc">Vetted administrative master profile accounts active.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- C. Core Asymmetrical Database Actions & Filtering Interface Block -->
+    <div class="database-control-card-panel hover-lift-glow-halo">
+        <div class="card-glow-halo-layer"></div>
+        <div class="database-panel-content-wrap">
+            
+            <div class="database-action-bar-flex-row">
+                <div class="action-bar-left-search-wrap">
+                    <span class="search-vector-lens">🔍</span>
+                    <input type="text" id="user-matrix-search-field" class="database-search-input" placeholder="Search accounts by name, email string, or UID...">
+                </div>
+                
+                <div class="action-bar-right-buttons">
+                    <a href="404.html" class="btn-action-add-account">Add Account Member</a>
+                </div>
+            </div>
+
+            
+            <div class="responsive-table-overflow-window">
+    <table class="identity-matrix-data-table">
+        <thead>
+                        <tr>
+                            <th class="table-head-cell text-left">ACCOUNT IDENTITY METADATA</th>
+                            <th class="table-head-cell text-left">UID HASH</th>
+                            <th class="table-head-cell text-center">ROLE CLASSIFICATION</th>
+                            <th class="table-head-cell text-center">SYSTEM SECURITY STATUS</th>
+                            <th class="table-head-cell text-right">MANAGEMENT ACTION</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- ACCOUNT ENTRY 1 -->
+                        <tr class="table-body-row-item">
+                            <td class="table-body-cell text-left">
+                                <div class="user-primary-info-block">
+                                    <div class="user-avatar-placeholder-circle">J</div>
+                                    
+                                        <span class="user-display-name-text">Jeevanandham R</span>
+                                        <span class="user-email-address-text">jeevi@gmail.com</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="table-body-cell text-left table-uid-hash-string">STK-94820-PRTN</td>
+                            <td class="table-body-cell text-center">
+                                <span class="role-badge-pill badge-teal-fill">Partner Hub</span>
+                            </td>
+                            <td class="table-body-cell text-center">
+                                <span class="security-status-dot-label active-status">● Verified</span>
+                            </td>
+                            <td class="table-body-cell text-right">
+                                <a href="404.html" class="btn-table-action-edit">Configure Permissions</a>
+                            </td>
+                        </tr>
+                        <!-- ACCOUNT ENTRY 2 -->
+                        <tr class="table-body-row-item">
+                            <td class="table-body-cell text-left">
+                                <div class="user-primary-info-block">
+                                    <div class="user-avatar-placeholder-circle">V</div>
+                                    
+                                        <span class="user-display-name-text">Vikram Rajasekar</span>
+                                        <span class="user-email-address-text">vikram.r@stackly.com</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="table-body-cell text-left table-uid-hash-string">STK-00142-ADMN</td>
+                            <td class="table-body-cell text-center">
+                                <span class="role-badge-pill badge-dark-fill">Master Admin</span>
+                            </td>
+                            <td class="table-body-cell text-center">
+                                <span class="security-status-dot-label active-status">● Root Master</span>
+                            </td>
+                            <td class="table-body-cell text-right">
+                                <a href="404.html" class="btn-table-action-edit">Configure Permissions</a>
+                            </td>
+                        </tr>
+                        <!-- ACCOUNT ENTRY 3 -->
+                        <tr class="table-body-row-item">
+                            <td class="table-body-cell text-left">
+                                <div class="user-primary-info-block">
+                                    <div class="user-avatar-placeholder-circle">A</div>
+                                    
+                                        <span class="user-display-name-text">Alpha Student Session</span>
+                                        <span class="user-email-address-text">student_alpha@outlook.com</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="table-body-cell text-left table-uid-hash-string">STK-72911-CLNT</td>
+                            <td class="table-body-cell text-center">
+                                <span class="role-badge-pill badge-amber-fill">Client User</span>
+                            </td>
+                            <td class="table-body-cell text-center">
+                                <span class="security-status-dot-label active-status">● Sandbox Active</span>
+                            </td>
+                            <td class="table-body-cell text-right">
+                                <a href="404.html" class="btn-table-action-edit">Configure Permissions</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+<style>
+    /* --- ENHANCED USER MATRIX ACCOUNTS SECTION STYLING --- */
+
+.admin-section-intro-bar {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 32px;
+}
+
+/* --- Creative 3-Column Identity Metrics Snapshot Grid --- */
+.user-matrix-snapshot-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 column blocks desktop row partitioning */
+    gap: 24px;
+    margin-bottom: 32px;
+    width: 100%;
+}
+
+.matrix-stat-card {
+    position: relative;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.3s ease;
+}
+
+.hover-lift-glow-halo:hover {
+    transform: translateY(-4px);
+    border-color: rgba(4, 106, 85, 0.18);
+}
+.hover-lift-glow-halo:hover .card-glow-halo-layer {
+    box-shadow: 0 14px 32px rgba(4, 106, 85, 0.04), 0 4px 12px rgba(17, 19, 20, 0.01);
+}
+
+.stat-card-content-wrap {
+    padding: 24px 28px;
+    position: relative;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.stat-icon-badge {
+    width: 42px; height: 42px;
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.3rem; flex-shrink: 0;
+    margin-bottom: 16px;
+}
+
+.color-teal-tint { background-color: #e6f0ed; color: #046a55; }
+.color-amber-tint { background-color: #ffedd5; color: #f97316; }
+.color-purple-tint { background-color: #f3e8ff; color: #a855f7; }
+
+.stat-numerical-display {
+    font-size: 2.15rem;
+    font-weight: 800;
+    color: var(--text-dark-black); /* Font explicitly black format verified */
+    line-height: 1;
+    margin-bottom: 8px;
+    letter-spacing: -0.02em;
+}
+
+.stat-label-title {
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: var(--text-dark-black);
+    margin-bottom: 4px;
+    line-height: 1.3;
+}
+
+.stat-supporting-desc {
+    font-size: 0.84rem;
+    color: #64748b;
+    line-height: 1.4;
+    text-align: left;
+}
+
+/* --- Core Asymmetrical Database Panel Sheet Framework --- */
+.database-control-card-panel {
+    position: relative;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    overflow: hidden;
+    width: 100%;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.database-panel-content-wrap {
+    padding: 32px 28px;
+    position: relative;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+/* Integrated Asymmetrical Action Bar */
+.database-action-bar-flex-row {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.action-bar-left-search-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    display: flex;
+    align-items: center;
+}
+
+.search-vector-lens {
+    position: absolute;
+    left: 14px;
+    font-size: 0.95rem;
+    color: #64748b;
+    pointer-events: none;
+}
+
+.database-search-input {
+    width: 100%;
+    border: 1px solid #cbd5e1;
+    background-color: #f8fafc;
+    border-radius: 8px;
+    padding: 10px 14px 10px 40px;
+    font-size: 0.92rem;
+    font-weight: 500;
+    color: var(--brand-dark-black);
+    outline: none;
+    transition: all 0.2s ease;
+}
+.database-search-input:focus {
+    background-color: #ffffff;
+    border-color: var(--brand-teal);
+    box-shadow: 0 0 0 4px rgba(4, 106, 85, 0.08);
+}
+
+.action-bar-right-buttons { flex-shrink: 0; }
+
+.btn-action-add-account {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 700;
+    background-color: var(--brand-teal);
+    color: #ffffff;
+    padding: 11px 24px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(4, 106, 85, 0.15);
+    transition: background-color 0.2s, transform 0.2s;
+}
+.btn-action-add-account:hover { background-color: var(--brand-dark-black); transform: translateY(-1px); }
+
+/* Identity Table Structural Rules */
+.responsive-table-overflow-window {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.identity-matrix-data-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-head-cell {
+    font-size: 0.72rem;
+    font-weight: 800;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.table-body-row-item {
+    border-bottom: 1px solid #f8fafc;
+    transition: background-color 0.2s ease;
+}
+.table-body-row-item:last-child { border-bottom: none; }
+.table-body-row-item:hover { background-color: #f8fafc; }
+
+.table-body-cell { padding: 14px 0; vertical-align: middle; }
+
+/* Combined Avatar Text Identity Block Column */
+.user-primary-info-block {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.user-avatar-placeholder-circle {
+    width: 38px; height: 38px;
+    border-radius: 50%;
+    background-color: #f1f5f9;
+    color: var(--brand-teal);
+    font-size: 0.95rem; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    border: 1px solid #e2e8f0;
+}
+
+.user-identity-text-stack { display: flex; flex-direction: column; text-align: left; }
+.user-display-name-text { font-size: 0.94rem; font-weight: 700; color: var(--brand-dark-black); }
+.user-email-address-text { font-size: 0.78rem; font-weight: 500; color: #64748b; margin-top: 1px; }
+
+.table-uid-hash-string {
+    font-size: 0.88rem; font-weight: 600; color: #475569; font-family: monospace;
+}
+
+.role-badge-pill {
+    font-size: 0.74rem; font-weight: 700; padding: 4px 10px; border-radius: 6px; white-space: nowrap;
+}
+.badge-teal-fill { background-color: #e6f0ed; color: var(--brand-teal); }
+.badge-dark-fill { background-color: #f1f5f9; color: var(--brand-dark-black); }
+.badge-amber-fill { background-color: #fff7ed; color: #f97316; }
+
+.security-status-dot-label { font-size: 0.82rem; font-weight: 700; white-space: nowrap; }
+.active-status { color: #16a34a; }
+
+/* Management link anchor buttons */
+.btn-table-action-edit {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--brand-dark-black);
+    background-color: transparent;
+    border: 1px solid #e2e8f0;
+    padding: 6px 14px;
+    border-radius: 8px; /* Snug rounded button corners from design snapshot */
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.btn-table-action-edit:hover {
+    background-color: var(--brand-dark-black); /* Turns solid black on hover tracking focus */
+    color: #ffffff;
+    border-color: var(--brand-dark-black);
+}
+
+/* --- Comprehensive Fluid Mobile Responsiveness Breakpoints --- */
+@media (max-width: 1024px) {
+    .user-matrix-snapshot-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns stack format layout tablet views */
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .database-action-bar-flex-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+    .action-bar-left-search-wrap { max-width: 100%; }
+    .btn-action-add-account { width: 100%; text-align: center; }
+}
+
+@media (max-width: 640px) {
+    .user-matrix-snapshot-grid {
+        grid-template-columns: 1fr; /* Forms single entry vertical card matrix stack track on phones viewports */
+        gap: 16px;
+    }
+    .database-panel-content-wrap { padding: 24px 16px; }
+}
+
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    
+    const matrixSearchField = document.getElementById("user-matrix-search-field");
+    const databaseTableRowsList = document.querySelectorAll(".identity-matrix-data-table tbody .table-body-row-item");
+
+    if (matrixSearchField && databaseTableRowsList.length > 0) {
+        matrixSearchField.addEventListener("input", () => {
+            const queryCleanString = matrixSearchField.value.toLowerCase().trim();
+
+            databaseTableRowsList.forEach(rowNode => {
+                // Collect row descriptive parameters lines text content strings values mapping
+                const accountNameString = rowNode.querySelector(".user-display-name-text").textContent.toLowerCase();
+                const accountEmailString = rowNode.querySelector(".user-email-address-text").textContent.toLowerCase();
+                const accountUidHashString = rowNode.querySelector(".table-uid-hash-string").textContent.toLowerCase();
+
+                // Check string match indices queries intersections positions parameters
+                if (accountNameString.includes(queryCleanString) || 
+                    accountEmailString.includes(queryCleanString) || 
+                    accountUidHashString.includes(queryCleanString)) {
+                    
+                    rowNode.style.display = ""; // Exposes item cleanly on filter query intersection match
+                } else {
+                    rowNode.style.display = "none"; // Conceals item cleanly from view lists tracks rows arrays
+                }
+            });
+        });
+    }
+});
+
+</script>
+
+
+               <!-- SECTION 3: SYLLABUS MASTER MANAGEMENT (Full-Width Curriculum Database Matrix Block) -->
+<div class="workspace-section-view-node" id="admin-courses">
+    
+    <!-- A. Section Introduction Header Pane -->
+    <div class="admin-section-intro-bar">
+        <h2 class="workspace-section-main-title">Syllabus Management</h2>
+        <p class="overview-section-subtitle">Structure core academic tracks, manage lesson modules allocations, update complexity tiers, and dispatch course content sandboxes globally.</p>
+    </div>
+
+    <!-- B. Creative 3-Column Curriculum Metrics Snapshot Grid -->
+    <div class="syllabus-matrix-snapshot-grid">
+        
+        <!-- CARD 1: TOTAL ACTIVE TRACKS -->
+        <div class="syllabus-stat-card hover-lift-glow-halo">
+            <div class="card-glow-halo-layer"></div>
+            <div class="syllabus-stat-card-wrap">
+                <span class="syllabus-icon-badge color-teal-tint">📚</span>
+                <div class="syllabus-numerical-display">18</div>
+                <h3 class="syllabus-label-title">Published Tracks</h3>
+                <p class="syllabus-supporting-desc">Active masterclasses available for student enrollments.</p>
+            </div>
+        </div>
+
+        <!-- CARD 2: TOTAL LESSON MODULES SANDBOXES -->
+        <div class="syllabus-stat-card hover-lift-glow-halo">
+            <div class="card-glow-halo-layer"></div>
+            <div class="syllabus-stat-card-wrap">
+                <span class="syllabus-icon-badge color-amber-tint">📝</span>
+                <div class="syllabus-numerical-display">642</div>
+                <h3 class="syllabus-label-title">Total Sandbox Lessons</h3>
+                <p class="syllabus-supporting-desc">Individual practical script sandboxes compiled.</p>
+            </div>
+        </div>
+
+        <!-- CARD 3: AVG MODULE PROGRESS SCORES -->
+        <div class="syllabus-stat-card hover-lift-glow-halo">
+            <div class="card-glow-halo-layer"></div>
+            <div class="syllabus-stat-card-wrap">
+                <span class="syllabus-icon-badge color-purple-tint">🎯</span>
+                <div class="syllabus-numerical-display">4.8<span class="unit-suffix"> / 5.0</span></div>
+                <h3 class="syllabus-label-title">Avg. Track Rating</h3>
+                <p class="syllabus-supporting-desc">Calculated across consumer student reviews pipelines.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- C. Core Asymmetrical Syllabus Actions & Filtering Interface Block -->
+    <div class="syllabus-control-card-panel hover-lift-glow-halo">
+        <div class="card-glow-halo-layer"></div>
+        <div class="syllabus-panel-content-wrap">
+            
+            <div class="syllabus-action-bar-flex-row">
+                <div class="syllabus-action-bar-left-search-wrap">
+                    <span class="syllabus-search-vector-lens">🔍</span>
+                    <input type="text" id="syllabus-matrix-search-field" class="syllabus-search-input" placeholder="Search masterclasses by track name, coding language, or tier...">
+                </div>
+                
+                <div class="syllabus-action-bar-right-buttons">
+                    <a href="404.html" class="btn-syllabus-add-track">Create Masterclass Track</a>
+                </div>
+            </div>
+
+            <!-- D. Full-Width Curriculum Database List Table Grid (Horizontal Scroll Safe) -->
+            <div class="responsive-table-overflow-window">
+                <table class="syllabus-matrix-data-table">
+                    <thead>
+                        <tr>
+                            <th class="table-head-cell text-left">MASTERCLASS COURSE TRACK DETAILS</th>
+                            <th class="table-head-cell text-center">LESSON UNITS</th>
+                            <th class="table-head-cell text-center">COMPLEXITY TIER</th>
+                            <th class="table-head-cell text-center">ENROLLED STUDENTS</th>
+                            <th class="table-head-cell text-right">SYLLABUS MANAGEMENT</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- SYLLABUS ENTRY 1 -->
+                        <tr class="syllabus-table-body-row-item">
+                            <td class="syllabus-table-body-cell text-left">
+                                <div class="course-primary-info-block">
+                                    <div class="course-avatar-placeholder-circle">FS</div>
+                                    
+                                        <span class="course-display-name-text">Fullstack Web Development Masterclass</span>
+                                        <span class="course-tech-stack-text">HTML5 • CSS Architecture • React • Node.js</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="syllabus-table-body-cell text-center table-numerical-string">40 Modules</td>
+                            <td class="syllabus-table-body-cell text-center">
+                                <span class="complexity-badge-pill badge-red-fill">Advanced</span>
+                            </td>
+                            <td class="syllabus-table-body-cell text-center table-student-count-bold">1,169</td>
+                            <td class="syllabus-table-body-cell text-right">
+                                <a href="404.html" class="btn-syllabus-action-edit">Edit Curriculum Blueprint</a>
+                            </td>
+                        </tr>
+                        <!-- SYLLABUS ENTRY 2 -->
+                        <tr class="syllabus-table-body-row-item">
+                            <td class="syllabus-table-body-cell text-left">
+                                <div class="course-primary-info-block">
+                                    <div class="course-avatar-placeholder-circle">JS</div>
+                                    
+                                        <span class="course-display-name-text">JavaScript Sandbox &amp; Algorithm Models</span>
+                                        <span class="course-tech-stack-text">Vanilla ES6+ • Async APIs • Algorithmic Logic</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="syllabus-table-body-cell text-center table-numerical-string">50 Modules</td>
+                            <td class="syllabus-table-body-cell text-center">
+                                <span class="complexity-badge-pill badge-orange-fill">Intermediate</span>
+                            </td>
+                            <td class="syllabus-table-body-cell text-center table-student-count-bold">842</td>
+                            <td class="syllabus-table-body-cell text-right">
+                                <a href="404.html" class="btn-syllabus-action-edit">Edit Curriculum Blueprint</a>
+                            </td>
+                        </tr>
+                        <!-- SYLLABUS ENTRY 3 -->
+                        <tr class="syllabus-table-body-row-item">
+                            <td class="syllabus-table-body-cell text-left">
+                                <div class="course-primary-info-block">
+                                    <div class="course-avatar-placeholder-circle">UX</div>
+                                    
+                                        <span class="course-display-name-text">UI/UX Wireframing &amp; Prototyping Essentials</span>
+                                        <span class="course-tech-stack-text">Figma Workshops • User Mapping • Grid Layouts</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="syllabus-table-body-cell text-center table-numerical-string">32 Modules</td>
+                            <td class="syllabus-table-body-cell text-center">
+                                <span class="complexity-badge-pill badge-teal-fill">Beginner</span>
+                            </td>
+                            <td class="syllabus-table-body-cell text-center table-student-count-bold">614</td>
+                            <td class="syllabus-table-body-cell text-right">
+                                <a href="404.html" class="btn-syllabus-action-edit">Edit Curriculum Blueprint</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<style>
+    /* --- ENHANCED SYLLABUS MASTER MANAGEMENT SECTION STYLING --- */
+
+.admin-section-intro-bar {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 32px;
+}
+
+/* --- Creative 3-Column Curriculum Metrics Snapshot Grid --- */
+.syllabus-matrix-snapshot-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 column blocks desktop row partitioning */
+    gap: 24px;
+    margin-bottom: 32px;
+    width: 100%;
+}
+
+.syllabus-stat-card {
+    position: relative;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.3s ease;
+}
+
+.syllabus-stat-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(4, 106, 85, 0.18);
+}
+.syllabus-stat-card:hover .card-glow-halo-layer {
+    box-shadow: 0 14px 32px rgba(4, 106, 85, 0.04), 0 4px 12px rgba(17, 19, 20, 0.01);
+}
+
+.syllabus-stat-card-wrap {
+    padding: 24px 28px;
+    position: relative;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.syllabus-icon-badge {
+    width: 42px; height: 42px;
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.3rem; flex-shrink: 0;
+    margin-bottom: 16px;
+}
+
+.color-teal-tint { background-color: #e6f0ed; color: #046a55; }
+.color-amber-tint { background-color: #ffedd5; color: #f97316; }
+.color-purple-tint { background-color: #f3e8ff; color: #a855f7; }
+
+.syllabus-numerical-display {
+    font-size: 2.15rem;
+    font-weight: 800;
+    color: var(--text-dark-black); /* Font explicitly black format verified */
+    line-height: 1;
+    margin-bottom: 8px;
+    letter-spacing: -0.02em;
+}
+
+.unit-suffix {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #94a3b8;
+    margin-left: 2px;
+}
+
+.syllabus-label-title {
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: var(--text-dark-black);
+    margin-bottom: 4px;
+    line-height: 1.3;
+}
+
+.syllabus-supporting-desc {
+    font-size: 0.84rem;
+    color: #64748b;
+    line-height: 1.4;
+    text-align: left;
+}
+
+/* --- Core Asymmetrical Syllabus Panel Sheet Framework --- */
+.syllabus-control-card-panel {
+    position: relative;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    overflow: hidden;
+    width: 100%;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.syllabus-panel-content-wrap {
+    padding: 32px 28px;
+    position: relative;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+/* Integrated Asymmetrical Action Bar */
+.syllabus-action-bar-flex-row {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.syllabus-action-bar-left-search-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    display: flex;
+    align-items: center;
+}
+
+.syllabus-search-vector-lens {
+    position: absolute;
+    left: 14px;
+    font-size: 0.95rem;
+    color: #64748b;
+    pointer-events: none;
+}
+
+.syllabus-search-input {
+    width: 100%;
+    border: 1px solid #cbd5e1;
+    background-color: #f8fafc;
+    border-radius: 8px;
+    padding: 10px 14px 10px 40px;
+    font-size: 0.92rem;
+    font-weight: 500;
+    color: var(--brand-dark-black);
+    outline: none;
+    transition: all 0.2s ease;
+}
+.syllabus-search-input:focus {
+    background-color: #ffffff;
+    border-color: var(--brand-teal);
+    box-shadow: 0 0 0 4px rgba(4, 106, 85, 0.08);
+}
+
+.syllabus-action-bar-right-buttons { flex-shrink: 0; }
+
+.btn-syllabus-add-track {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 700;
+    background-color: var(--brand-teal);
+    color: #ffffff;
+    padding: 11px 24px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(4, 106, 85, 0.15);
+    transition: background-color 0.2s, transform 0.2s;
+}
+.btn-syllabus-add-track:hover { background-color: var(--brand-dark-black); transform: translateY(-1px); }
+
+/* Syllabus Table Structural Rules */
+.responsive-table-overflow-window {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.syllabus-matrix-data-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-head-cell {
+    font-size: 0.72rem;
+    font-weight: 800;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.syllabus-table-body-row-item {
+    border-bottom: 1px solid #f8fafc;
+    transition: background-color 0.2s ease;
+}
+.syllabus-table-body-row-item:last-child { border-bottom: none; }
+.syllabus-table-body-row-item:hover { background-color: #f8fafc; }
+
+.syllabus-table-body-cell { padding: 14px 0; vertical-align: middle; }
+
+/* Combined Avatar Text Identity Block Column */
+.course-primary-info-block {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.course-avatar-placeholder-circle {
+    width: 38px; height: 38px;
+    border-radius: 12px;
+    background-color: #f1f5f9;
+    color: var(--brand-teal);
+    font-size: 0.85rem; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    border: 1px solid #e2e8f0;
+}
+
+.course-identity-text-stack { display: flex; flex-direction: column; text-align: left; }
+.course-display-name-text { font-size: 0.94rem; font-weight: 700; color: var(--brand-dark-black); }
+.course-tech-stack-text { font-size: 0.78rem; font-weight: 500; color: #64748b; margin-top: 1px; }
+
+.table-numerical-string {
+    font-size: 0.88rem; font-weight: 700; color: #475569;
+}
+
+.table-student-count-bold {
+    font-size: 0.94rem; font-weight: 800; color: var(--brand-dark-black);
+}
+
+.complexity-badge-pill {
+    font-size: 0.74rem; font-weight: 700; padding: 4px 10px; border-radius: 6px; white-space: nowrap;
+}
+.badge-red-fill { background-color: #fef2f2; color: #ef4444; }
+.badge-orange-fill { background-color: #fff7ed; color: #f97316; }
+.badge-teal-fill { background-color: #e6f0ed; color: var(--brand-teal); }
+
+/* Management link anchor buttons */
+.btn-syllabus-action-edit {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--brand-dark-black);
+    background-color: transparent;
+    border: 1px solid #e2e8f0;
+    padding: 6px 14px;
+    border-radius: 8px; /* Snug rounded button corners from design snapshot */
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.btn-syllabus-action-edit:hover {
+    background-color: var(--brand-dark-black); /* Turns solid black on hover tracking focus */
+    color: #ffffff;
+    border-color: var(--brand-dark-black);
+}
+
+/* --- Comprehensive Fluid Mobile Responsiveness Breakpoints --- */
+@media (max-width: 1024px) {
+    .syllabus-matrix-snapshot-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns stack format layout tablet views */
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .syllabus-action-bar-flex-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+    .syllabus-action-bar-left-search-wrap { max-width: 100%; }
+    .btn-syllabus-add-track { width: 100%; text-align: center; }
+}
+
+@media (max-width: 640px) {
+    .syllabus-matrix-snapshot-grid {
+        grid-template-columns: 1fr; /* Forms single entry vertical card matrix stack track on phones viewports */
+        gap: 16px;
+    }
+    .syllabus-panel-content-wrap { padding: 24px 16px; }
+}
+
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    
+    const syllabusSearchField = document.getElementById("syllabus-matrix-search-field");
+    const syllabusTableRowsList = document.querySelectorAll(".syllabus-matrix-data-table tbody .syllabus-table-body-row-item");
+
+    if (syllabusSearchField && syllabusTableRowsList.length > 0) {
+        syllabusSearchField.addEventListener("input", () => {
+            const queryCleanString = syllabusSearchField.value.toLowerCase().trim();
+
+            syllabusTableRowsList.forEach(rowNode => {
+                const courseNameString = rowNode.querySelector(".course-display-name-text").textContent.toLowerCase();
+                const courseTechString = rowNode.querySelector(".course-tech-stack-text").textContent.toLowerCase();
+
+                if (courseNameString.includes(queryCleanString) || courseTechString.includes(queryCleanString)) {
+                    rowNode.style.display = ""; // Exposes item cleanly on filter query intersection match
+                } else {
+                    rowNode.style.display = "none"; // Conceals item cleanly from view lists tracks rows arrays
+                }
+            });
+        });
+    }
+});
+
+</script>
+
+             <!-- SECTION 4: LIVE CLASSROOM STREAMS (Full-Width Streaming Director Matrix Block) -->
+<div class="workspace-section-view-node" id="admin-classes">
+    
+    <!-- A. Section Introduction Header Pane -->
+    <div class="admin-section-intro-bar">
+        <h2 class="workspace-section-main-title">Live Classroom Streams</h2>
+        <p class="overview-section-subtitle">Monitor active masterclass data broadcasts, track current concurrent student socket connection nodes, audit bandwidth bitrates, and manage live instructor pipelines.</p>
+    </div>
+
+    <!-- B. Creative 3-Column Streaming Vitals Snapshot Grid -->
+    <div class="streams-matrix-snapshot-grid">
+        
+        <!-- CARD 1: TOTAL CONCURRENT CONNECTIONS -->
+        <div class="streams-stat-card hover-lift-glow-halo">
+            <div class="card-glow-halo-layer"></div>
+            <div class="streams-stat-card-wrap">
+                <span class="streams-icon-badge color-teal-tint">👥</span>
+                <div class="streams-numerical-display">1,424</div>
+                <h3 class="streams-label-title">Concurrent Students</h3>
+                <p class="streams-supporting-desc">Active socket nodes linked to streaming sandboxes.</p>
+            </div>
+        </div>
+
+        <!-- CARD 2: TOTAL LIVE BANDWIDTH CONSUMPTION -->
+        <div class="streams-stat-card hover-lift-glow-halo">
+            <div class="card-glow-halo-layer"></div>
+            <div class="streams-stat-card-wrap">
+                <span class="streams-icon-badge color-amber-tint">⚡</span>
+                <div class="streams-numerical-display">4.2<span class="unit-suffix"> Gbps</span></div>
+                <h3 class="streams-label-title">Network Ingestion</h3>
+                <p class="streams-supporting-desc">Total cumulative bandwidth delivered through CDN servers.</p>
+            </div>
+        </div>
+
+        <!-- CARD 3: BROADCAST QUALITY METRICS RATIO -->
+        <div class="streams-stat-card hover-lift-glow-halo">
+            <div class="card-glow-halo-layer"></div>
+            <div class="streams-stat-card-wrap">
+                <span class="streams-icon-badge color-purple-tint">✅</span>
+                <div class="streams-numerical-display">100%</div>
+                <h3 class="streams-label-title">Stream Health Status</h3>
+                <p class="streams-supporting-desc">Zero frames dropped reported by global server relays.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- C. Core Asymmetrical Streams Actions & Filtering Interface Block -->
+    <div class="streams-control-card-panel hover-lift-glow-halo">
+        <div class="card-glow-halo-layer"></div>
+        <div class="streams-panel-content-wrap">
+            
+            <div class="streams-action-bar-flex-row">
+                <div class="streams-action-bar-left-search-wrap">
+                    <span class="streams-search-vector-lens">🔍</span>
+                    <input type="text" id="streams-matrix-search-field" class="streams-search-input" placeholder="Search live rooms by course title, mentor name, or status...">
+                </div>
+                
+                <div class="streams-action-bar-right-buttons">
+                    <button class="btn-streams-refresh" id="btn-sync-streams">Sync Live Feeds</button>
+                </div>
+            </div>
+
+            <!-- D. Full-Width Streaming Database List Table Grid (Horizontal Scroll Safe) -->
+            <div class="responsive-table-overflow-window">
+                <table class="streams-matrix-data-table">
+                    <thead>
+                        <tr>
+                            <th class="table-head-cell text-left">LIVE ACADEMIC BROADCAST ROOM</th>
+                            <th class="table-head-cell text-center">CONCURRENT TRAFFIC</th>
+                            <th class="table-head-cell text-center">BITRATE SPEED</th>
+                            <th class="table-head-cell text-center">STREAM STATUS</th>
+                            <th class="table-head-cell text-right">DIRECTOR COMMAND</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- STREAM ENTRY 1 -->
+                        <tr class="streams-table-body-row-item">
+                            <td class="streams-table-body-cell text-left">
+                                <div class="stream-primary-info-block">
+                                    <div class="stream-avatar-placeholder-circle live-pulse-teal">●</div>
+                                    
+                                        <span class="stream-display-name-text">Fullstack Web Engineering - Sandbox Live</span>
+                                        <span class="stream-tech-stack-text">Instructor: Vikram Rajasekar • Session Room 01</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="streams-table-body-cell text-center table-numerical-string">642 Connected</td>
+                            <td class="streams-table-body-cell text-center table-bitrate-bold">5,400 Kbps</td>
+                            <td class="streams-table-body-cell text-center">
+                                <span class="status-badge-pill badge-green-fill">Excellent</span>
+                            </td>
+                            <td class="streams-table-body-cell text-right">
+                                <a href="404.html" class="btn-stream-action-terminate">Terminate Stream</a>
+                            </td>
+                        </tr>
+                        <!-- STREAM ENTRY 2 -->
+                        <tr class="streams-table-body-row-item">
+                            <td class="streams-table-body-cell text-left">
+                                <div class="stream-primary-info-block">
+                                    <div class="stream-avatar-placeholder-circle live-pulse-teal">●</div>
+                                    
+                                        <span class="stream-display-name-text">JavaScript Sandbox &amp; Algorithm Models</span>
+                                        <span class="stream-tech-stack-text">Instructor: Guest Architect • Session Room 04</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="streams-table-body-cell text-center table-numerical-string">420 Connected</td>
+                            <td class="streams-table-body-cell text-center table-bitrate-bold">4,800 Kbps</td>
+                            <td class="streams-table-body-cell text-center">
+                                <span class="status-badge-pill badge-green-fill">Excellent</span>
+                            </td>
+                            <td class="streams-table-body-cell text-right">
+                                <a href="404.html" class="btn-stream-action-terminate">Terminate Stream</a>
+                            </td>
+                        </tr>
+                        <!-- STREAM ENTRY 3 -->
+                        <tr class="streams-table-body-row-item">
+                            <td class="streams-table-body-cell text-left">
+                                <div class="stream-primary-info-block">
+                                    <div class="stream-avatar-placeholder-circle live-pulse-amber">●</div>
+                                    
+                                        <span class="stream-display-name-text">UI/UX Wireframing Essentials Workshop</span>
+                                        <span class="stream-tech-stack-text">Instructor: Design Director • Session Room 02</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="streams-table-body-cell text-center table-numerical-string">362 Connected</td>
+                            <td class="streams-table-body-cell text-center table-bitrate-bold">3,200 Kbps</td>
+                            <td class="streams-table-body-cell text-center">
+                                <span class="status-badge-pill badge-orange-fill">Fluctuating</span>
+                            </td>
+                            <td class="streams-table-body-cell text-right">
+                                <a href="404.html" class="btn-stream-action-terminate">Terminate Stream</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<style>
+    /* --- ENHANCED LIVE CLASSROOM STREAMS SECTION STYLING --- */
+
+.admin-section-intro-bar {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 32px;
+}
+
+/* --- Creative 3-Column Streaming Vitals Snapshot Grid --- */
+.streams-matrix-snapshot-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 column blocks desktop row partitioning */
+    gap: 24px;
+    margin-bottom: 32px;
+    width: 100%;
+}
+
+.streams-stat-card {
+    position: relative;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.3s ease;
+}
+
+.streams-stat-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(4, 106, 85, 0.18);
+}
+.streams-stat-card:hover .card-glow-halo-layer {
+    box-shadow: 0 14px 32px rgba(4, 106, 85, 0.04), 0 4px 12px rgba(17, 19, 20, 0.01);
+}
+
+.streams-stat-card-wrap {
+    padding: 24px 28px;
+    position: relative;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.streams-icon-badge {
+    width: 42px; height: 42px;
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.3rem; flex-shrink: 0;
+    margin-bottom: 16px;
+}
+
+.color-teal-tint { background-color: #e6f0ed; color: #046a55; }
+.color-amber-tint { background-color: #ffedd5; color: #f97316; }
+.color-purple-tint { background-color: #f3e8ff; color: #a855f7; }
+
+.streams-numerical-display {
+    font-size: 2.15rem;
+    font-weight: 800;
+    color: var(--text-dark-black); /* Font explicitly black format verified */
+    line-height: 1;
+    margin-bottom: 8px;
+    letter-spacing: -0.02em;
+}
+
+.unit-suffix {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #94a3b8;
+    margin-left: 2px;
+}
+
+.streams-label-title {
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: var(--text-dark-black);
+    margin-bottom: 4px;
+    line-height: 1.3;
+}
+
+.streams-supporting-desc {
+    font-size: 0.84rem;
+    color: #64748b;
+    line-height: 1.4;
+    text-align: left;
+}
+
+/* --- Core Asymmetrical Streams Panel Sheet Framework --- */
+.streams-control-card-panel {
+    position: relative;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    overflow: hidden;
+    width: 100%;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.streams-panel-content-wrap {
+    padding: 32px 28px;
+    position: relative;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+/* Integrated Asymmetrical Action Bar */
+.streams-action-bar-flex-row {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.streams-action-bar-left-search-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    display: flex;
+    align-items: center;
+}
+
+.streams-search-vector-lens {
+    position: absolute;
+    left: 14px;
+    font-size: 0.95rem;
+    color: #64748b;
+    pointer-events: none;
+}
+
+.streams-search-input {
+    width: 100%;
+    border: 1px solid #cbd5e1;
+    background-color: #f8fafc;
+    border-radius: 8px;
+    padding: 10px 14px 10px 40px;
+    font-size: 0.92rem;
+    font-weight: 500;
+    color: var(--brand-dark-black);
+    outline: none;
+    transition: all 0.2s ease;
+}
+.streams-search-input:focus {
+    background-color: #ffffff;
+    border-color: var(--brand-teal);
+    box-shadow: 0 0 0 4px rgba(4, 106, 85, 0.08);
+}
+
+.streams-action-bar-right-buttons { flex-shrink: 0; }
+
+.btn-streams-refresh {
+    background-color: #111314;
+    border: none; outline: none;
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: #ffffff;
+    padding: 11px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(17, 19, 20, 0.15);
+    transition: background-color 0.2s, transform 0.2s;
+}
+.btn-streams-refresh:hover { background-color: var(--brand-teal); transform: translateY(-1px); }
+
+/* Streams Table Structural Rules */
+.responsive-table-overflow-window {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.streams-matrix-data-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-head-cell {
+    font-size: 0.72rem;
+    font-weight: 800;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.streams-table-body-row-item {
+    border-bottom: 1px solid #f8fafc;
+    transition: background-color 0.2s ease;
+}
+.streams-table-body-row-item:last-child { border-bottom: none; }
+.streams-table-body-row-item:hover { background-color: #f8fafc; }
+
+.streams-table-body-cell { padding: 14px 0; vertical-align: middle; }
+
+/* Combined Avatar Text Identity Block Column */
+.stream-primary-info-block {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.stream-avatar-placeholder-circle {
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    font-size: 1rem;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    user-select: none;
+}
+
+/* Pulsing operational canvas tags from reference matrix dashboards design layout */
+.live-pulse-teal { color: #16a34a; background-color: #e6f0ed; animation: pulseTeal 2s infinite; }
+.live-pulse-amber { color: #f97316; background-color: #fff7ed; animation: pulseAmber 2s infinite; }
+
+@keyframes pulseTeal { 0%, 100% { box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.4); } 50% { box-shadow: 0 0 0 8px rgba(22, 163, 74, 0); } }
+@keyframes pulseAmber { 0%, 100% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.4); } 50% { box-shadow: 0 0 0 8px rgba(249, 115, 22, 0); } }
+
+.stream-identity-text-stack { display: flex; flex-direction: column; text-align: left; }
+.stream-display-name-text { font-size: 0.94rem; font-weight: 700; color: var(--brand-dark-black); }
+.stream-tech-stack-text { font-size: 0.78rem; font-weight: 500; color: #64748b; margin-top: 2px; }
+
+.table-numerical-string {
+    font-size: 0.88rem; font-weight: 700; color: #475569;
+}
+
+.table-bitrate-bold {
+    font-size: 0.88rem; font-weight: 700; color: var(--brand-dark-black); font-family: monospace;
+}
+
+.status-badge-pill {
+    font-size: 0.74rem; font-weight: 700; padding: 4px 10px; border-radius: 6px; white-space: nowrap;
+}
+.badge-green-fill { background-color: #e6f0ed; color: var(--brand-teal); }
+.badge-orange-fill { background-color: #fff7ed; color: #f97316; }
+
+/* Emergency kill link anchor buttons */
+.btn-stream-action-terminate {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #dc2626;
+    background-color: transparent;
+    border: 1px solid #fee2e2;
+    padding: 6px 14px;
+    border-radius: 8px; /* Snug rounded button corners from design snapshot */
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.btn-stream-action-terminate:hover {
+    background-color: #dc2626; /* Turns warning red on hover emergency execution tracking focus */
+    color: #ffffff;
+    border-color: #dc2626;
+}
+
+/* --- Comprehensive Fluid Mobile Responsiveness Breakpoints --- */
+@media (max-width: 1024px) {
+    .streams-matrix-snapshot-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns stack format layout tablet views */
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .streams-action-bar-flex-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+    .streams-action-bar-left-search-wrap { max-width: 100%; }
+    .btn-streams-refresh { width: 100%; text-align: center; }
+}
+
+@media (max-width: 640px) {
+    .streams-matrix-snapshot-grid {
+        grid-template-columns: 1fr; /* Forms single entry vertical card matrix stack track on phones viewports */
+        gap: 16px;
+    }
+    .streams-panel-content-wrap { padding: 24px 16px; }
+}
+
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    
+    const streamsSearchField = document.getElementById("streams-matrix-search-field");
+    const syncFeedsTriggerBtn = document.getElementById("btn-sync-streams");
+    const streamsTableRowsList = document.querySelectorAll(".streams-matrix-data-table tbody .streams-table-body-row-item");
+
+    if (streamsSearchField && streamsTableRowsList.length > 0) {
+        streamsSearchField.addEventListener("input", () => {
+            const queryCleanString = streamsSearchField.value.toLowerCase().trim();
+
+            streamsTableRowsList.forEach(rowNode => {
+                const roomTitleString = rowNode.querySelector(".stream-display-name-text").textContent.toLowerCase();
+                const instructorString = rowNode.querySelector(".stream-tech-stack-text").textContent.toLowerCase();
+
+                if (roomTitleString.includes(queryCleanString) || instructorString.includes(queryCleanString)) {
+                    rowNode.style.display = ""; // Exposes item cleanly on filter query intersection match
+                } else {
+                    rowNode.style.display = "none"; // Conceals item cleanly from view lists tracks rows arrays
+                }
+            });
+        });
+    }
+
+    if (syncFeedsTriggerBtn) {
+        syncFeedsTriggerBtn.addEventListener("click", () => {
+            // Animates micro button feedback loop tracking reload steps
+            syncFeedsTriggerBtn.textContent = "Syncing Feeds...";
+            setTimeout(() => {
+                window.location.reload();
+            }, 500);
+        });
+    }
+});
+
+</script>
+
+            </div>
+        </main>
+
+    </div>
+
+    <style>
+        /* Color System Layout Configurations matching template branding profiles */
+:root {
+    --brand-dark-black: #111314;   
+    --brand-teal: #046a55;        
+    --brand-amber: #f49b09;       
+    --canvas-base-bg: #f8fafc;
+    --sidebar-width: 260px;
+    --header-height: 70px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
+
+body.dashboard-root-body {
+    background-color: var(--canvas-base-bg);
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden; 
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- TOP HEADER ROW SYSTEM --- */
+.dashboard-main-header {
+    height: var(--header-height);
+    width: 100%;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 100;
+}
+
+.header-left-pane { display: flex; align-items: center; gap: 16px; }
+
+.hamburger-menu-toggle-btn {
+    display: none;
+    background: transparent; border: none; outline: none;
+    cursor: pointer; color: var(--brand-dark-black);
+    width: 36px; height: 36px; align-items: center; justify-content: center;
+    transition: color 0.2s;
+}
+.hamburger-menu-toggle-btn svg { width: 22px; height: 22px; }
+.hamburger-menu-toggle-btn:hover { color: var(--brand-teal); }
+
+/* Brand Refresh Trigger Nodes */
+.header-brand-refresh-trigger {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.header-brand-logo-img { height: 32px; width: auto; object-fit: contain; }
+.header-brand-name-string { font-size: 1.15rem; font-weight: 800; color: var(--brand-dark-black); letter-spacing: -0.02em; }
+
+.header-right-pane { display: flex; align-items: center; gap: 20px; }
+.header-user-welcome-message { font-size: 0.95rem; font-weight: 600; color: #475569; }
+.dynamic-parsed-username-node { color: var(--brand-teal); font-weight: 800; text-transform: capitalize; }
+
+/* Icon Bell Component Wrapper Button */
+.header-icon-bell-notification-btn {
+    width: 36px; height: 36px; color: #64748b; background: transparent;
+    border: none; outline: none; cursor: pointer; display: flex; align-items: center; justify-content: center;
+    position: relative; transition: color 0.2s;
+}
+.header-icon-bell-notification-btn svg { width: 20px; height: 20px; }
+.header-icon-bell-notification-btn:hover { color: var(--brand-teal); }
+.notification-indicator-dot { position: absolute; top: 6px; right: 8px; width: 8px; height: 8px; background-color: var(--brand-amber); border-radius: 50%; border: 1.5px solid #ffffff; }
+
+/* Profile Avatar Bubble Button */
+.header-profile-avatar-window-btn {
+    width: 40px; height: 40px; border-radius: 50%; overflow: hidden;
+    border: 2px solid #e2e8f0; display: block; transition: border-color 0.25s ease;
+}
+.header-profile-avatar-window-btn:hover { border-color: var(--brand-teal); }
+.header-profile-avatar-img { width: 100%; height: 100%; object-fit: cover; }
+
+/* --- CORE WORKSPACE MESH FRAMEWORK --- */
+.dashboard-workspace-mesh {
+    flex: 1; width: 100%; display: flex; position: relative; height: calc(100vh - var(--header-height));
+}
+
+/* --- SIDEBAR PANEL NAVIGATION HARDWARE --- */
+.dashboard-sidebar-navigation-panel {
+    width: var(--sidebar-width);
+    background-color: #ffffff;
+    border-right: 1px solid #e2e8f0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 32px 16px 24px 16px;
+    z-index: 90;
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.sidebar-scrollable-nav-menu { display: flex; flex-direction: column; gap: 24px; width: 100%; overflow-y: auto; }
+.sidebar-section-menu-group-wrapper { display: flex; flex-direction: column; width: 100%; }
+
+.sidebar-section-meta-headline {
+    font-size: 0.68rem; font-weight: 800; color: #94a3b8; text-transform: uppercase;
+    letter-spacing: 0.06em; margin-bottom: 8px; padding-left: 12px;
+}
+
+.sidebar-links-pipeline-list { list-style: none; display: flex; flex-direction: column; gap: 4px; }
+
+/* Sidebar Menu Item Row Layout */
+.sidebar-item-row {
+    display: flex; align-items: center; gap: 12px; padding: 12px; border-radius: 10px;
+    color: #64748b; cursor: pointer; transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    user-select: none;
+}
+.sidebar-row-vector-icon { width: 18px; height: 18px; display: inline-flex; align-items: center; justify-content: center; }
+.sidebar-row-vector-icon svg { width: 100%; height: 100%; }
+.sidebar-item-label-text { font-size: 0.92rem; font-weight: 700; }
+
+.sidebar-item-row:hover { background-color: #f8fafc; color: var(--brand-teal); }
+.sidebar-item-row.active-menu-row { background-color: #f0fdf4; color: var(--brand-teal); }
+
+/* Sidebar Disconnect Logout Area Footer */
+.sidebar-system-logout-action-box { width: 100%; padding-top: 16px; border-top: 1px solid #f1f5f9; }
+
+.sidebar-logout-pill-btn {
+    width: 100%; background: transparent; border: 1px solid #fee2e2; outline: none;
+    padding: 12px; border-radius: 10px; cursor: pointer; display: flex; align-items: center; gap: 12px;
+    color: #dc2626; transition: all 0.2s ease;
+}
+.logout-vector-icon { width: 18px; height: 18px; display: flex; align-items: center; justify-content: center; }
+.logout-vector-icon svg { width: 100%; height: 100%; }
+.logout-btn-label { font-size: 0.92rem; font-weight: 700; }
+
+.sidebar-logout-pill-btn:hover { background-color: #fef2f2; border-color: #fca5a5; transform: translateY(-1px); }
+
+/* --- MAIN WORKSPACE MULTI-SECTION VIEWPORT VIEWPORT STAGE --- */
+.dashboard-viewport-main-content-stage {
+    flex: 1; height: 100%; overflow-y: auto; background-color: var(--canvas-base-bg);
+}
+
+.stage-internal-scroller-box { padding: 40px; width: 100%; max-width: 1000px; }
+
+/* Individual Target Content Display Sections Panel Nodes */
+.workspace-section-view-node {
+    display: none; 
+    background-color: #ffffff; border: 1px solid #e2e8f0; border-radius: 20px;
+    padding: 44px; box-shadow: 0 4px 12px rgba(17, 19, 20, 0.01);
+    animation: fadeSectionUpIn 0.45s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes fadeSectionUpIn {
+    0% { opacity: 0; transform: translateY(12px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.workspace-section-view-node.active-section-node { display: block !important; }
+.workspace-section-main-title { font-size: 1.85rem; font-weight: 800; color: var(--brand-dark-black); letter-spacing: -0.02em; }
+
+/* --- PRECISION ADAPTIVE LAYOUT VIEWPORT RESPONSIVE BREAKPOINTS --- */
+@media (max-width: 900px) {
+    .hamburger-menu-toggle-btn { display: inline-flex; } 
+    
+    .dashboard-sidebar-navigation-panel {
+        position: absolute; top: 0; bottom: 0; left: 0;
+        transform: translateX(-100%); 
+        box-shadow: 15px 0 40px rgba(17, 19, 20, 0.1); border-right: none;
+    }
+    
+    .dashboard-sidebar-navigation-panel.sidebar-drawer-open { transform: translateX(0) !important; }
+    
+    .mobile-sidebar-backdrop-mask-overlay {
+        position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+        background-color: rgba(15, 17, 21, 0.4); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
+        z-index: 85; transition: opacity 0.3s ease;
+    }
+    
+    .stage-internal-scroller-box { padding: 24px 16px; }
+    .workspace-section-view-node { padding: 32px 20px; border-radius: 16px; }
+}
+
+.hidden-mask { display: none !important; opacity: 0; }
+
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+    
+    // ==========================================
+    // A. DYNAMIC EMAIL ACCOUNT USERNAME PARSER ENGINE
+    // ==========================================
+    const usernameDisplayNode = document.getElementById("header-display-username");
+    let userSessionEmailString = localStorage.getItem("stackly_user_email") || "admin_jeevi@gmail.com"; 
+
+    if (usernameDisplayNode && userSessionEmailString) {
+        if (userSessionEmailString.includes("@")) {
+            const parsedFirstNameSegment = userSessionEmailString.split("@");
+            usernameDisplayNode.textContent = parsedFirstNameSegment[0];
+        }
+    }
+
+    // ==========================================
+    // B. SECTION-WISE VIEWPORT SWITCHING PIPELINE
+    // ==========================================
+    const sidebarMenuRows = document.querySelectorAll(".sidebar-item-row");
+    const workspaceSectionNodes = document.querySelectorAll(".workspace-section-view-node");
+
+    if (sidebarMenuRows.length > 0 && workspaceSectionNodes.length > 0) {
+        sidebarMenuRows.forEach(clickedRow => {
+            clickedRow.addEventListener("click", () => {
+                
+                sidebarMenuRows.forEach(row => row.classList.remove("active-menu-row"));
+                clickedRow.classList.add("active-menu-row");
+
+                const destinationSectionId = clickedRow.getAttribute("data-target-section");
+
+                workspaceSectionNodes.forEach(sectionBlock => {
+                    if (sectionBlock.getAttribute("id") === destinationSectionId) {
+                        sectionBlock.classList.add("active-section-node");
+                    } else {
+                        sectionBlock.classList.remove("active-section-node");
+                    }
+                });
+
+                closeMobileSidebarDrawerPanel();
+            });
+        });
+    }
+
+    // ==========================================
+    // C. RESPONSIVE MOBILE BURGER DRAWER CONTROLLER
+    // ==========================================
+    const hamburgerTrigger = document.getElementById("mobile-hamburger-trigger");
+    const sidebarPanelDrawer = document.getElementById("dashboard-sidebar-node");
+    const mobileMaskOverlay = document.getElementById("mobile-sidebar-mask");
+
+    if (hamburgerTrigger && sidebarPanelDrawer && mobileMaskOverlay) {
+        hamburgerTrigger.addEventListener("click", (event) => {
+            event.stopPropagation();
+            const isOpen = sidebarPanelDrawer.classList.contains("sidebar-drawer-open");
+            
+            if (isOpen) {
+                closeMobileSidebarDrawerPanel();
+            } else {
+                sidebarPanelDrawer.classList.add("sidebar-drawer-open");
+                mobileMaskOverlay.classList.remove("hidden-mask");
+            }
+        });
+
+        mobileMaskOverlay.addEventListener("click", closeMobileSidebarDrawerPanel);
+    }
+
+    function closeMobileSidebarDrawerPanel() {
+        if (sidebarPanelDrawer && mobileMaskOverlay) {
+            sidebarPanelDrawer.classList.remove("sidebar-drawer-open");
+            mobileMaskOverlay.classList.add("hidden-mask");
+        }
+    }
+
+    // ==========================================
+    // D. SYSTEM CORE INITIALIZATION & REFRESH RE-RUNNERS
+    // ==========================================
+    const brandRefreshTrigger = document.getElementById("brand-refresh-node");
+    const portalLogoutTrigger = document.getElementById("portal-logout-trigger");
+
+    if (brandRefreshTrigger) brandRefreshTrigger.addEventListener("click", () => window.location.reload());
+    if (portalLogoutTrigger) portalLogoutTrigger.addEventListener("click", () => window.location.href = "login.html");
+});
+
+    </script>
+
+    <style>
+        /* =========================================================
+   STACKLY DASHBOARD — FULL WIDTH + MAIN CONTENT SCROLL FIX
+   ========================================================= */
+
+/* Prevent the dashboard workspace itself from creating
+   an unwanted horizontal/outer overflow */
+.dashboard-workspace-mesh {
+    width: 100%;
+    min-width: 0;
+    height: calc(100vh - var(--header-height));
+    display: flex;
+    overflow: hidden;
+}
+
+/* Keep sidebar at its fixed width */
+.dashboard-sidebar-navigation-panel {
+    flex: 0 0 var(--sidebar-width);
+    width: var(--sidebar-width);
+    min-width: var(--sidebar-width);
+}
+
+/* MAIN CONTENT — allow vertical scrolling */
+.dashboard-viewport-main-content-stage {
+    flex: 1 1 auto;
+    width: auto;
+    min-width: 0;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: var(--canvas-base-bg);
+
+    /* Smooth scrolling */
+    scroll-behavior: smooth;
+}
+
+/* REMOVE THE 1000px WIDTH LIMIT */
+.stage-internal-scroller-box {
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+    padding: 40px;
+}
+
+/* Every section uses the complete available width */
+.workspace-section-view-node {
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+}
+
+/* Dashboard grids use complete available width */
+.admin-analytics-metrics-grid,
+.admin-dual-pane-layout {
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+}
+
+/* Prevent grid children from forcing horizontal overflow */
+.admin-metric-card,
+.admin-sub-pane-card {
+    min-width: 0;
+    max-width: 100%;
+}
+
+/* Tables can scroll horizontally inside their own area */
+.responsive-table-overflow-window {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1200px) {
+
+    .stage-internal-scroller-box {
+        width: 100%;
+        max-width: none;
+        padding: 32px 24px;
+    }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .dashboard-workspace-mesh {
+        width: 100%;
+        height: calc(100vh - var(--header-height));
+        overflow: hidden;
+    }
+
+    .dashboard-sidebar-navigation-panel {
+        flex: none;
+        width: var(--sidebar-width);
+        min-width: var(--sidebar-width);
+    }
+
+    .dashboard-viewport-main-content-stage {
+        width: 100%;
+        min-width: 0;
+        height: 100%;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .stage-internal-scroller-box {
+        width: 100%;
+        max-width: none;
+        padding: 24px 16px;
+    }
+
+    .workspace-section-view-node {
+        width: 100%;
+        max-width: none;
+        padding: 32px 20px;
+    }
+}
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 640px) {
+
+    .stage-internal-scroller-box {
+        padding: 16px 12px;
+    }
+
+    .workspace-section-view-node {
+        width: 100%;
+        padding: 24px 16px;
+        border-radius: 16px;
+    }
+
+    .admin-analytics-metrics-grid {
+        width: 100%;
+    }
+
+    .admin-dual-pane-layout {
+        width: 100%;
+    }
+}
+
+/* =========================================================
+   FIX METRIC NUMBER CLASS
+   ========================================================= */
+
+.metric-card-numerical-display {
+    font-size: 2.15rem;
+    font-weight: 800;
+    color: var(--brand-dark-black);
+    line-height: 1;
+    margin-bottom: 8px;
+    letter-spacing: -0.02em;
+}
+
+
+    </style>
+
+    <style>
+        /* =========================================================
+   FINAL MAIN CONTENT VERTICAL SCROLL FIX
+   ========================================================= */
+
+/* Allow flex children to shrink correctly */
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body.dashboard-root-body {
+    height: 100vh;
+    min-height: 0;
+    overflow: hidden;
+}
+
+/* Dashboard workspace must stay within viewport */
+.dashboard-workspace-mesh {
+    display: flex;
+    width: 100%;
+    height: calc(100vh - var(--header-height));
+    min-height: 0;
+    overflow: hidden;
+}
+
+/* Sidebar remains fixed while main area scrolls */
+.dashboard-sidebar-navigation-panel {
+    flex: 0 0 var(--sidebar-width);
+    width: var(--sidebar-width);
+    height: 100%;
+    min-height: 0;
+}
+
+/* THIS is the actual scrolling container */
+.dashboard-viewport-main-content-stage {
+    flex: 1 1 auto;
+    width: 0;
+    min-width: 0;
+    min-height: 0;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Content must be allowed to grow beyond viewport */
+.stage-internal-scroller-box {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    min-height: max-content;
+    max-width: none;
+    padding: 40px;
+}
+
+/* Section content must not create its own height restriction */
+.workspace-section-view-node {
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+    height: auto;
+    min-height: 0;
+}
+
+/* Active section remains normal document flow */
+.workspace-section-view-node.active-section-node {
+    display: block !important;
+    height: auto;
+}
+
+/* Prevent grids from forcing the main flex container */
+.admin-analytics-metrics-grid,
+.admin-dual-pane-layout,
+.user-matrix-snapshot-grid,
+.database-control-card-panel {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .dashboard-workspace-mesh {
+        height: calc(100vh - var(--header-height));
+        min-height: 0;
+        overflow: hidden;
+    }
+
+    .dashboard-viewport-main-content-stage {
+        width: 100%;
+        min-width: 0;
+        min-height: 0;
+        height: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .stage-internal-scroller-box {
+        width: 100%;
+        min-height: max-content;
+        padding: 24px 16px;
+    }
+}
+
+@media (max-width: 640px) {
+
+    .stage-internal-scroller-box {
+        padding: 16px 12px;
+    }
+}
+    </style>
+</body>
+</html>

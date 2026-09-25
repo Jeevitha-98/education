@@ -1,0 +1,2160 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stackly | Welcome</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Premium Creative Preloader Overlay -->
+    <div id="preloader">
+        <div class="preloader-content">
+            
+            <!-- Creative Dynamic Vector Icon Block -->
+            <div class="vector-container">
+                <svg viewBox="0 0 200 200" xmlns="http://w3.org">
+                    <!-- Background Accent Ring -->
+                    <circle cx="100" cy="100" r="70" class="vector-bg-ring" />
+                    
+                    <!-- Top Abstract Graduation Square (Teal) -->
+                    <polygon points="100,35 150,55 100,75 50,55" class="shape-teal element-top" />
+                    
+                    <!-- Middle Stack Layer (Orange/Amber Book) -->
+                    <rect x="60" y="85" width="80" height="20" rx="4" class="shape-orange element-middle" />
+                    <line x1="75" y1="95" x2="125" y2="95" class="shape-line" />
+                    
+                    <!-- Bottom Foundational Layer (Deep Charcoal Book) -->
+                    <rect x="45" y="120" width="110" height="25" rx="5" class="shape-charcoal element-bottom" />
+                    <line x1="60" y1="132" x2="140" y2="132" class="shape-line" />
+
+                    <!-- Playful Accent Spark Lines (Like the orange rays in your image) -->
+                    <line x1="160" y1="35" x2="175" y2="25" class="ray-line ray-1" />
+                    <line x1="175" y1="55" x2="192" y2="55" class="ray-line ray-2" />
+                </svg>
+            </div>
+
+            <!-- Bold High-Scale Brand Typography -->
+            <h1 class="brand-name">Stackly</h1>
+            
+            <!-- Minimal Linear Dynamic Loader Component -->
+            <div class="loader-status">
+                <p class="status-msg">Setting up your learning track...</p>
+                <div class="progress-track">
+                    <div class="progress-fill" id="progress-bar"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Main Content Presentation Dashboard -->
+    <main id="main-content" class="hidden">
+        <section class="welcome-hero">
+            <h1>Keep Learning on Track</h1>
+            <p>Welcome back to Stackly. Your educational workspace is ready.</p>
+        </section>
+    </main>
+
+   
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const progressBar = document.getElementById("progress-bar");
+    const preloader = document.getElementById("preloader");
+
+    let progress = 0;
+
+    const loader = setInterval(function () {
+
+        progress += 2;
+
+        if (progressBar) {
+            progressBar.style.width = progress + "%";
+        }
+
+        if (progress >= 100) {
+            clearInterval(loader);
+
+            // Hide preloader
+            if (preloader) {
+                preloader.classList.add("fade-out");
+
+                setTimeout(function () {
+                    preloader.remove();
+                }, 450);
+            }
+
+            // Enable page scrolling
+            document.body.style.overflow = "auto";
+        }
+
+    }, 40);
+
+});
+</script>
+    <!-- Fixed Top Navigation Header Bar -->
+<header class="main-header">
+    <div class="header-container">
+        
+        <!-- Brand Logo Element (Positioned Left Side - Triggers Page Hard Refresh) -->
+        <a href="#" class="logo-link" id="logo-trigger">
+            <!-- Replace 'logo.png' with your verified local image file path -->
+            <img src="./assests/logo AGRI.webp" alt="Stackly Brand Logo" class="brand-logo-img" onerror="this.src='https://placehold.co'">
+        </a>
+
+        <!-- Desktop Navigation Bar Core Area (Aligned Center) -->
+        <nav class="nav-wrapper">
+            <ul class="nav-list">
+                <li><a href="index.html" class="nav-item active">Home</a></li>
+                <li><a href="about.html" class="nav-item">About Us</a></li>
+                <li><a href="courses.html" class="nav-item">Courses</a></li>
+                <li><a href="blogs.html" class="nav-item">Blogs</a></li>
+                <li><a href="contact.html" class="nav-item">Contact Us</a></li>
+            </ul>
+        </nav>
+
+        <!-- Single Authentication Action Button (Right Aligned) -->
+        <div class="auth-wrapper">
+            <a href="login.html" class="btn-started">Get Started</a>
+        </div>
+
+        <!-- Responsive Hamburger Action Menu Toggle Icon for Compact Displays -->
+        <button class="hamburger-btn" id="mobile-toggle" aria-label="Toggle Navigation Tray Menu">
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+        </button>
+    </div>
+</header>
+
+<!-- Mobile Slider Sidebar Navigation Drawer Menu Frame Overlay -->
+<div class="mobile-drawer" id="mobile-menu-drawer">
+    <ul class="mobile-nav-list">
+        <li><a href="index.html" class="mobile-nav-item active">Home</a></li>
+        <li><a href="about.html" class="mobile-nav-item">About Us</a></li>
+        <li><a href="courses.html" class="mobile-nav-item">Courses</a></li>
+        <li><a href="blogs.html" class="mobile-nav-item">Blogs</a></li>
+        <li><a href="contact.html" class="mobile-nav-item">Contact Us</a></li>
+        <li class="mobile-auth-divider"></li>
+        <li><a href="lofin.html" class="btn-started dynamic-btn">Get Started</a></li>
+    </ul>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    
+    // 1. Brand Logo Hard Document Window Refresh Functionality Execution Loop
+    const logoTrigger = document.getElementById("logo-trigger");
+    if (logoTrigger) {
+        logoTrigger.addEventListener("click", (event) => {
+            event.preventDefault(); // Halt active route address tracing routines
+            window.location.reload(); // Perform target page browser cache reload execution
+        });
+    }
+
+    // 2. Mobile Responsive Slide-Out Layout Drawer Panel Interaction Mechanics
+    const mobileToggle = document.getElementById("mobile-toggle");
+    const mobileMenuDrawer = document.getElementById("mobile-menu-drawer");
+
+    if (mobileToggle && mobileMenuDrawer) {
+        mobileToggle.addEventListener("click", (event) => {
+            event.stopPropagation();
+            mobileToggle.classList.toggle("open");
+            mobileMenuDrawer.classList.toggle("open");
+        });
+
+        // Close navigation tray framework safely when user clicks off-canvas layout boundaries
+        document.addEventListener("click", (event) => {
+            if (!mobileMenuDrawer.contains(event.target) && event.target !== mobileToggle) {
+                mobileToggle.classList.remove("open");
+                mobileMenuDrawer.classList.remove("open");
+            }
+        });
+    }
+
+    // 3. Navigation Anchor Links Menu Item Active Validation Selector Switch Tracker 
+    const navItems = document.querySelectorAll(".nav-item, .mobile-nav-item");
+
+    navItems.forEach(item => {
+        item.addEventListener("click", function() {
+            // Strip active styling layout flags off alternative choices array
+            navItems.forEach(node => node.classList.remove("active"));
+            
+            // Add active focus state flag to targeted element selection choice
+            this.classList.add("active");
+            
+            // Gracefully retract responsive canvas slide framework layout block structures
+            if (mobileMenuDrawer) {
+                mobileToggle.classList.remove("open");
+                mobileMenuDrawer.classList.remove("open");
+            }
+        });
+    });
+});
+
+</script>
+
+<!-- Premium Contact Page Hero Section -->
+<section class="stackly-contact-hero-section">
+    
+    <!-- Ambient Floating Vector Backdrop Canvas Universe -->
+    <div class="contact-hero-vector-universe">
+        <svg class="contact-ambient-vector vector-loop-stroke" viewBox="0 0 100 60" fill="none" xmlns="http://w3.org">
+            <path d="M10,20 Q40,50 60,15 T90,35" stroke="rgba(4, 106, 85, 0.08)" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+        <svg class="contact-ambient-vector vector-grid-dots" viewBox="0 0 40 40" xmlns="http://w3.org">
+            <circle cx="10" cy="10" r="2" fill="#f49b09" opacity="0.15"/><circle cx="25" cy="10" r="2" fill="#f49b09" opacity="0.15"/>
+            <circle cx="10" cy="25" r="2" fill="#f49b09" opacity="0.15"/><circle cx="25" cy="25" r="2" fill="#f49b09" opacity="0.15"/>
+        </svg>
+    </div>
+
+    <div class="contact-hero-grid-mesh">
+        
+        <!-- LEFT COLUMN: Typography Content & Staggered Action Links -->
+        <div class="contact-panel-left">
+            <span class="contact-micro-badge-tag">Stackly Help Desk • 24/7 Support</span>
+            
+            <!-- Headline Title: Restored word-by-word page load side slides -->
+            <h1 class="contact-mega-title" id="contact-onload-title">
+                <span class="contact-word slide-left">Let's</span>
+                <span class="contact-word slide-right">Connect</span>
+                <span class="contact-word slide-left">and</span>
+                <span class="contact-word slide-right text-teal-accent">Build</span>
+                <span class="contact-word slide-left">Your</span>
+                <span class="contact-word slide-right text-teal-accent">Coding</span>
+                <span class="contact-word slide-left text-marker-arc">Skills</span>
+            </h1>
+
+            <p class="contact-descriptive-paragraph">
+                Have questions about our fullstack engineering tracks, certified mentorship bootcamps, or workspace sandboxes? Reach out today and let's get you on the right path.
+            </p>
+
+            <!-- Slide-in Action Buttons Container (Enters from sides) -->
+            <div class="contact-actions-row-flex" id="contact-actions-lateral-block">
+                <!-- Solid Forest Teal Pill Button Triggering 404 Route Fallback -->
+                <a href="404.html" class="btn-contact-solid-teal">Submit a Ticket</a>
+                
+                <!-- Video Trigger Link Targeting 404 Route Fallback -->
+                <a href="404.html" class="btn-contact-video-flex">
+                    <div class="video-play-marker-orange">▶</div>
+                    <span class="video-label-text">Explore Help Center</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- RIGHT COLUMN: Core Support Graphic Canvas Stage -->
+        <div class="contact-panel-right">
+            <div class="contact-image-canvas-stage">
+                
+                <!-- Main Featured Customer Support Team Graphic Component -->
+                <!-- Replace 'contact-support-team.png' with your local support image file path -->
+                <img src="contact-support-team.png" alt="Stackly corporate customer support staff" class="contact-main-mascot-img" onerror="this.src='https://unsplash.com'">
+                
+                <!-- Decorative Backdrop Solid Shape Plate from template layout blueprint -->
+                <div class="stage-backdrop-plate-cream"></div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    /* Color System Layout Configurations matching template branding profiles */
+:root {
+    --text-black-heading: #0f1115;  /* Font content explicitly black format */
+    --text-charcoal-body: #1e2229;  
+    --brand-teal: #046a55;          /* Forest Teal Corporate Theme Color */
+    --brand-amber: #f49b09;         
+    --section-canvas-white: #ffffff; /* Requested Pure White Background Layer */
+}
+
+.stackly-contact-hero-section {
+    position: relative;
+    width: 100%;
+    min-height: calc(100vh - 80px);
+    background-color: var(--section-canvas-white); /* Pure White background applied strictly */
+    /* Spacing Dimensions Parameters: 50px Top, 30px Bottom */
+    padding-top: 50px;
+    padding-bottom: 30px;
+    padding-left: 24px;
+    padding-right: 24px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.contact-hero-grid-mesh {
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    /* Replicates reference image dual column split grid shares balance ratio */
+    grid-template-columns: 1.12fr 0.88fr;
+    gap: 56px;
+    align-items: center;
+}
+
+/* --- Background Ambient Layout Canvas Watermarks --- */
+.contact-hero-vector-universe {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+.contact-ambient-vector { position: absolute; }
+.vector-loop-stroke { top: 15%; right: 40%; width: 120px; opacity: 0.85; }
+.vector-grid-dots { bottom: 15%; left: 4%; width: 40px; }
+
+/* --- Left Column Word-by-Word Side Entrance System (Triggers immediately on page load) --- */
+.contact-panel-left { display: flex; flex-direction: column; align-items: flex-start; }
+
+.contact-micro-badge-tag {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #64748b;
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 6px 14px;
+    border-radius: 9999px;
+    margin-bottom: 20px;
+    letter-spacing: 0.04em;
+}
+
+.contact-mega-title {
+    font-size: clamp(2.5rem, 5.2vw, 3.85rem);
+    font-weight: 800;
+    line-height: 1.15;
+    color: var(--text-black-heading);
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 14px;
+    letter-spacing: -0.02em;
+    text-align: left;
+}
+
+.text-teal-accent { color: var(--brand-teal); }
+
+.contact-word {
+    display: inline-block;
+    opacity: 0;
+    transition: opacity 0.75s cubic-bezier(0.25, 1, 0.5, 1), 
+                transform 0.75s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.slide-left { transform: translateX(-50px); }
+.slide-right { transform: translateX(50px); }
+
+/* Trigger active flags inject sequentially upon window ready states */
+.contact-word.active-word-reveal { opacity: 1 !important; transform: translateX(0) !important; }
+
+/* Hand-drawn style yellow accent stroke looping behind the word "Skills" from title layout */
+.text-marker-arc {
+    position: relative;
+    color: var(--brand-teal);
+    z-index: 1;
+}
+.text-marker-arc::after {
+    content: '';
+    position: absolute;
+    left: -2px; right: -2px; bottom: 2px;
+    height: 35%;
+    background-color: #fef08a; /* Clean solid yellow indicator paint wash bar */
+    z-index: -1;
+}
+
+.contact-descriptive-paragraph {
+    font-size: 1.05rem;
+    color: var(--text-charcoal-body); /* Text color explicitly set black format */
+    line-height: 1.6;
+    font-weight: 500;
+    max-width: 540px;
+    margin-bottom: 36px;
+    text-align: left;
+    transition: text-shadow 0.3s ease;
+}
+.stackly-contact-hero-section:hover .contact-descriptive-paragraph {
+    text-shadow: 0 0 1px rgba(30, 34, 41, 0.1); /* Soft subtle content glow on text layer */
+}
+
+/* --- Action Buttons Lateral Side Entrance Setup --- */
+.contact-actions-row-flex {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    
+    /* Initial state configured to slide out horizontally leftwards */
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.contact-actions-row-flex.btns-lateral-revealed { opacity: 1; transform: translateX(0); }
+
+.btn-contact-solid-teal {
+    display: inline-block;
+    text-decoration: none;
+    background-color: var(--brand-teal);
+    color: #ffffff;
+    padding: 14px 32px;
+    border-radius: 9999px; /* Pill design buttons format track profile */
+    font-size: 0.98rem;
+    font-weight: 700;
+    box-shadow: 0 4px 14px rgba(4, 106, 85, 0.2);
+    transition: background-color 0.25s, transform 0.2s, box-shadow 0.25s;
+}
+.btn-contact-solid-teal:hover {
+    background-color: var(--brand-dark-black);
+    transform: translateY(-2px);
+}
+
+.btn-contact-video-flex {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.video-play-marker-orange {
+    width: 38px; height: 38px;
+    background-color: var(--brand-amber); 
+    color: #ffffff; font-size: 0.72rem;
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    padding-left: 2px;
+    box-shadow: 0 4px 10px rgba(244, 155, 9, 0.25);
+    transition: transform 0.25s ease, background-color 0.25s;
+}
+
+.video-label-text { font-size: 0.98rem; font-weight: 700; color: var(--text-black-heading); transition: color 0.2s; }
+
+.btn-contact-video-flex:hover .video-play-marker-orange {
+    background-color: var(--brand-dark-black);
+    transform: scale(1.1) rotate(15deg);
+}
+.btn-contact-video-flex:hover .video-label-text { color: var(--brand-teal); }
+
+/* --- Right Side Column: Media Portrait Canvas Stage --- */
+.contact-panel-right { display: flex; justify-content: center; align-items: center; }
+
+.contact-image-canvas-stage {
+    position: relative;
+    width: 100%;
+    max-width: 440px;
+    height: 440px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-main-mascot-img {
+    width: 86%;
+    height: 86%;
+    object-fit: cover;
+    border-radius: 28px;
+    position: relative;
+    z-index: 5;
+    box-shadow: 0 10px 30px rgba(11, 15, 23, 0.04);
+    transition: transform 0.4s ease;
+}
+.contact-image-canvas-stage:hover .contact-main-mascot-img {
+    transform: scale(1.02) rotate(-0.5deg); /* Subtle responsive lens zoom layout feedback on card hover */
+}
+
+/* Background Plate Layer Block from sample layouts image data sheets */
+.stage-backdrop-plate-cream {
+    position: absolute;
+    bottom: 2%; right: 2%; width: 45%; height: 40%;
+    background-color: #eaedea; /* Stronger definition gray-cream accent shape backdrop block */
+    border-radius: 20px;
+    z-index: 1;
+}
+
+/* --- Full Fluid Responsive Adaptation Matrices Breakpoints --- */
+@media (max-width: 992px) {
+    .stackly-contact-hero-section { padding-top: 50px; padding-bottom: 40px; }
+    .contact-hero-grid-mesh { grid-template-columns: 1fr; gap: 52px; }
+    .contact-panel-left { align-items: center; text-align: center; }
+    .contact-mega-title, .contact-actions-row-flex { justify-content: center; }
+    .contact-descriptive-paragraph { text-align: center; margin-left: auto; margin-right: auto; }
+    .contact-panel-right { order: -1; } /* Lifts photo blocks above descriptions parameters on tablet browsers windows */
+    .contact-hero-vector-universe { display: none; }
+}
+
+@media (max-width: 480px) {
+    .contact-image-canvas-stage { height: 320px; max-width: 280px; }
+    .contact-actions-row-flex { flex-direction: column; gap: 16px; }
+    .btn-contact-solid-teal { width: 100%; text-align: center; }
+}
+
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    
+    // 1. IMMEDIATE ONLOAD TRIGGER: Headline Stagger Word Array parsing
+    const contactTitleBlock = document.getElementById("contact-onload-title");
+    const contactActionsPanel = document.getElementById("contact-actions-lateral-block");
+
+    if (contactTitleBlock && contactActionsPanel) {
+        const titleWordsList = contactTitleBlock.querySelectorAll(".contact-word");
+        
+        // Executes side-reveal transitions immediately upon document layout ready steps
+        titleWordsList.forEach((wordSpan, orderIndex) => {
+            setTimeout(() => {
+                wordSpan.classList.add("active-word-reveal");
+            }, orderIndex * 75); 
+        });
+
+        // Secondary delayed trigger activates button entry lateral slide-in
+        setTimeout(() => {
+            contactActionsPanel.classList.add("btns-lateral-revealed");
+        }, (titleWordsList.length * 75) + 120);
+    }
+});
+
+</script>
+
+<!-- Stackly Platform Interactive Contact & Registration Form Section -->
+<section class="stackly-contact-form-section">
+    <div class="contact-form-grid-mesh">
+        
+        <!-- LEFT PANEL: High-Fidelity Validation Form Wrapper Block (Slides up on scroll) -->
+        <div class="contact-form-card-panel scroll-stagger-up-node">
+            <span class="form-mini-badge">Course Registration</span>
+            
+            <h2 class="form-main-headline">Configure Your Learning Matrix</h2>
+            <p class="form-sub-paragraph">Fill out your baseline skill requirements below. Our system will dynamically compute a tailored educational roadmap proposal quote blueprint.</p>
+            
+            <!-- JavaScript Intercepted Validation Form Elements Matrix -->
+            <form class="contact-interactive-form-mesh" id="learning-matrix-form" novalidate>
+                
+                <div class="form-inputs-two-column-row">
+                    <!-- FULL NAME INPUT (Blocks numerical entry characters entirely) -->
+                    <div class="form-field-group-box">
+                        <label for="form-user-name" class="field-label-text">FULL NAME / CORPORATE TITLE</label>
+                        <div class="input-icon-relative-wrap">
+                            <span class="input-vector-marker">👤</span>
+                            <input type="text" id="form-user-name" class="form-input-node" placeholder="e.g. Vikram R" required>
+                        </div>
+                    </div>
+
+                    <!-- MOBILE HANDLE INPUT (Blocks alphabetic entry characters entirely) -->
+                    <div class="form-field-group-box">
+                        <label for="form-user-phone" class="field-label-text">CONTACT MOBILE HANDLE</label>
+                        <div class="input-icon-relative-wrap">
+                            <span class="input-vector-marker">📞</span>
+                            <input type="text" id="form-user-phone" class="form-input-node" placeholder="e.g. 9876543210" required maxlength="10">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-inputs-two-column-row">
+                    <!-- EMAIL ADDRESS INPUT -->
+                    <div class="form-field-group-box">
+                        <label for="form-user-email" class="field-label-text">EMAIL INBOX ADDRESS</label>
+                        <div class="input-icon-relative-wrap">
+                            <span class="input-vector-marker">✉</span>
+                            <input type="email" id="form-user-email" class="form-input-node" placeholder="e.g. design@stacklystudio.com" required>
+                        </div>
+                    </div>
+
+                    <!-- EXPECTED ATTENDANCE VOLUME INPUT -->
+                    <div class="form-field-group-box">
+                        <label for="form-user-volume" class="field-label-text">ESTIMATED WEEKLY HOURS AVAILABILITY</label>
+                        <div class="input-icon-relative-wrap">
+                            <span class="input-vector-marker">⏱</span>
+                            <input type="number" id="form-user-volume" class="form-input-node" placeholder="e.g. 15" required min="1" max="168">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TEXTAREA COMMENTS INJECTIONS INPUT -->
+                <div class="form-field-group-box full-width-textarea-box">
+                    <label for="form-user-notes" class="field-label-text">LEARNING PREFERENCES &amp; OBJECTIVES NOTES</label>
+                    <div class="input-icon-relative-wrap textarea-alignment-fix">
+                        <span class="input-vector-marker textarea-icon-shift">📝</span>
+                        <textarea id="form-user-notes" class="form-textarea-node" placeholder="Describe any tracking coding targets, framework choices, traditional system architectures, or specific lesson package inclusions..." required></textarea>
+                    </div>
+                </div>
+
+                <!-- Action Submit Trigger Button Block Frame Row -->
+                <div class="form-action-button-row">
+                    <button type="submit" class="form-submit-pill-btn">
+                        <span class="submit-btn-icon">🚀</span>
+                        <span class="submit-btn-text">Transmit Learning Blueprint Request</span>
+                    </button>
+                </div>
+
+            </form>
+
+            <!-- Dynamic Error Feedback Overlay Toast Component -->
+            <div class="form-error-feedback-toast hidden-alert-node" id="form-error-toast">
+                <span class="warning-icon">⚠</span> Please fill the fields correctly
+            </div>
+
+        </div>
+
+        <!-- RIGHT PANEL: Information Data Sidebar Box Block (Slides up on scroll with stagger) -->
+        <div class="contact-info-sidebar-panel scroll-stagger-up-node">
+            <div class="sidebar-header-block">
+                <span class="sidebar-orange-badge">FLAGSHIP ACADEMIC HUB</span>
+                <h3 class="sidebar-main-title">Reach Our Course Architects</h3>
+                <p class="sidebar-sub-desc">Connect directly with our corporate technical mentorship staff to fast-track specialized track bookings, customized roadmap packages, and learning plans.</p>
+            </div>
+
+            <!-- Info Rows Lists Stack Pipeline Area -->
+            <div class="sidebar-info-rows-stack">
+                
+                <!-- ROW 1: STUDIO LOCATION -->
+                <div class="info-row-box-card">
+                    <div class="row-icon-circle-badge">📍</div>
+                    <div class="row-text-stack">
+                        <span class="row-meta-micro-tag">VISIT OUR STUDIO</span>
+                        <p class="row-main-data-text">MMR Complex, Periyakollappatty, Chinna Thirupathi, Salem, Tamil Nadu 636008</p>
+                    </div>
+                </div>
+
+                <!-- ROW 2: DIRECT HOTLINES -->
+                <div class="info-row-box-card">
+                    <div class="row-icon-circle-badge">📞</div>
+                    <div class="row-text-stack">
+                        <span class="row-meta-micro-tag">DIRECT HOTLINES</span>
+                        <a href="tel:+917010792745" class="row-main-data-link">+91 7010792745</a>
+                    </div>
+                </div>
+
+                <!-- ROW 3: ELECTRONIC MAIL (Launches addressed window directly in Outlook client mail system) -->
+                <div class="info-row-box-card">
+                    <div class="row-icon-circle-badge">✉</div>
+                    <div class="row-text-stack">
+                        <span class="row-meta-micro-tag">ELECTRONIC MAIL</span>
+                        <a href="mailto:design@://stacklystudio.com" class="row-main-data-link email-underline-accent">design@stacklystudio.com</a>
+                    </div>
+                </div>
+
+                <!-- ROW 4: ATELIER AVAILABILITY HOURS -->
+                <div class="info-row-box-card">
+                    <div class="row-icon-circle-badge">🕒</div>
+                    <div class="row-text-stack">
+                        <span class="row-meta-micro-tag">ATELIER AVAILABILITY</span>
+                        <p class="row-main-data-text">Mon - Sun: 9:00 AM - 7:00 PM</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    /* Color System Layout Configurations matching template branding profiles */
+:root {
+    --brand-dark-black: #111314;   
+    --brand-teal: #046a55;        /* Forest Teal Core Signature Color From Reference Shape */
+    --brand-amber: #f49b09;       /* Golden Amber Accent Indicator Color */
+    --canvas-cream-bg: #fbfbf9;   /* Off-white light frame base backdrop layer fill */
+    --input-placeholder-color: #a0a6b0;
+}
+
+.stackly-contact-form-section {
+    width: 100%;
+    /* Spacing Dimensions Parameters strictly bounded: 50px Top, 30px Bottom */
+    padding-top: 50px;
+    padding-bottom: 30px;
+    padding-left: 24px;
+    padding-right: 24px;
+    background-color: var(--canvas-cream-bg);
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-form-grid-mesh {
+    max-width: 1240px;
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    /* Split balance ratio matching the precise structural grids of source document blueprint */
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 40px;
+    align-items: start;
+}
+
+/* --- LEFT PANEL: High Fidelity Form Architecture Layout --- */
+.contact-form-card-panel {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 24px;
+    padding: 44px;
+    box-shadow: 0 10px 30px rgba(17, 19, 20, 0.02);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+    /* Prepares item to cascade upwards from the bottom axis horizon on scroll matching */
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.75s cubic-bezier(0.25, 1, 0.5, 1), transform 0.75s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.form-mini-badge {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--brand-teal);
+    background-color: #f0fdf4;
+    padding: 4px 12px;
+    border-radius: 6px;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.form-main-headline {
+    font-size: clamp(1.85rem, 3.5vw, 2.35rem);
+    font-weight: 800;
+    color: var(--brand-dark-black);
+    line-height: 1.2;
+    margin-bottom: 8px;
+    letter-spacing: -0.02em;
+    text-align: left;
+}
+
+.form-sub-paragraph {
+    font-size: 0.96rem;
+    font-weight: 500;
+    color: #555c66;
+    line-height: 1.55;
+    margin-bottom: 32px;
+    text-align: left;
+    max-width: 600px;
+}
+
+/* Internal inputs layout flows fields matrix layers setup */
+.contact-interactive-form-mesh {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-inputs-two-column-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    width: 100%;
+}
+
+.form-field-group-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.field-label-text {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--brand-dark-black);
+    margin-bottom: 8px;
+    letter-spacing: 0.02em;
+}
+
+.input-icon-relative-wrap {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.input-vector-marker {
+    position: absolute;
+    left: 16px;
+    font-size: 1rem;
+    color: #64748b;
+    pointer-events: none;
+    z-index: 5;
+}
+
+/* Input elements fields configurations metrics verified */
+.form-input-node {
+    width: 100%;
+    border: 1px solid #cbd5e1;
+    background-color: #f8fafc;
+    border-radius: 10px;
+    padding: 14px 16px 14px 44px; /* Allocates precise indentation left space to guard absolute vector marker icon */
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--brand-dark-black);
+    outline: none;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.01);
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.form-textarea-node {
+    width: 100%;
+    height: 120px;
+    border: 1px solid #cbd5e1;
+    background-color: #f8fafc;
+    border-radius: 10px;
+    padding: 14px 16px 14px 44px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--brand-dark-black);
+    outline: none;
+    resize: none; /* Locks text box profile to block unaligned window warping bugs */
+    font-family: inherit;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.textarea-alignment-fix { align-items: flex-start; }
+.textarea-icon-shift { top: 16px; }
+
+/* Interactive Focus Input Content Glow Effects Halolayers */
+.form-input-node:focus, .form-textarea-node:focus {
+    background-color: #ffffff;
+    border-color: var(--brand-teal);
+    box-shadow: 0 0 0 4px rgba(4, 106, 85, 0.08), inset 0 1px 2px rgba(0,0,0,0.02);
+}
+
+.form-input-node::placeholder, .form-textarea-node::placeholder {
+    color: var(--input-placeholder-color);
+    opacity: 1;
+}
+
+/* --- Submit Pill Action Button Block --- */
+.form-action-button-row { width: 100%; text-align: left; margin-top: 12px; }
+
+.form-submit-pill-btn {
+    background-color: var(--brand-teal); /* Signature Forest Teal solid background fill from reference layout */
+    border: none; outline: none;
+    padding: 16px 36px;
+    border-radius: 12px; /* Snug matching rounded button profile */
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 4px 14px rgba(4, 106, 85, 0.25);
+    transition: background-color 0.25s, transform 0.2s, box-shadow 0.25s;
+}
+
+.submit-btn-icon { font-size: 1.1rem; }
+.submit-btn-text { color: #ffffff; font-size: 1.05rem; font-weight: 700; }
+
+.form-submit-pill-btn:hover {
+    background-color: var(--brand-dark-black); /* Switches cleanly into brand dark black on hover action focus */
+    box-shadow: 0 8px 22px rgba(17, 19, 20, 0.2);
+    transform: translateY(-2px);
+}
+.form-submit-pill-btn:active { transform: translateY(0); }
+
+/* --- RIGHT PANEL: High Contrast Information Sidebar Box --- */
+.contact-info-sidebar-panel {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 24px;
+    padding: 44px 36px;
+    box-shadow: 0 10px 30px rgba(17, 19, 20, 0.02);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.75s cubic-bezier(0.25, 1, 0.5, 1), transform 0.75s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.sidebar-header-block { display: flex; flex-direction: column; align-items: flex-start; margin-bottom: 32px; text-align: left; }
+.sidebar-orange-badge { font-size: 0.75rem; font-weight: 800; color: var(--brand-amber); letter-spacing: 0.06em; margin-bottom: 12px; }
+.sidebar-main-title { font-size: 1.55rem; font-weight: 800; color: var(--brand-dark-black); margin-bottom: 10px; letter-spacing: -0.02em; }
+.sidebar-sub-desc { font-size: 0.94rem; font-weight: 500; color: #64748b; line-height: 1.5; }
+
+.sidebar-info-rows-stack { display: flex; flex-direction: column; gap: 20px; width: 100%; }
+
+/* Info Card Stack Row Boxes Layout Channels */
+.info-row-box-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background-color: #f8fafc;
+    border: 1px solid #f1f5f9;
+    padding: 16px 20px;
+    border-radius: 16px;
+    width: 100%;
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.info-row-box-card:hover {
+    transform: translateX(4px);
+    border-color: rgba(4, 106, 85, 0.15);
+    box-shadow: 0 6px 16px rgba(4, 106, 85, 0.03);
+}
+
+.row-icon-circle-badge {
+    width: 40px; height: 44px;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.05rem; flex-shrink: 0;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+}
+
+.row-text-stack { display: flex; flex-direction: column; align-items: flex-start; text-align: left; }
+.row-meta-micro-tag { font-size: 0.72rem; font-weight: 800; color: #94a3b8; letter-spacing: 0.04em; margin-bottom: 4px; }
+.row-main-data-text { font-size: 0.94rem; font-weight: 600; color: var(--brand-dark-black); line-height: 1.45; }
+
+.row-main-data-link {
+    font-size: 0.96rem;
+    font-weight: 700;
+    color: var(--brand-dark-black);
+    text-decoration: none;
+    line-height: 1.4;
+    transition: color 0.2s ease;
+}
+.row-main-data-link:hover { color: var(--brand-teal); }
+
+/* Premium Underline Action Rule Accent on Mail Anchor Links */
+.email-underline-accent {
+    position: relative;
+    border-bottom: 2px solid var(--brand-teal);
+    padding-bottom: 1px;
+}
+.email-underline-accent:hover {
+    border-color: var(--brand-amber);
+}
+
+/* --- DYNAMIC SHAKING ALERT TOAST BLOCKS --- */
+.form-error-feedback-toast {
+    margin-top: 24px;
+    background-color: #dc2626; /* Warning Crimson Crimson Alert Fill */
+    color: #ffffff;
+    padding: 12px 28px;
+    border-radius: 9999px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    box-shadow: 0 6px 20px rgba(220, 38, 38, 0.2);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    align-self: flex-start;
+    animation: toastShake 0.4s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+@keyframes toastShake {
+    10%, 90% { transform: translate3d(-1px, 0, 0); }
+    20%, 80% { transform: translate3d(2px, 0, 0); }
+    30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+    40%, 60% { transform: translate3d(4px, 0, 0); }
+}
+
+/* Intersection Reveal State Handler Injections */
+.scroll-stagger-up-node.node-active-reveal {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Comprehensive Fluid Mobile Responsiveness Breakpoints --- */
+@media (max-width: 1024px) {
+    .contact-form-grid-mesh { grid-template-columns: 1fr; gap: 40px; }
+}
+
+@media (max-width: 680px) {
+    .stackly-contact-form-section { padding-left: 16px; padding-right: 16px; }
+    .contact-form-card-panel { padding: 32px 20px; border-radius: 20px; }
+    .contact-info-sidebar-panel { padding: 32px 20px; border-radius: 20px; }
+    .form-inputs-two-column-row { grid-template-columns: 1fr; gap: 20px; }
+    .form-submit-pill-btn { width: 100%; justify-content: center; }
+}
+
+.hidden-alert-node { display: none !important; }
+
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    
+    // 1. Core Element Lookup Selectors Matrix
+    const nameInput = document.getElementById("form-user-name");
+    const phoneInput = document.getElementById("form-user-phone");
+    const learningForm = document.getElementById("learning-matrix-form");
+    const errorToast = document.getElementById("form-error-toast");
+    const allInputNodes = learningForm.querySelectorAll(".form-input-node, .form-textarea-node");
+
+    // 2. REAL-TIME KEYSTROKE INPUT FILTER SANITIZATION
+    if (nameInput) {
+        // Name Field Validation Loop: Blocks numerical character keystrokes completely in real time
+        nameInput.addEventListener("input", (event) => {
+            const rawValue = nameInput.value;
+            // Clear out any trailing integers numbers digit entries characters instantly
+            nameInput.value = rawValue.replace(/[0-9]/g, "");
+        });
+    }
+
+    if (phoneInput) {
+        // Phone Field Validation Loop: Blocks alphabetic character keystrokes completely in real time
+        phoneInput.addEventListener("input", (event) => {
+            const rawValue = phoneInput.value;
+            // Clear out any trailing alphabetic string words entry characters instantly
+            phoneInput.value = rawValue.replace(/[^0-9]/g, "");
+        });
+    }
+
+    // 3. MASTER FORM SUBMISSION VALIDATION PIPELINE
+    if (learningForm && errorToast) {
+        learningForm.addEventListener("submit", (event) => {
+            event.preventDefault(); // Stop native baseline HTML page reloads triggers
+
+            let isFormValidFlag = true;
+
+            // Evaluation Loop: Check if mandatory fields are empty
+            allInputNodes.forEach(inputNode => {
+                if (inputNode.value.trim() === "") {
+                    isFormValidFlag = false;
+                }
+            });
+
+            // Specific Email Structure Pattern Test verification
+            const emailField = document.getElementById("form-user-email");
+            if (emailField && emailField.value.trim() !== "") {
+                const emailRegexPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegexPattern.test(emailField.value.trim())) {
+                    isFormValidFlag = false;
+                }
+            }
+
+            if (!isFormValidFlag) {
+                // Activate error feedback overlay toast animation sequences
+                errorToast.classList.remove("hidden-alert-node");
+                errorToast.style.animation = 'none';
+                errorToast.offsetHeight; 
+                errorToast.style.animation = '';
+                return;
+            }
+
+            // Success Transition: Form is filled correctly. Route address to fallback page view
+            errorToast.classList.add("hidden-alert-node");
+            window.location.href = "404.html";
+        });
+
+        // Hide warning toast as soon as user types structural input edits changes
+        allInputNodes.forEach(inputField => {
+            inputField.addEventListener("input", () => {
+                if (!errorToast.classList.contains("hidden-alert-node")) {
+                    errorToast.classList.add("hidden-alert-node");
+                }
+            });
+        });
+    }
+
+    // 4. STAGGERED INTERSECTION SCROLL OBSERVERReveal Track
+    const scrollStaggerUpNodes = document.querySelectorAll(".scroll-stagger-up-node");
+
+    if (scrollStaggerUpNodes.length > 0) {
+        const observerConfigSettings = {
+            root: null,
+            threshold: 0.12,
+            rootMargin: "0px 0px -20px 0px"
+        };
+
+        const formCascadeObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const intersectedNode = entry.target;
+                    const nodeIndexOffset = Array.from(scrollStaggerUpNodes).indexOf(intersectedNode);
+                    
+                    // Controlled staggering up-rise entry delay pacing loops
+                    setTimeout(() => {
+                        intersectedNode.classList.add("node-active-reveal");
+                    }, nodeIndexOffset * 160); // 160ms granular separation path speed spacer
+
+                    observer.unobserve(intersectedNode);
+                }
+            });
+        }, observerConfigSettings);
+
+        scrollStaggerUpNodes.forEach(nodeBlock => formCascadeObserver.observe(nodeBlock));
+    }
+});
+
+</script>
+
+<!-- Stackly Platform Creative Map Section Layout -->
+<section class="stackly-creative-map-section">
+    <div class="map-section-grid-mesh">
+        
+        <!-- LEFT COLUMN SIDE: Floating Glass Location Anchor Box -->
+        <div class="map-floating-glass-card scroll-reveal-fade-left">
+            <span class="map-micro-tag">Campus Presence</span>
+            
+            <!-- Headline Title Elements: Injected Letter-by-Letter via Javascript -->
+            <h2 class="map-letter-stagger-headline" id="map-scroll-headline">
+                Locate Our Campus
+            </h2>
+            
+            <p class="map-card-descriptive-text">
+                Our main flagship engineering studio is located at the center of Salem's technical corridor block setup. Stop by to launch sandbox sessions and review roadmap trajectories with our certified architects in person.
+            </p>
+
+            <div class="map-coordinate-details-list">
+                <div class="coordinate-flex-row">
+                    <span class="vector-bullet">■</span>
+                    <p><strong>Studio:</strong> MMR Complex, Chinna Thirupathi, Salem, TN</p>
+                </div>
+                <div class="coordinate-flex-row">
+                    <span class="vector-bullet">■</span>
+                    <p><strong>Availability:</strong> Mon - Sun: 9:00 AM - 7:00 PM</p>
+                </div>
+            </div>
+
+            <!-- INTERACTIVE BUTTON: Navigates cleanly out to the physical location on Google Maps -->
+            <div class="map-action-button-track">
+                <a href="https://google.com" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="btn-map-location-pill">
+                    <span class="btn-icon">📍</span>
+                    <span class="btn-label">Open in Google Maps</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- RIGHT COLUMN SIDE: High-Definition Creative Graphic Frame Stage Canvas -->
+        <div class="map-graphic-canvas-pane scroll-reveal-fade-up">
+            <div class="map-canvas-stage-wrapper">
+                
+                <!-- Main Core HD Map Representation Image Component -->
+                <!-- Replace 'map-canvas-snapshot.png' with your cropped graphic maps asset file path -->
+                <img src="map-canvas-snapshot.png" alt="Creative corporate map asset vector layout pointing Salem headquarters" class="main-map-canvas-img" onerror="this.src='https://unsplash.com'">
+                
+                <!-- Secondary Layer Overlap Accent Frame (Slides up behind image) -->
+                <div class="map-backdrop-accent-plate-teal"></div>
+                <div class="map-backdrop-accent-plate-amber"></div>
+
+                <!-- Ambient Floating Compass Vector Pin Handle Overlay -->
+                <div class="floating-vector-pin-handle">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#f49b09" stroke-width="3">
+                        <path d="M12 21s-9-6-9-13a9 9 0 0 1 18 0c0 7-9 13-9 13z"/>
+                        <circle cx="12" cy="10" r="3" fill="#ffffff"/>
+                    </svg>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    /* Color System Layout Configurations matching template branding profiles */
+:root {
+    --text-dark-black: #111314;       /* Font content explicitly black format */
+    --text-charcoal-body: #1a1d20;    /* High contrast scannability profile */
+    --brand-teal: #046a55;            /* Core Forest Teal identity color */
+    --brand-amber: #f49b09;           /* Core Golden Amber identity color */
+    --canvas-cream-bg: #fbfbf9;
+}
+
+.stackly-creative-map-section {
+    width: 100%;
+    /* Strict layout parameters compress section footprint: 50px Top, 30px Bottom */
+    padding-top: 50px;
+    padding-bottom: 30px;
+    padding-left: 24px;
+    padding-right: 24px;
+    background-color: var(--canvas-cream-bg);
+    position: relative;
+    overflow: hidden;
+}
+
+.map-section-grid-mesh {
+    max-width: 1240px;
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    /* Split balance columns shares matrix separating card layer from map frame stage */
+    grid-template-columns: 0.82fr 1.18fr;
+    gap: 52px;
+    align-items: center;
+}
+
+/* --- LEFT COLUMN: Floating Glass Location Anchor Box --- */
+.map-floating-glass-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 28px;
+    padding: 44px;
+    box-shadow: 0 10px 30px rgba(17, 19, 20, 0.02);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    z-index: 10;
+    
+    opacity: 0;
+    transform: translateX(-40px); /* Prepares left horizon emergence path on viewport scroll cross */
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.map-floating-glass-card.card-revealed-left {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.map-micro-tag {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--brand-teal);
+    background-color: #f0fdf4;
+    padding: 4px 12px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+/* --- LETTER-BY-LETTER STAGGERED HEADLINE SETUP --- */
+.map-letter-stagger-headline {
+    font-size: clamp(1.85rem, 3.8vw, 2.45rem);
+    font-weight: 800;
+    color: var(--text-dark-black);
+    line-height: 1.2;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+    display: flex;
+    flex-wrap: wrap; /* Allows letter stacks to wrap safely inside narrow viewports columns */
+}
+
+/* Fine-grained individual text split letter nodes variables setups */
+.map-letter-node {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(14px) scale(0.85); /* Emerges upwards with a gentle pop look */
+    transition: opacity 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), 
+                transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.map-letter-node.letter-revealed-flag {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.map-card-descriptive-text {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #555c66;
+    line-height: 1.6;
+    margin-bottom: 24px;
+    text-align: left;
+}
+
+.map-coordinate-details-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 32px;
+    width: 100%;
+}
+
+.coordinate-flex-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    text-align: left;
+}
+
+.vector-bullet { color: var(--brand-teal); font-size: 0.75rem; margin-top: 3px; }
+.coordinate-flex-row p { font-size: 0.92rem; color: var(--text-charcoal-body); font-weight: 500; line-height: 1.45; }
+
+/* --- Interactive Location Link Button Pill --- */
+.map-action-button-track { width: 100%; text-align: left; }
+
+.btn-map-location-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    background-color: var(--brand-teal);
+    padding: 14px 28px;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(4, 106, 85, 0.2);
+    transition: background-color 0.25s, transform 0.25s, box-shadow 0.25s;
+}
+
+.btn-icon { font-size: 1rem; }
+.btn-label { color: #ffffff; font-size: 0.96rem; font-weight: 700; white-space: nowrap; }
+
+.btn-map-location-pill:hover {
+    background-color: var(--brand-dark-black); /* Switches to bold dark contrast tone on hover focus tracking */
+    box-shadow: 0 8px 20px rgba(17, 19, 20, 0.2);
+    transform: translateY(-2px);
+}
+
+/* --- RIGHT COLUMN: Graphic Canvas Frame Stage Controls --- */
+.map-graphic-canvas-pane {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    
+    opacity: 0;
+    transform: translateY(40px); /* Prepares bottom threshold up-rise entrance path on view cross */
+    transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.map-graphic-canvas-pane.canvas-stage-revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.map-canvas-stage-wrapper {
+    position: relative;
+    width: 100%;
+    height: 380px; /* Snug depth prevents aspect ratio stretching over columns line rules */
+    border-radius: 24px;
+    padding: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 12px 35px rgba(17, 19, 20, 0.08);
+}
+
+.main-map-canvas-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 16px;
+    position: relative;
+    z-index: 5;
+    transition: transform 0.5s ease;
+}
+
+.map-canvas-stage-wrapper:hover .main-map-canvas-img {
+    transform: scale(1.02); /* Micro zoom maps frame lens feedback loop on grid hover */
+}
+
+/* Creative shape overlay plates layers tucked behind map plate canvas */
+.map-backdrop-accent-plate-teal {
+    position: absolute;
+    top: -12px; right: -12px; width: 30%; height: 35%;
+    background-color: rgba(4, 106, 85, 0.06);
+    border-radius: 16px;
+    z-index: 1;
+}
+
+.map-backdrop-accent-plate-amber {
+    position: absolute;
+    bottom: -10px; left: -10px; width: 85px; height: 85px;
+    background-color: rgba(244, 155, 9, 0.08);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* Floating Accessory Vector Pin Overlay */
+.floating-vector-pin-handle {
+    position: absolute;
+    top: 35%;
+    left: 48%;
+    width: 36px;
+    height: 36px;
+    z-index: 10;
+    animation: constantBouncePin 4s infinite ease-in-out;
+}
+.floating-vector-pin-handle svg { width: 100%; height: 100%; }
+
+@keyframes constantBouncePin {
+    0%, 100% { transform: translateY(0) scale(1); filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1)); }
+    50% { transform: translateY(-8px) scale(1.04); filter: drop-shadow(0 12px 14px rgba(4, 106, 85, 0.25)); }
+}
+
+/* --- Full Fluid Mobile Responsiveness Breakpoints --- */
+@media (max-width: 1024px) {
+    .map-section-grid-mesh { grid-template-columns: 1fr; gap: 40px; }
+    .map-floating-glass-card { align-items: center; text-align: center; }
+    .map-letter-stagger-headline { justify-content: center; }
+    .map-coordinate-details-list { align-items: center; }
+    .map-action-button-track { text-align: center; }
+    .map-graphic-canvas-pane { order: -1; } /* Raises visual maps preview stage above text descriptions on mobile display screens */
+    .map-backdrop-accent-plate-teal, .map-backdrop-accent-plate-amber { display: none; }
+}
+
+@media (max-width: 520px) {
+    .map-floating-glass-card { padding: 32px 20px; border-radius: 20px; }
+    .map-canvas-stage-wrapper { height: 260px; border-radius: 16px; }
+    .btn-map-location-pill { width: 100%; justify-content: center; }
+}
+
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    
+    // 1. DYNAMIC LETTER DECONSTRUCTION EXTRACTOR LAYER
+    const staggerHeadlineNode = document.getElementById("map-scroll-headline");
+    
+    if (staggerHeadlineNode) {
+        const pureTextContentString = staggerHeadlineNode.textContent.trim();
+        staggerHeadlineNode.textContent = ""; // Blank out original static text nodes wrap strings
+
+        // Break characters down into isolated text character spans arrays elements
+        for (let characterVal of pureTextContentString) {
+            const letterSpan = document.createElement("span");
+            
+            if (characterVal === " ") {
+                letterSpan.innerHTML = "&nbsp;"; // Enforce non-breaking space codes preservation rule handles gaps
+            } else {
+                letterSpan.textContent = characterVal;
+            }
+            
+            letterSpan.classList.add("map-letter-node");
+            staggerHeadlineNode.appendChild(letterSpan);
+        }
+    }
+
+    // 2. SCROLL REVEAL VIEWPORT INTERCEPT MONITORING PIPELINE
+    const targetLeftCardPane = document.querySelector(".map-floating-glass-card");
+    const targetRightCanvasPane = document.querySelector(".map-graphic-canvas-pane");
+
+    if (targetLeftCardPane && targetRightCanvasPane) {
+        const mapIntersectionOptions = {
+            root: null,
+            threshold: 0.15 /* Triggers calculation sequence loops as soon as 15% of block cuts screen boundaries */
+        };
+
+        const masterMapSectionObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    
+                    // Step A. Reveal Main Floating Glass Card and Photo Frame Stage Canvas Blocks one-by-one
+                    targetLeftCardPane.classList.add("card-revealed-left");
+                    
+                    setTimeout(() => {
+                        targetRightCanvasPane.classList.add("canvas-stage-revealed");
+                    }, 140); // 140ms precise cascade gap pacing delay tracking
+
+                    // Step B. Fire Letter-by-Letter Text Reveal Sequence with granular delays stagger loops
+                    const instantiatedLetterSpansList = targetLeftCardPane.querySelectorAll(".map-letter-node");
+                    instantiatedLetterSpansList.forEach((letterNodeElement, indexOrderIndex) => {
+                        setTimeout(() => {
+                            letterNodeElement.classList.add("letter-revealed-flag");
+                        }, 220 + (indexOrderIndex * 35)); // 35ms ultra rapid fine-tuned letter sequence cascading spacing values
+                    });
+
+                    // Terminate lookup registry track on target container once active to conserve processing loop memory
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, mapIntersectionOptions);
+
+        // Mount trigger observer targeting header wrapper
+        masterMapSectionObserver.observe(targetLeftCardPane);
+    }
+});
+
+</script>
+
+<!-- Fluid Grid Newsletter CTA Section -->
+<section class="stackly-newsletter-section">
+    <div class="newsletter-section-container">
+        
+        <!-- Centered Pill-Shaped Banner Card Box (With Left and Right Padding Channels) -->
+        <div class="newsletter-padded-banner-card">
+            
+            <!-- Large Decorative Background Vector Icons (Muted Watermarks) -->
+            <svg class="news-watermark watermark-left" viewBox="0 0 100 100" xmlns="http://w3.org">
+                <path d="M10,30 Q40,5 70,30 T40,90" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="5" stroke-linecap="round"/>
+            </svg>
+            <svg class="news-watermark watermark-right" viewBox="0 0 100 100" xmlns="http://w3.org">
+                <text x="10" y="70" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="2" font-size="60" font-weight="900" font-family="system-ui">ST</text>
+            </svg>
+
+            <div class="newsletter-inner-container">
+                
+                <!-- Section Content Blocks Header -->
+                <div class="newsletter-text-header">
+                    <span class="newsletter-micro-tag">Newsletter</span>
+                    
+                    <h2 class="newsletter-main-headline" id="news-scroll-title">
+                        <span class="news-word">Subscribe</span>
+                        <span class="news-word">to</span>
+                        <span class="news-word">our</span>
+                        <span class="news-word highlight-amber-text">newsletter</span>
+                        <span class="news-word">to</span>
+                        <span class="news-word">receive</span>
+                        <span class="news-word">updates</span>
+                    </h2>
+                </div>
+
+                <!-- Integrated Unified Pill Input Form Block Matrix -->
+                <form class="newsletter-pill-form-wrapper" id="newsletter-form" novalidate>
+                    <div class="input-glow-halo-container">
+                        
+                        <!-- Text Input Node -->
+                        <input type="email" 
+                               id="newsletter-email-input" 
+                               class="newsletter-field-node" 
+                               placeholder="Email Address" 
+                               aria-label="Enter your professional email address">
+                        
+                        <!-- Submit Core Action Button Block -->
+                        <button type="submit" class="newsletter-submit-btn" id="submit-btn">
+                            <span class="btn-label-text">Submit</span>
+                        </button>
+
+                    </div>
+                </form>
+
+                <!-- Dynamic Error Feedback Overlay Toast Component -->
+                <div class="error-toast-feedback hidden-alert" id="error-toast">
+                    <span class="alert-icon">⚠</span> Please fill the fields
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    /* Color System Layout Configurations matching template branding profiles */
+:root {
+    --brand-teal-bg: #046a55; 
+    --brand-amber: #f49b09;
+    --brand-dark-black: #111314;
+    --canvas-cream-bg: #fbfbf9;
+}
+
+.stackly-newsletter-section {
+    width: 100%;
+    /* Strict padding assignments compress vertical profile volume */
+    padding-top: 50px;
+    padding-bottom: 30px;
+    padding-left: 24px;  /* Left side padding constraints locked to map page borders */
+    padding-right: 24px; /* Right side padding constraints locked to map page borders */
+    background-color: var(--canvas-cream-bg);
+    position: relative;
+}
+
+.newsletter-section-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* --- CENTERED PADDED BANNER CARD BOX --- */
+/* Removes 100vw breakout logic, living comfortably within container margins */
+.newsletter-padded-banner-card {
+    background-color: var(--brand-teal-bg);
+    width: 100%;
+    border-radius: 32px; /* Generous curve corner profile matching reference banner */
+    position: relative;
+    overflow: hidden;
+    
+    /* Internal structural padding keeps content safely balanced apart from edges */
+    padding: 56px 36px 60px 36px; 
+    
+    /* Soft curving layout path cut mask across bottom boundary lines */
+    clip-path: path("M 0,0 L 1152,0 L 1152,940 Q 576,1000 0,940 Z");
+}
+
+.newsletter-inner-container {
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+}
+
+/* --- Top Header Center-Aligned Text Blocks --- */
+.newsletter-text-header {
+    text-align: center;
+    max-width: 700px;
+    margin-bottom: 32px;
+}
+
+.newsletter-micro-tag {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--brand-amber);
+    text-transform: uppercase;
+    letter-spacing: 0.150em;
+    display: block;
+    margin-bottom: 12px;
+    opacity: 0.95;
+}
+
+.newsletter-main-headline {
+    font-size: clamp(1.95rem, 4.2vw, 2.75rem); 
+    font-weight: 800;
+    color: #ffffff; 
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0 12px;
+}
+
+.highlight-amber-text {
+    color: var(--brand-amber) !important;
+}
+
+/* --- Headline Word-by-word Side Entrance --- */
+.news-word {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1), 
+                transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.news-word.active-word-reveal {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+/* --- INTEGRATED REPLICATED PILL FORM DESIGN --- */
+.newsletter-pill-form-wrapper {
+    width: 100%;
+    max-width: 520px; 
+    position: relative;
+}
+
+.input-glow-halo-container {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff; 
+    padding: 6px 6px 6px 24px;
+    border-radius: 9999px; 
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 30px rgba(17, 19, 20, 0.08);
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.input-glow-halo-container:focus-within {
+    border-color: var(--brand-amber);
+    box-shadow: 0 12px 35px rgba(244, 155, 9, 0.15), 0 4px 12px rgba(17, 19, 20, 0.04);
+}
+
+.newsletter-field-node {
+    flex: 1;
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--brand-dark-black);
+    padding: 10px 0;
+}
+
+.newsletter-field-node::placeholder {
+    color: #a0a6b0; 
+    opacity: 1;
+}
+
+/* --- Submit Button Block --- */
+.newsletter-submit-btn {
+    background-color: var(--brand-dark-black); 
+    border: none;
+    outline: none;
+    padding: 12px 32px;
+    border-radius: 9999px; 
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(17, 19, 20, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.25s, transform 0.2s, box-shadow 0.25s;
+}
+
+.btn-label-text {
+    color: #ffffff;
+    font-size: 1.05rem;
+    font-weight: 700;
+}
+
+.newsletter-submit-btn:hover {
+    background-color: var(--brand-amber); 
+    box-shadow: 0 6px 16px rgba(244, 155, 9, 0.25);
+    transform: scale(1.02);
+}
+
+/* --- DYNAMIC SHAKING ERROR TOAST ALERTS --- */
+.error-toast-feedback {
+    margin-top: 20px;
+    background-color: rgba(220, 38, 38, 0.95); 
+    color: #ffffff;
+    padding: 10px 24px;
+    border-radius: 9999px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    box-shadow: 0 6px 20px rgba(220, 38, 38, 0.2);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    z-index: 50;
+    animation: alertShake 0.4s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+.alert-icon { font-size: 1.15rem; }
+
+@keyframes alertShake {
+    10%, 90% { transform: translate3d(-1px, 0, 0); }
+    20%, 80% { transform: translate3d(2px, 0, 0); }
+    30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+    40%, 60% { transform: translate3d(4px, 0, 0); }
+}
+
+/* --- Muted Background Watermarks Vector Assets --- */
+.news-watermark { position: absolute; pointer-events: none; z-index: 1; }
+.watermark-left { top: 15%; left: 30px; width: 100px; height: auto; }
+.watermark-right { bottom: 15%; right: 30px; width: 120px; height: auto; }
+
+/* --- Full Fluid Mobile Responsiveness Breakpoints --- */
+@media (max-width: 768px) {
+    .stackly-newsletter-section {
+        padding-left: 16px;  /* Tighten side margin buffers slightly on smartphones */
+        padding-right: 16px;
+    }
+    .newsletter-padded-banner-card {
+        padding: 44px 20px 48px 20px;
+        clip-path: none; 
+        border-radius: 24px;
+    }
+    .input-glow-halo-container {
+        flex-direction: column; 
+        border-radius: 20px;
+        padding: 16px;
+        gap: 16px;
+    }
+    .newsletter-field-node { width: 100%; text-align: center; }
+    .newsletter-submit-btn { width: 100%; }
+    .news-watermark { display: none; }
+}
+
+.hidden-alert { display: none !important; }
+
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    
+    // Headline Scroll Trigger Interceptor
+    const titleParentNode = document.getElementById("news-scroll-title");
+    if (titleParentNode) {
+        const compiledTitleNodes = titleParentNode.querySelectorAll(".news-word");
+        const titleIntersectionOptions = { root: null, threshold: 0.15 };
+
+        const splitTitleObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    compiledTitleNodes.forEach((wordSpan, indexOrder) => {
+                        setTimeout(() => {
+                            wordSpan.classList.add("active-word-reveal");
+                        }, indexOrder * 60); 
+                    });
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, titleIntersectionOptions);
+        splitTitleObserver.observe(titleParentNode);
+    }
+
+    // Form Submission Redirection Routing Engine
+    const newsletterForm = document.getElementById("newsletter-form");
+    const emailInput = document.getElementById("newsletter-email-input");
+    const errorToast = document.getElementById("error-toast");
+
+    if (newsletterForm && emailInput && errorToast) {
+        newsletterForm.addEventListener("submit", (event) => {
+            event.preventDefault(); 
+            
+            const rawInputValue = emailInput.value.trim();
+
+            if (rawInputValue === "") {
+                triggerToastFeedback();
+                return;
+            }
+
+            const emailRegexPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegexPattern.test(rawInputValue)) {
+                triggerToastFeedback();
+                return;
+            }
+
+            errorToast.classList.add("hidden-alert");
+            window.location.href = "404.html";
+        });
+
+        function triggerToastFeedback() {
+            errorToast.classList.remove("hidden-alert");
+            errorToast.style.animation = 'none';
+            errorToast.offsetHeight; 
+            errorToast.style.animation = '';
+        }
+
+        emailInput.addEventListener("input", () => {
+            if (!errorToast.classList.contains("hidden-alert")) {
+                errorToast.classList.add("hidden-alert");
+            }
+        });
+    }
+});
+
+</script>
+
+<!-- Fully Responsive Premium Corporate Footer Module -->
+<footer class="main-footer-section">
+    <div class="footer-master-container">
+        
+        <!-- Upper Grid Content Partition (4 Columns Mesh Layout) -->
+        <div class="footer-columns-grid">
+            
+            <!-- COLUMN 1: Brand Profile & Back-to-Top Navigation Trigger -->
+            <div class="footer-brand-column">
+                <a href="#" class="footer-logo-anchor" id="footer-back-to-top" title="Navigate back to top of page">
+                    <!-- Replace 'logo.png' with your verified local image file path -->
+                    <img src="logo.png" alt="Stackly Master Logo" class="footer-brand-logo-img" onerror="this.src='https://placehold.co'">
+                </a>
+                <p class="footer-brand-description">
+                    Engineering premium macro-balanced learning paths and flexible educational tracks designed to fuel student productivity and certified career achievements alike.
+                </p>
+                <!-- Interactive Social Vector Icons Group Array -->
+                <div class="footer-social-media-row">
+                    <a href="404.html" class="social-icon-circle-btn" aria-label="Follow Stackly on Facebook"><span>f</span></a>
+                    <a href="404.html" class="social-icon-circle-btn" aria-label="Follow Stackly on Instagram"><span>📸</span></a>
+                    <a href="404.html" class="social-icon-circle-btn" aria-label="Follow Stackly on X (Twitter)"><span>X</span></a>
+                    <a href="404.html" class="social-icon-circle-btn" aria-label="Follow Stackly on LinkedIn"><span>in</span></a>
+                    <a href="404.html" class="social-icon-circle-btn" aria-label="Follow Stackly on YouTube"><span>▶</span></a>
+                </div>
+            </div>
+
+            <!-- COLUMN 2: Explore Academic Fields Links -->
+            <div class="footer-links-column">
+                <h3 class="footer-column-headline">Explore Menus</h3>
+                <ul class="footer-links-list">
+                    <li><a href="404.html" class="footer-anchor-item">Frontend Development</a></li>
+                    <li><a href="404.html" class="footer-anchor-item">AI & Automation Basics</a></li>
+                    <li><a href="404.html" class="footer-anchor-item">Product Design Workshop</a></li>
+                    <li><a href="404.html" class="footer-anchor-item">UI/UX Design Essentials</a></li>
+                </ul>
+            </div>
+
+            <!-- COLUMN 3: Academic Operations Support Links -->
+            <div class="footer-links-column">
+                <h3 class="footer-column-headline">Learning Support</h3>
+                <ul class="footer-links-list">
+                    <li><a href="404.html" class="footer-anchor-item">Curriculum Parameters</a></li>
+                    <li><a href="404.html" class="footer-anchor-item">Expert Mentor Tracks</a></li>
+                    <li><a href="404.html" class="footer-anchor-item">Help & FAQ Center</a></li>
+                    <li><a href="404.html" class="footer-anchor-item">Verified Certifications</a></li>
+                </ul>
+            </div>
+
+            <!-- COLUMN 4: Headquarters Location Specifications Matrix -->
+            <div class="footer-links-column info-contact-column">
+                <h3 class="footer-column-headline">Headquarters Location</h3>
+                <ul class="footer-contact-info-list">
+                    <li class="contact-info-item-flex">
+                        <span class="info-vector-marker">📍</span>
+                        <p class="contact-text-node">MMR Complex, Periyakollappatty, Chinna Thirupathi, Salem, Tamil Nadu 636008</p>
+                    </li class="contact-info-item-flex">
+                    <li class="contact-info-item-flex">
+                        <span class="info-vector-marker">📞</span>
+                        <a href="tel:+917010792745" class="contact-text-node phone-anchor">+91 7010792745</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- Lower Grid Content Line (Copyright and Legal Hooks Row Layout) -->
+        <div class="footer-copyright-bottom-bar">
+            <div class="copyright-left-pane">
+                <p class="copyright-text-string">© 2026 Stackly Industries. All educational rights reserved.</p>
+            </div>
+            <div class="legal-links-right-pane">
+                <a href="404.html" class="legal-anchor-item">Privacy Policy</a>
+                <a href="404.html" class="legal-anchor-item">Terms of Service</a>
+                <a href="404.html" class="legal-anchor-item">Cookie Management</a>
+            </div>
+        </div>
+
+    </div>
+</footer>
+
+<style>
+    /* Color System Layout Configurations matching template branding profiles */
+:root {
+    --footer-bg-dark: #0b0f17;      /* Precise deep dark background matching layout sample */
+    --footer-text-light: #f8fafc;
+    --footer-text-muted: #94a3b8;
+    --brand-teal-glow: #046a55;
+    --brand-amber-underline: #f49b09; /* Matches original red underline marker in template */
+}
+
+/* --- Master Section Layout Wrapper --- */
+.main-footer-section {
+    width: 100%;
+    background-color: var(--footer-bg-dark);
+    color: var(--footer-text-light);
+    padding: 72px 24px 32px 24px; /* Generous breathing gutters space */
+    position: relative;
+    border-top: 1px solid #1e293b;
+}
+
+.footer-master-container {
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- Upper Partition Column Distribution Grids --- */
+.footer-columns-grid {
+    display: grid;
+    grid-template-columns: 1.35fr 0.85fr 0.85fr 0.95fr; /* Replicates exact template spatial horizontal layout width shares */
+    gap: 48px;
+    padding-bottom: 56px;
+    border-bottom: 1px solid #1e293b; /* Clean horizontal structural separation line bar */
+}
+
+/* Brand Column Internals Setup */
+.footer-brand-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer-logo-anchor {
+    display: block;
+    margin-bottom: 24px;
+    transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.footer-logo-anchor:hover {
+    transform: scale(1.03); /* Soft micro grow response on logo hover */
+}
+
+.footer-brand-logo-img {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+}
+
+.footer-brand-description {
+    font-size: 0.94rem;
+    font-weight: 500;
+    color: var(--footer-text-muted);
+    line-height: 1.6;
+    margin-bottom: 24px;
+    max-width: 360px;
+}
+
+/* Social Buttons Row Tracking Layout Parameters */
+.footer-social-media-row {
+    display: flex;
+    gap: 12px;
+}
+
+.social-icon-circle-btn {
+    width: 36px;
+    height: 36px;
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: var(--footer-text-muted);
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.25s ease;
+}
+
+.social-icon-circle-btn:hover {
+    background-color: var(--brand-teal-glow); /* Turns brand teal on hover metrics tracking focus */
+    color: #ffffff;
+    border-color: var(--brand-teal-glow);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(4, 106, 85, 0.3);
+}
+
+/* Standard Links Columns Configuration */
+.footer-links-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer-column-headline {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 6px;
+}
+
+/* Sharp underline accent bar marker from template image */
+.footer-column-headline::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 32px;
+    height: 2.5px;
+    background-color: var(--brand-amber-underline); /* Identity accent tracking underline strip */
+}
+
+.footer-links-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.footer-anchor-item {
+    text-decoration: none;
+    font-size: 0.98rem;
+    font-weight: 500;
+    color: var(--footer-text-muted);
+    transition: color 0.2s ease, padding-left 0.2s ease;
+    display: inline-block;
+}
+
+.footer-anchor-item:hover {
+    color: var(--brand-teal-glow); /* Content glow switch text color on hover actions */
+    padding-left: 4px; /* Creative slide micro action on hover items list */
+}
+
+/* Contact Column Specific Settings */
+.footer-contact-info-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.contact-info-item-flex {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.info-vector-marker {
+    font-size: 1.05rem;
+    line-height: 1;
+    padding-top: 2px;
+}
+
+.contact-text-node {
+    font-size: 0.96rem;
+    font-weight: 500;
+    color: var(--footer-text-muted);
+    line-height: 1.5;
+    text-decoration: none;
+}
+
+.phone-anchor {
+    font-weight: 700;
+    color: #ffffff;
+    transition: color 0.2s ease;
+}
+.phone-anchor:hover {
+    color: var(--brand-teal-glow);
+}
+
+/* --- Lower Partition Bottom Copyright Line Rules --- */
+.footer-copyright-bottom-bar {
+    padding-top: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.copyright-text-string {
+    font-size: 0.92rem;
+    font-weight: 500;
+    color: #64748b;
+}
+
+.legal-links-right-pane {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.legal-anchor-item {
+    text-decoration: none;
+    font-size: 0.92rem;
+    font-weight: 500;
+    color: #64748b;
+    transition: color 0.2s ease;
+}
+
+.legal-anchor-item:hover {
+    color: var(--footer-text-light);
+}
+
+/* --- Full Fluid Mobile Responsiveness Breakpoints --- */
+@media (max-width: 1024px) {
+    .footer-columns-grid {
+        grid-template-columns: 1fr 1fr; /* splits 2x2 blocks alignment on tablets views window */
+        gap: 40px;
+    }
+}
+
+@media (max-width: 640px) {
+    .main-footer-section {
+        padding: 56px 16px 24px 16px;
+    }
+    .footer-columns-grid {
+        grid-template-columns: 1fr; /* drops to raw stacked vertical column pipeline track on mobile sizes */
+        gap: 36px;
+        padding-bottom: 40px;
+    }
+    .footer-copyright-bottom-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        gap: 16px;
+    }
+    .legal-links-right-pane {
+        gap: 16px;
+    }
+}
+
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    
+    // 1. Functional Back-to-Top Window Motion Controller
+    const backToTopTrigger = document.getElementById("footer-back-to-top");
+
+    if (backToTopTrigger) {
+        backToTopTrigger.addEventListener("click", (event) => {
+            // Interrupt default instant route hash jumping anchor mechanisms
+            event.preventDefault(); 
+            
+            // Execute browser native window scroll behavior to travel smoothly to top coordinate index bounds
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth" /* Pushes true fluid mathematical scroll tracking deceleration speeds */
+            });
+        });
+    }
+});
+
+</script>
+</body>
+
+</html>

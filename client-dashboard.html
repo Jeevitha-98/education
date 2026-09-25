@@ -1,0 +1,2238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stackly Portal - Client Workspace</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dashboard-root-body">
+
+    <!-- MASTER TOP NAVBAR HEADER -->
+    <header class="dashboard-main-header">
+        <div class="header-left-pane">
+            <!-- Hamburger Icon Trigger for Responsive Sidebar Drawer Menu -->
+            <button class="hamburger-menu-toggle-btn" id="mobile-hamburger-trigger" aria-label="Toggle Navigation Sidebar">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+
+            <!-- Brand Logo/Name Function as Page Layout Refresh Trigger -->
+            <div class="header-brand-refresh-trigger" id="brand-refresh-node" title="Refresh Client Dashboard">
+                <img src="logo.png" alt="Stackly Corporate Logo" class="header-brand-logo-img" onerror="this.src='https://placehold.co'">
+                <span class="header-brand-name-string">Client Hub</span>
+            </div>
+        </div>
+
+        <div class="header-right-pane">
+            <!-- Dynamic Parsed Name Greeting String Message -->
+            <div class="header-user-welcome-message">
+                Hello, <span class="dynamic-parsed-username-node" id="header-display-username">Client</span>!
+            </div>
+
+            <!-- Active Bell Notification Handle (Targets 404 Fallback View) -->
+            <a href="404.html" class="header-icon-bell-notification-btn" aria-label="View Alerts">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+                <span class="notification-indicator-dot"></span>
+            </a>
+
+            <!-- Client Profile Avatar Button (Targets 404 Fallback View) -->
+            <a href="404.html" class="header-profile-avatar-window-btn" title="View Profile Profile">
+                <img src="client-avatar.jpg" alt="Client Profile Photo" class="header-profile-avatar-img" onerror="this.src='https://placehold.co'">
+            </a>
+        </div>
+    </header>
+
+    <!-- MAIN BODY GRID MESH DISTRIBUTION LAYOUT -->
+    <div class="dashboard-workspace-mesh">
+        
+        <!-- SIDEBAR SYSTEM: Handles 4 menus arrays stacked section-wise -->
+        <aside class="dashboard-sidebar-navigation-panel" id="dashboard-sidebar-node">
+            <nav class="sidebar-scrollable-nav-menu">
+                
+                <!-- SECTION GROUP 1: LEARNING CONTROL -->
+                <div class="sidebar-section-menu-group-wrapper">
+                    <span class="sidebar-section-meta-headline">Learning Control</span>
+                    <ul class="sidebar-links-pipeline-list">
+                        <li class="sidebar-item-row active-menu-row" data-target-section="client-overview">
+                            <span class="sidebar-row-vector-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="7" height="9"></rect><rect x="14" y="3" width="7" height="5"></rect><rect x="14" y="12" width="7" height="9"></rect><rect x="3" y="16" width="7" height="5"></rect></svg>
+                            </span>
+                            <span class="sidebar-item-label-text">My Learning Metrics</span>
+                        </li>
+                        <li class="sidebar-item-row" data-target-section="client-courses">
+                            <span class="sidebar-row-vector-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"></path></svg>
+                            </span>
+                            <span class="sidebar-item-label-text">Enrolled Classes</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- SECTION GROUP 2: INFRASTRUCTURE PROFILE -->
+                <div class="sidebar-section-menu-group-wrapper">
+                    <span class="sidebar-section-meta-headline">Account Profile</span>
+                    <ul class="sidebar-links-pipeline-list">
+                        <li class="sidebar-item-row" data-target-section="client-billing">
+                            <span class="sidebar-row-vector-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                            </span>
+                            <span class="sidebar-item-label-text">Billing Ledgers</span>
+                        </li>
+                        <li class="sidebar-item-row" data-target-section="client-support">
+                            <span class="sidebar-row-vector-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                            </span>
+                            <span class="sidebar-item-label-text">Help Desk Support</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </nav>
+
+            <!-- CORE SYSTEM DISCONNECT TRIGGER: Routes window cleanly back to login page view -->
+            <div class="sidebar-system-logout-action-box">
+                <button class="sidebar-logout-pill-btn" id="portal-logout-trigger">
+                    <span class="logout-vector-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                    </span>
+                    <span class="logout-btn-label">Disconnect Portal</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- DARK OVERLAY SHEET FOR PHONE VIEWPORTS SIDEBAR RESPONSIVE NAVIGATION DRAWER -->
+        <div class="mobile-sidebar-backdrop-mask-overlay hidden-mask" id="mobile-sidebar-mask"></div>
+
+        <!-- MAIN VIEWPORT CONTENT WORKSPACE STAGE (Swaps section views via tabs clicks) -->
+        <main class="dashboard-viewport-main-content-stage">
+            <div class="stage-internal-scroller-box">
+
+                <!-- SECTION 1: MY LEARNING METRICS (Active Default) -->
+               <!-- VIEWPORT SECTION 1: MY LEARNING METRICS (Full-Width Dashboard Sheet View) -->
+<div class="workspace-section-view-node active-section-node" id="client-overview">
+    
+    <!-- A. Top Header Overview Branding Section Bar -->
+    <div class="overview-section-intro-bar">
+        <h2 class="workspace-section-main-title">My Learning Metrics</h2>
+        <p class="overview-section-subtitle">Real-time analytical summary of your technical training courses, code sandboxes, and milestone completion velocity tracks.</p>
+    </div>
+
+    <!-- B. DYNAMIC SCROLLABLE METRICS TRACK BAR (Prevents layout cramping, scrolls on small viewports) -->
+    <div class="scrollable-metrics-track-container">
+        <div class="client-metrics-summary-grid">
+            
+            <!-- CARD 1: SANDBOX TIME -->
+            <div class="metric-analytics-card hover-lift-glow-halo">
+                <div class="card-glow-halo-layer"></div>
+                <div class="metric-card-content-wrap">
+                    <div class="metric-card-top-row">
+                        <span class="metric-vector-icon-badge badge-teal-tint">⏱</span>
+                        <span class="trend-percentage-pill positive-growth">↗ +12.4%</span>
+                    </div>
+                    <div class="metric-card-numerical-display">148<span class="unit-suffix"> hrs</span></div>
+                    <h3 class="metric-card-label-title">Sandbox Code Time</h3>
+                    <p class="metric-card-supporting-desc">Spent compiling scripts in live framework environments.</p>
+                </div>
+            </div>
+
+            <!-- CARD 2: MASTERCLASSES -->
+            <div class="metric-analytics-card hover-lift-glow-halo">
+                <div class="card-glow-halo-layer"></div>
+                <div class="metric-card-content-wrap">
+                    <div class="metric-card-top-row">
+                        <span class="metric-vector-icon-badge badge-amber-tint">📚</span>
+                        <span class="trend-percentage-pill stable-growth">● On Track</span>
+                    </div>
+                    <div class="metric-card-numerical-display">04<span class="unit-suffix"> / 06</span></div>
+                    <h3 class="metric-card-label-title">Masterclasses Finished</h3>
+                    <p class="metric-card-supporting-desc">Syllabus modules completed toward graduation goals.</p>
+                </div>
+            </div>
+
+            <!-- CARD 3: QUIZ ACCURACY -->
+            <div class="metric-analytics-card hover-lift-glow-halo">
+                <div class="card-glow-halo-layer"></div>
+                <div class="metric-card-content-wrap">
+                    <div class="metric-card-top-row">
+                        <span class="metric-vector-icon-badge badge-purple-tint">🎯</span>
+                        <span class="trend-percentage-pill positive-growth">↗ +3.2%</span>
+                    </div>
+                    <div class="metric-card-numerical-display">92.5<span class="unit-suffix"> %</span></div>
+                    <h3 class="metric-card-label-title">Avg. Quiz Accuracy</h3>
+                    <p class="metric-card-supporting-desc">Scored across industrial interface mock evaluations.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- C. FULL-WIDTH ASYMMETRICAL DUAL-PANE WORKSPACE METRICS SUB-GRID -->
+    <div class="overview-dual-pane-layout">
+        
+        <!-- LEFT PANELS: Continuous Course Progress Pipeline Stack -->
+        <div class="overview-sub-pane-card active-curriculum-progress-box hover-lift-glow-halo">
+            <div class="card-glow-halo-layer"></div>
+            <div class="pane-content-inner-wrap">
+                <h3 class="sub-pane-main-title">Active Curriculum Progress</h3>
+                
+                <div class="curriculum-progress-stack-pipeline">
+                    
+                    <!-- PROGRESS TRACK ITEM 1: FULLSTACK WEB -->
+                    <div class="progress-track-row-item">
+                        <div class="track-row-metadata">
+                            <span class="track-name-label">Fullstack Web Development masterclass</span>
+                            <span class="track-percentage-value">85%</span>
+                        </div>
+                        <div class="track-progressbar-base-rail">
+                            <div class="track-progressbar-fill-line fill-teal-color" style="width: 85%;"></div>
+                        </div>
+                    </div>
+
+                    <!-- PROGRESS TRACK ITEM 2: JAVASCRIPT MASTERCLASS -->
+                    <div class="progress-track-row-item">
+                        <div class="track-row-metadata">
+                            <span class="track-name-label">JavaScript Sandbox &amp; Logic Models</span>
+                            <span class="track-percentage-value">40%</span>
+                        </div>
+                        <div class="track-progressbar-base-rail">
+                            <div class="track-progressbar-fill-line fill-amber-color" style="width: 40%;"></div>
+                        </div>
+                    </div>
+
+                    <!-- PROGRESS TRACK ITEM 3: UI/UX ESSENTIALS -->
+                    <div class="progress-track-row-item">
+                        <div class="track-row-metadata">
+                            <span class="track-name-label">UI/UX Wireframing &amp; Interface Prototyping</span>
+                            <span class="track-percentage-value">12%</span>
+                        </div>
+                        <div class="track-progressbar-base-rail">
+                            <div class="track-progressbar-fill-line fill-purple-color" style="width: 12%;"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT PANELS: Detailed Matrix Activity Timeline Table Data Log Sheet -->
+        <div class="overview-sub-pane-card recent-activity-timeline-box hover-lift-glow-halo">
+            <div class="card-glow-halo-layer"></div>
+            <div class="pane-content-inner-wrap">
+                <h3 class="sub-pane-main-title">Recent Activity Logs</h3>
+                
+                <div class="responsive-table-overflow-window">
+                    <table class="activity-data-log-table">
+                        <thead>
+                            <tr>
+                                <th class="table-head-cell text-left">LESSON DESCRIPTION MAPPED</th>
+                                <th class="table-head-cell text-center">STATUS</th>
+                                <th class="table-head-cell text-right">DATE STAMP</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- LOG ENTRY 1 -->
+                            <tr class="table-body-row-item">
+                                <td class="table-body-cell text-left">
+                                    <div class="lesson-primary-label">Asynchronous API Prompts Data Streams</div>
+                                    <span class="lesson-sub-meta-tag">JavaScript Masterclass • Lesson 14</span>
+                                </td>
+                                <td class="table-body-cell text-center">
+                                    <span class="status-badge-pill badge-green-fill">Completed</span>
+                                </td>
+                                <td class="table-body-cell text-right table-date-text">Oct 24, 2026</td>
+                            </tr>
+                            <!-- LOG ENTRY 2 -->
+                            <tr class="table-body-row-item">
+                                <td class="table-body-cell text-left">
+                                    <div class="lesson-primary-label">Root Variable Overriding Framework Models</div>
+                                    <span class="lesson-sub-meta-tag">Fullstack Web Development • Lesson 32</span>
+                                </td>
+                                <td class="table-body-cell text-center">
+                                    <span class="status-badge-pill badge-green-fill">Completed</span>
+                                </td>
+                                <td class="table-body-cell text-right table-date-text">Oct 22, 2026</td>
+                            </tr>
+                            <!-- LOG ENTRY 3 -->
+                            <tr class="table-body-row-item">
+                                <td class="table-body-cell text-left">
+                                    <div class="lesson-primary-label">Asymmetrical Grid Layout Partitioning</div>
+                                    <span class="lesson-sub-meta-tag">UI/UX Wireframing Essentials • Lesson 03</span>
+                                </td>
+                                <td class="table-body-cell text-center">
+                                    <span class="status-badge-pill badge-orange-fill">In Progress</span>
+                                </td>
+                                <td class="table-body-cell text-right table-date-text">Oct 19, 2026</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<style>
+    /* --- CRITICAL SCROLLING & FULL-WIDTH SCREEN OPTIMIZATION MATRIX --- */
+
+body.dashboard-root-body {
+    background-color: var(--canvas-base-bg);
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden; 
+    overflow-y: auto; /* Restores global layout viewport scroller functionality */
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard-workspace-mesh {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    position: relative;
+    min-height: calc(100vh - var(--header-height));
+}
+
+.dashboard-viewport-main-content-stage {
+    flex: 1;
+    width: 100%;
+    overflow-y: auto; /* Internal scrolling within the main viewport workspace area */
+    overflow-x: hidden;
+    background-color: var(--canvas-base-bg);
+}
+
+.stage-internal-scroller-box {
+    padding: 40px;
+    width: 100%;
+    max-width: 100%; /* CHANGED: Extends seamlessly to full viewport width sizes */
+    margin: 0 auto;
+}
+
+.workspace-section-view-node {
+    display: none; 
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 24px;
+    padding: 44px;
+    box-shadow: 0 4px 14px rgba(17, 19, 20, 0.01);
+    width: 100%;
+    height: auto; /* Allows height to expand dynamically to prevent data cramping layout bugs */
+}
+
+.workspace-section-view-node.active-section-node {
+    display: flex !important;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.overview-section-intro-bar {
+    width: 100%;
+    text-align: left;
+}
+
+.overview-section-subtitle {
+    font-size: 0.96rem;
+    font-weight: 500;
+    color: #64748b;
+    line-height: 1.5;
+    margin-top: 6px;
+}
+
+/* --- SCROLLABLE METRICS TRACK CONTAINER SYSTEM --- */
+.scrollable-metrics-track-container {
+    width: 100%;
+    overflow-x: auto; /* Injects a clean horizontal scroller tracker over metrics row on small views */
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+    scrollbar-width: thin; /* Clean minimalist scrollbar style indicator track */
+}
+
+.client-metrics-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Spreads evenly into 3 column sections on widescreen desktop */
+    gap: 24px;
+    width: 100%;
+    min-width: 800px; /* CHANGED: Safeguards rows architecture balance from squishing down on compact screen lines */
+}
+
+/* Metric card baseline internals design setup */
+.metric-analytics-card {
+    position: relative;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.3s ease;
+}
+
+.hover-lift-glow-halo:hover { transform: translateY(-4px); border-color: rgba(4, 106, 85, 0.18); }
+.hover-lift-glow-halo:hover .card-glow-halo-layer { box-shadow: 0 14px 32px rgba(4, 106, 85, 0.04); }
+
+.metric-card-content-wrap { padding: 24px 28px; position: relative; z-index: 5; display: flex; flex-direction: column; align-items: flex-start; }
+.metric-card-top-row { width: 100%; display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+.metric-vector-icon-badge { width: 42px; height: 42px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0; }
+
+.badge-teal-tint { background-color: #e6f0ed; color: #046a55; }
+.badge-amber-tint { background-color: #ffedd5; color: #f97316; }
+.badge-purple-tint { background-color: #f3e8ff; color: #a855f7; }
+
+.trend-percentage-pill { font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 9999px; }
+.positive-growth { background-color: #f0fdf4; color: #16a34a; }
+.stable-growth { background-color: #f8fafc; color: #64748b; }
+
+.metric-card-numerical-display { font-size: 2.25rem; font-weight: 800; color: var(--text-dark-black); line-height: 1; margin-bottom: 8px; letter-spacing: -0.03em; }
+.unit-suffix { font-size: 0.85rem; font-weight: 700; color: #94a3b8; margin-left: 2px; }
+.metric-card-label-title { font-size: 1.05rem; font-weight: 700; color: var(--text-dark-black); margin-bottom: 4px; line-height: 1.3; }
+.metric-card-supporting-desc { font-size: 0.84rem; color: #64748b; line-height: 1.4; text-align: left; }
+
+/* --- Full-Width Asymmetrical Lower Section Panels Grid --- */
+.overview-dual-pane-layout {
+    display: grid;
+    grid-template-columns: 0.95fr 1.05fr; /* Creative proportions split maximizing screen canvas area */
+    gap: 28px;
+    width: 100%;
+    align-items: start;
+}
+
+.overview-sub-pane-card {
+    position: relative;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.pane-content-inner-wrap { padding: 32px 28px; position: relative; z-index: 5; display: flex; flex-direction: column; align-items: flex-start; }
+.sub-pane-main-title { font-size: 1.25rem; font-weight: 800; color: var(--text-dark-black); margin-bottom: 24px; letter-spacing: -0.01em; }
+
+/* Curriculum linear bars configuration internals */
+.curriculum-progress-stack-pipeline { display: flex; flex-direction: column; gap: 20px; width: 100%; }
+.progress-track-row-item { display: flex; flex-direction: column; width: 100%; }
+.track-row-metadata { width: 100%; display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
+.track-name-label { font-size: 0.88rem; font-weight: 700; color: #475569; text-align: left; }
+.track-percentage-value { font-size: 0.88rem; font-weight: 800; color: var(--text-dark-black); }
+.track-progressbar-base-rail { width: 100%; height: 8px; background-color: #f1f5f9; border-radius: 9999px; overflow: hidden; }
+.track-progressbar-fill-line { height: 100%; border-radius: 9999px; }
+.fill-teal-color { background-color: var(--brand-teal); }
+.fill-amber-color { background-color: #f97316; }
+.fill-purple-color { background-color: #a855f7; }
+
+/* Activity table log data sheet internals */
+.responsive-table-overflow-window { width: 100%; overflow-x: auto; }
+.activity-data-log-table { width: 100%; border-collapse: collapse; }
+.table-head-cell { font-size: 0.72rem; font-weight: 800; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.04em; padding-bottom: 12px; border-bottom: 1px solid #f1f5f9; }
+.table-body-row-item { border-bottom: 1px solid #f8fafc; transition: background-color 0.2s ease; }
+.table-body-row-item:last-child { border-bottom: none; }
+.table-body-row-item:hover { background-color: #f8fafc; }
+.table-body-cell { padding: 14px 0; vertical-align: middle; }
+
+.lesson-primary-label { font-size: 0.92rem; font-weight: 700; color: var(--text-dark-black); line-height: 1.3; }
+.lesson-sub-meta-tag { font-size: 0.76rem; font-weight: 500; color: #64748b; display: block; margin-top: 2px; }
+.status-badge-pill { font-size: 0.74rem; font-weight: 700; padding: 4px 10px; border-radius: 6px; white-space: nowrap; }
+.badge-green-fill { background-color: #e6f0ed; color: var(--brand-teal); }
+.badge-orange-fill { background-color: #fff7ed; color: #f97316; }
+.table-date-text { font-size: 0.85rem; font-weight: 600; color: #64748b; white-space: nowrap; }
+
+/* --- Full Fluid Mobile Viewport Breakpoints --- */
+@media (max-width: 1024px) {
+    .overview-dual-pane-layout {
+        grid-template-columns: 1fr; /* Stack progress bars above activity log sheets vertically on tablet */
+        gap: 24px;
+    }
+}
+
+@media (max-width: 900px) {
+    .scrollable-metrics-track-container {
+        margin-left: -20px; /* Extends horizontal scroller parameters precisely outward to touch device borders */
+        margin-right: -20px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .stage-internal-scroller-box { padding: 24px 16px; }
+    .workspace-section-view-node { padding: 32px 20px; border-radius: 16px; }
+}
+
+
+
+</style>
+<!-- VIEWPORT SECTION 2: ENROLLED CLASSES (Full-Width Academic Matrix Block) -->
+<div class="workspace-section-view-node" id="client-courses">
+    
+    <!-- A. Section Introduction & Functional Category Filters Grid -->
+    <div class="courses-section-header-row">
+        <div class="courses-header-text-stack">
+            <h2 class="workspace-section-main-title">Enrolled Classes</h2>
+            <p class="overview-section-subtitle">Manage your active technical education tracks, launch development sandbox labs, and connect with live engineering streams.</p>
+        </div>
+        
+        <!-- Live Category Filter Buttons Pill Stack Matrix -->
+        <div class="courses-filter-pills-row">
+            <button class="filter-pill-btn active-filter" data-filter="all">All Tracks (3)</button>
+            <button class="filter-pill-btn" data-filter="active">In Progress</button>
+            <button class="filter-pill-btn" data-filter="completed">Completed</button>
+        </div>
+    </div>
+
+    <!-- B. Premium 3-Column Forced Course Cards Grid Matrix -->
+    <div class="client-courses-matrix-grid">
+        
+        <!-- COURSE CARD 1: FULLSTACK WEB -->
+        <div class="course-profile-card hover-lift-glow-halo" data-category="active">
+            <div class="card-glow-halo-layer"></div>
+            <div class="course-card-inner-mesh">
+                
+                <!-- Top Graphic Backplate Frame Window -->
+                <div class="course-media-window">
+                    <span class="course-badge-indicator level-advanced">Advanced</span>
+                    <img src="course-thumb-fullstack.jpg" alt="Fullstack Web Engineering Track Thumbnail" class="course-mesh-graphic-img" onerror="this.src='https://unsplash.com'">
+                </div>
+
+                <!-- Text Content Body Panel Container -->
+                <div class="course-card-body-compartment">
+                    <div class="course-meta-category-line">DEVELOPMENT TRACK</div>
+                    <h3 class="course-primary-title-text">Fullstack Web Development Masterclass</h3>
+                    
+                    <!-- Progress Bar Linear Rail Sub-component -->
+                    <div class="course-completion-progress-wrapper">
+                        <div class="progress-meta-data-line">
+                            <span class="progress-status-label">Syllabus Completeness</span>
+                            <span class="progress-percentage-metric-node">85%</span>
+                        </div>
+                        <div class="progress-rail-base">
+                            <div class="progress-fill-bar-line fill-teal" style="width: 85%;"></div>
+                        </div>
+                    </div>
+
+                    <!-- Upcoming Session Schedule Parameters Info Box -->
+                    <div class="upcoming-session-schedule-box">
+                        <div class="schedule-icon-bullet">🎥</div>
+                        <div class="schedule-text-stack">
+                            <span class="schedule-meta-label">NEXT LIVE STREAM QUEUE</span>
+                            <p class="schedule-live-time-data">Tonight at 7:30 PM • Mentorship Sandbox</p>
+                        </div>
+                    </div>
+
+                    <!-- Lower Action Direct Buttons Grid Handles -->
+                    <div class="course-card-actions-wrapper-row">
+                        <a href="404.html" class="btn-course-action-solid-teal">Launch Sandbox Workspace</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- COURSE CARD 2: JAVASCRIPT LOGIC -->
+        <div class="course-profile-card hover-lift-glow-halo" data-category="active">
+            <div class="card-glow-halo-layer"></div>
+            <div class="course-card-inner-mesh">
+                
+                <div class="course-media-window">
+                    <span class="course-badge-indicator level-intermediate">Intermediate</span>
+                    <img src="course-thumb-javascript.jpg" alt="JavaScript Sandbox Tracking Thumbnail" class="course-mesh-graphic-img" onerror="this.src='https://unsplash.com'">
+                </div>
+
+                <div class="course-card-body-compartment">
+                    <div class="course-meta-category-line">LOGIC MODELS</div>
+                    <h3 class="course-primary-title-text">JavaScript Sandbox &amp; Algorithm Models</h3>
+                    
+                    <div class="course-completion-progress-wrapper">
+                        <div class="progress-meta-data-line">
+                            <span class="progress-status-label">Syllabus Completeness</span>
+                            <span class="progress-percentage-metric-node">40%</span>
+                        </div>
+                        <div class="progress-rail-base">
+                            <div class="progress-fill-bar-line fill-amber" style="width: 40%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="upcoming-session-schedule-box">
+                        <div class="schedule-icon-bullet">📅</div>
+                        <div class="schedule-text-stack">
+                            <span class="schedule-meta-label">NEXT ASSIGNMENT DEADLINE</span>
+                            <p class="schedule-live-time-data">Tommorrow, 11:59 PM • API Prompts Task</p>
+                        </div>
+                    </div>
+
+                    <div class="course-card-actions-wrapper-row">
+                        <a href="404.html" class="btn-course-action-solid-teal">Open Assignments Desk</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- COURSE CARD 3: UI/UX WIREFRAMING -->
+        <div class="course-profile-card hover-lift-glow-halo" data-category="active">
+            <div class="card-glow-halo-layer"></div>
+            <div class="course-card-inner-mesh">
+                
+                <div class="course-media-window">
+                    <span class="course-badge-indicator level-beginner">Beginner</span>
+                    <img src="course-thumb-uiux.jpg" alt="UI/UX Prototyping Thumbnail" class="course-mesh-graphic-img" onerror="this.src='https://unsplash.com'">
+                </div>
+
+                <div class="course-card-body-compartment">
+                    <div class="course-meta-category-line">INTERFACE DESIGN</div>
+                    <h3 class="course-primary-title-text">UI/UX Wireframing &amp; Prototyping Essentials</h3>
+                    
+                    <div class="course-completion-progress-wrapper">
+                        <div class="progress-meta-data-line">
+                            <span class="progress-status-label">Syllabus Completeness</span>
+                            <span class="progress-percentage-metric-node">12%</span>
+                        </div>
+                        <div class="progress-rail-base">
+                            <div class="progress-fill-bar-line fill-purple" style="width: 12%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="upcoming-session-schedule-box">
+                        <div class="schedule-icon-bullet">🎥</div>
+                        <div class="schedule-text-stack">
+                            <span class="schedule-meta-label">NEXT LIVE STREAM QUEUE</span>
+                            <p class="schedule-live-time-data">Monday at 4:00 PM • UI Grid Mapping</p>
+                        </div>
+                    </div>
+
+                    <div class="course-card-actions-wrapper-row">
+                        <a href="404.html" class="btn-course-action-solid-teal">Enter Live Stream Room</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<style>
+    /* --- ENHANCED ENROLLED CLASSES SECTION STYLING --- */
+
+.courses-section-header-row {
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 20px;
+    margin-bottom: 12px;
+}
+
+.courses-header-text-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+/* Category Filter Button Capsule Rails */
+.courses-filter-pills-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #f1f5f9;
+    padding: 6px;
+    border-radius: 12px;
+    flex-shrink: 0;
+}
+
+.filter-pill-btn {
+    background: transparent;
+    border: none; outline: none;
+    padding: 8px 16px;
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: #64748b;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.filter-pill-btn:hover {
+    color: var(--brand-teal);
+}
+
+.filter-pill-btn.active-filter {
+    background-color: #ffffff;
+    color: var(--brand-teal);
+    box-shadow: 0 4px 10px rgba(17, 19, 20, 0.04);
+}
+
+/* --- Premium 3-Column Course Grid Matrix --- */
+.client-courses-matrix-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal sharing columns desktop rows grid lines */
+    gap: 28px;
+    width: 100%;
+    margin-top: 12px;
+}
+
+.course-profile-card {
+    position: relative;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.3s ease;
+}
+
+/* High-end hover halo shadow expansions customized to our theme signature tokens */
+.hover-lift-glow-halo:hover {
+    transform: translateY(-5px);
+    border-color: rgba(4, 106, 85, 0.18);
+}
+.hover-lift-glow-halo:hover .card-glow-halo-layer {
+    box-shadow: 0 16px 36px rgba(4, 106, 85, 0.04), 0 4px 12px rgba(17, 19, 20, 0.01);
+}
+
+.course-card-inner-mesh {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Core Media Image Framework Window */
+.course-media-window {
+    position: relative;
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    background-color: #f1f5f9;
+}
+
+.course-mesh-graphic-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+.course-profile-card:hover .course-mesh-graphic-img {
+    transform: scale(1.03); /* Controlled internal graphic lens zoom loop triggered on card hover tracking */
+}
+
+/* Difficulty Pill Tags Badges Overlays */
+.course-badge-indicator {
+    position: absolute;
+    top: 14px; right: 14px;
+    font-size: 0.72rem;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    z-index: 10;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+.level-advanced { background-color: #fef2f2; color: #ef4444; }
+.level-intermediate { background-color: #fff7ed; color: #f97316; }
+.level-beginner { background-color: #f0fdf4; color: #16a34a; }
+
+/* Internal Content Metadata Area Compartment Padding limits optimized */
+.course-card-body-compartment {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+    text-align: left;
+}
+
+.course-meta-category-line {
+    font-size: 0.72rem;
+    font-weight: 800;
+    color: #94a3b8;
+    letter-spacing: 0.05em;
+    margin-bottom: 6px;
+}
+
+.course-primary-title-text {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--brand-dark-black); /* Font color color set strictly black format */
+    line-height: 1.35;
+    margin-bottom: 16px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden; /* Guards title row heights alignment fields */
+}
+
+/* Completion ProgressBar Component Rail Internals */
+.course-completion-progress-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px;
+}
+
+.progress-meta-data-line {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 6px;
+    font-size: 0.8rem;
+}
+.progress-status-label { font-weight: 600; color: #64748b; }
+.progress-percentage-metric-node { font-weight: 800; color: var(--brand-dark-black); }
+
+.progress-rail-base {
+    width: 100%;
+    height: 6px;
+    background-color: #f1f5f9;
+    border-radius: 9999px;
+    overflow: hidden;
+}
+.progress-fill-bar-line { height: 100%; border-radius: 9999px; }
+.progress-fill-bar-line.fill-teal { background-color: var(--brand-teal); }
+.progress-fill-bar-line.fill-amber { background-color: #f97316; }
+.progress-fill-bar-line.fill-purple { background-color: #a855f7; }
+
+/* Upcoming Session Timing Info Row Container */
+.upcoming-session-schedule-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background-color: #f8fafc;
+    border: 1px solid #f1f5f9;
+    padding: 12px 14px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.schedule-icon-bullet { font-size: 0.95rem; margin-top: 2px; }
+.schedule-text-stack { display: flex; flex-direction: column; }
+.schedule-meta-label { font-size: 0.68rem; font-weight: 800; color: #94a3b8; letter-spacing: 0.04em; }
+.schedule-live-time-data { font-size: 0.84rem; font-weight: 600; color: #475569; margin-top: 1px; }
+
+.course-card-actions-wrapper-row { width: 100%; }
+
+/* Solid Action Pill Custom Button */
+.btn-course-action-solid-teal {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    background-color: var(--brand-teal);
+    color: #ffffff;
+    padding: 12px 20px;
+    border-radius: 10px; /* Rounded button geometry from snapshot templates rules */
+    font-size: 0.88rem;
+    font-weight: 700;
+    box-shadow: 0 4px 12px rgba(4, 106, 85, 0.15);
+    transition: background-color 0.2s, transform 0.2s;
+}
+.btn-course-action-solid-teal:hover {
+    background-color: var(--brand-dark-black); /* Switches cleanly into bold black format on active hover tracking focus */
+    transform: translateY(-1px);
+}
+
+/* --- Comprehensive Fluid Mobile Responsiveness Breakpoints --- */
+@media (max-width: 1140px) {
+    .client-courses-matrix-grid {
+        grid-template-columns: repeat(2, 1fr); /* Splitting grid template into balanced 2 column row slots tablet views */
+        gap: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .courses-section-header-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+    .courses-filter-pills-row { width: 100%; overflow-x: auto; justify-content: flex-start; } /* Smooth scrollable filter pill bar smartphone viewports */
+}
+
+@media (max-width: 640px) {
+    .client-courses-matrix-grid {
+        grid-template-columns: 1fr; /* Convers grid matrix down into standard single list card entries pipeline */
+        gap: 20px;
+    }
+}
+
+</style>
+<style>
+    /* --- ENHANCED ENROLLED CLASSES SECTION STYLING --- */
+
+.courses-section-header-row {
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 20px;
+    margin-bottom: 12px;
+}
+
+.courses-header-text-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+/* Category Filter Button Capsule Rails */
+.courses-filter-pills-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #f1f5f9;
+    padding: 6px;
+    border-radius: 12px;
+    flex-shrink: 0;
+}
+
+.filter-pill-btn {
+    background: transparent;
+    border: none; outline: none;
+    padding: 8px 16px;
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: #64748b;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.filter-pill-btn:hover {
+    color: var(--brand-teal);
+}
+
+.filter-pill-btn.active-filter {
+    background-color: #ffffff;
+    color: var(--brand-teal);
+    box-shadow: 0 4px 10px rgba(17, 19, 20, 0.04);
+}
+
+/* --- Premium 3-Column Course Grid Matrix --- */
+.client-courses-matrix-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal sharing columns desktop rows grid lines */
+    gap: 28px;
+    width: 100%;
+    margin-top: 12px;
+}
+
+.course-profile-card {
+    position: relative;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.3s ease;
+}
+
+/* High-end hover halo shadow expansions customized to our theme signature tokens */
+.hover-lift-glow-halo:hover {
+    transform: translateY(-5px);
+    border-color: rgba(4, 106, 85, 0.18);
+}
+.hover-lift-glow-halo:hover .card-glow-halo-layer {
+    box-shadow: 0 16px 36px rgba(4, 106, 85, 0.04), 0 4px 12px rgba(17, 19, 20, 0.01);
+}
+
+.course-card-inner-mesh {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Core Media Image Framework Window */
+.course-media-window {
+    position: relative;
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    background-color: #f1f5f9;
+}
+
+.course-mesh-graphic-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+.course-profile-card:hover .course-mesh-graphic-img {
+    transform: scale(1.03); /* Controlled internal graphic lens zoom loop triggered on card hover tracking */
+}
+
+/* Difficulty Pill Tags Badges Overlays */
+.course-badge-indicator {
+    position: absolute;
+    top: 14px; right: 14px;
+    font-size: 0.72rem;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    z-index: 10;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+.level-advanced { background-color: #fef2f2; color: #ef4444; }
+.level-intermediate { background-color: #fff7ed; color: #f97316; }
+.level-beginner { background-color: #f0fdf4; color: #16a34a; }
+
+/* Internal Content Metadata Area Compartment Padding limits optimized */
+.course-card-body-compartment {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+    text-align: left;
+}
+
+.course-meta-category-line {
+    font-size: 0.72rem;
+    font-weight: 800;
+    color: #94a3b8;
+    letter-spacing: 0.05em;
+    margin-bottom: 6px;
+}
+
+.course-primary-title-text {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--brand-dark-black); /* Font color color set strictly black format */
+    line-height: 1.35;
+    margin-bottom: 16px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden; /* Guards title row heights alignment fields */
+}
+
+/* Completion ProgressBar Component Rail Internals */
+.course-completion-progress-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px;
+}
+
+.progress-meta-data-line {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 6px;
+    font-size: 0.8rem;
+}
+.progress-status-label { font-weight: 600; color: #64748b; }
+.progress-percentage-metric-node { font-weight: 800; color: var(--brand-dark-black); }
+
+.progress-rail-base {
+    width: 100%;
+    height: 6px;
+    background-color: #f1f5f9;
+    border-radius: 9999px;
+    overflow: hidden;
+}
+.progress-fill-bar-line { height: 100%; border-radius: 9999px; }
+.progress-fill-bar-line.fill-teal { background-color: var(--brand-teal); }
+.progress-fill-bar-line.fill-amber { background-color: #f97316; }
+.progress-fill-bar-line.fill-purple { background-color: #a855f7; }
+
+/* Upcoming Session Timing Info Row Container */
+.upcoming-session-schedule-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background-color: #f8fafc;
+    border: 1px solid #f1f5f9;
+    padding: 12px 14px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.schedule-icon-bullet { font-size: 0.95rem; margin-top: 2px; }
+.schedule-text-stack { display: flex; flex-direction: column; }
+.schedule-meta-label { font-size: 0.68rem; font-weight: 800; color: #94a3b8; letter-spacing: 0.04em; }
+.schedule-live-time-data { font-size: 0.84rem; font-weight: 600; color: #475569; margin-top: 1px; }
+
+.course-card-actions-wrapper-row { width: 100%; }
+
+/* Solid Action Pill Custom Button */
+.btn-course-action-solid-teal {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    background-color: var(--brand-teal);
+    color: #ffffff;
+    padding: 12px 20px;
+    border-radius: 10px; /* Rounded button geometry from snapshot templates rules */
+    font-size: 0.88rem;
+    font-weight: 700;
+    box-shadow: 0 4px 12px rgba(4, 106, 85, 0.15);
+    transition: background-color 0.2s, transform 0.2s;
+}
+.btn-course-action-solid-teal:hover {
+    background-color: var(--brand-dark-black); /* Switches cleanly into bold black format on active hover tracking focus */
+    transform: translateY(-1px);
+}
+
+/* --- Comprehensive Fluid Mobile Responsiveness Breakpoints --- */
+@media (max-width: 1140px) {
+    .client-courses-matrix-grid {
+        grid-template-columns: repeat(2, 1fr); /* Splitting grid template into balanced 2 column row slots tablet views */
+        gap: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .courses-section-header-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+    .courses-filter-pills-row { width: 100%; overflow-x: auto; justify-content: flex-start; } /* Smooth scrollable filter pill bar smartphone viewports */
+}
+
+@media (max-width: 640px) {
+    .client-courses-matrix-grid {
+        grid-template-columns: 1fr; /* Convers grid matrix down into standard single list card entries pipeline */
+        gap: 20px;
+    }
+}
+
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    
+    const filterButtonsList = document.querySelectorAll(".filter-pill-btn");
+    const structuralCourseCardsList = document.querySelectorAll(".course-profile-card");
+
+    if (filterButtonsList.length > 0 && structuralCourseCardsList.length > 0) {
+        filterButtonsList.forEach(buttonNode => {
+            buttonNode.addEventListener("click", () => {
+                
+                // Clear active high-contrast highlight state from neighboring category filters nodes
+                filterButtonsList.forEach(btn => btn.classList.remove("active-filter"));
+                buttonNode.classList.add("active-filter");
+
+                const targetedFilterToken = buttonNode.getAttribute("data-filter");
+
+                // Process analytical layout classification hiding and showing loops parameters
+                structuralCourseCardsList.forEach(cardNode => {
+                    const cardCategoryToken = cardNode.getAttribute("data-category");
+                    
+                    if (targetedFilterToken === "all" || cardCategoryToken === targetedFilterToken) {
+                        cardNode.style.display = "flex";
+                        // Re-triggers fresh fading popup animation frames smoothly
+                        cardNode.style.animation = 'none';
+                        cardNode.offsetHeight; 
+                        cardNode.style.animation = '';
+                    } else {
+                        cardNode.style.display = "none";
+                    }
+                });
+            });
+        });
+    }
+});
+
+</script>
+
+
+              <!-- VIEWPORT SECTION 3: BILLING LEDGERS (Full-Width Financial Ledger Matrix Block) -->
+<div class="workspace-section-view-node" id="client-billing">
+    
+    <!-- A. Section Introduction Header Pane -->
+    <div class="billing-section-intro-bar">
+        <h2 class="workspace-section-main-title">Billing Ledgers</h2>
+        <p class="overview-section-subtitle">Track your platform subscription plans, download verified invoice receipts, and review active billing statement logs maps.</p>
+    </div>
+
+    <!-- B. Creative 3-Column Financial Snapshot Grid -->
+    <div class="billing-summary-snapshot-grid">
+        
+        <!-- COUNTER 1: ACTIVE SUBSCRIPTION PLAN -->
+        <div class="billing-metric-card hover-lift-glow-halo">
+            <div class="card-glow-halo-layer"></div>
+            <div class="billing-card-content-wrap">
+                <span class="billing-icon-circle-badge badge-teal-tint">💳</span>
+                <div class="billing-numerical-display">Premium<span class="unit-suffix"> Pro</span></div>
+                <h3 class="billing-label-title">Active Membership Track</h3>
+                <p class="billing-supporting-desc">Renews automatically on Oct 15, 2026.</p>
+            </div>
+        </div>
+
+        <!-- COUNTER 2: TOTAL INVESTED FOR CAREER TRAINING -->
+        <div class="billing-metric-card hover-lift-glow-halo">
+            <div class="card-glow-halo-layer"></div>
+            <div class="billing-card-content-wrap">
+                <span class="billing-icon-circle-badge badge-amber-tint">💰</span>
+                <div class="billing-numerical-display">₹12,450</div>
+                <h3 class="billing-label-title">Total Invested Value</h3>
+                <p class="billing-supporting-desc">Spent across certified coding masterclasses.</p>
+            </div>
+        </div>
+
+        <!-- COUNTER 3: OUTSTANDING BALANCE STATUS -->
+        <div class="billing-metric-card hover-lift-glow-halo">
+            <div class="card-glow-halo-layer"></div>
+            <div class="billing-card-content-wrap">
+                <div class="billing-card-top-row">
+                    <span class="billing-icon-circle-badge badge-purple-tint">✅</span>
+                    <span class="status-pill-emerald">All Clear</span>
+                </div>
+                <div class="billing-numerical-display">₹0.00</div>
+                <h3 class="billing-label-title">Outstanding Dues</h3>
+                <p class="billing-supporting-desc">No active pending invoices balance found.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- C. Full-Width Statement Data Log Table Sheet Wrapper (Scrollable on phone viewports) -->
+    <div class="billing-ledger-card hover-lift-glow-halo">
+        <div class="card-glow-halo-layer"></div>
+        <div class="billing-ledger-content-wrap">
+            
+            <div class="ledger-header-action-row">
+                <h3 class="ledger-table-main-title">Statement History Logs</h3>
+                <a href="404.html" class="btn-download-all-statement">Download Year Summary (.PDF)</a>
+            </div>
+
+            <div class="responsive-table-overflow-window">
+                <table class="billing-data-log-table">
+                    <thead>
+                        <tr>
+                            <th class="table-head-cell text-left">INVOICE ID REFERENCE</th>
+                            <th class="table-head-cell text-left">LEARNING MODULE/TRACK</th>
+                            <th class="table-head-cell text-center">AMOUNT PAID</th>
+                            <th class="table-head-cell text-center">STATUS</th>
+                            <th class="table-head-cell text-right">ACTION</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- INVOICE LOG ENTRY 1 -->
+                        <tr class="table-body-row-item">
+                            <td class="table-body-cell text-left table-invoice-id">#STK-2026-089</td>
+                            <td class="table-body-cell text-left">
+                                <div class="billing-primary-label">Premium Pro - Monthly Access Fee</div>
+                                <span class="billing-sub-meta-tag">Sandbox Stream &amp; Mentorship Allocation</span>
+                            </td>
+                            <td class="table-body-cell text-center table-amount-bold">₹2,450</td>
+                            <td class="table-body-cell text-center">
+                                <span class="status-badge-pill badge-green-fill">Settled Success</span>
+                            </td>
+                            <td class="table-body-cell text-right">
+                                <a href="404.html" class="btn-table-action-download">Download PDF</a>
+                            </td>
+                        </tr>
+                        <!-- INVOICE LOG ENTRY 2 -->
+                        <tr class="table-body-row-item">
+                            <td class="table-body-cell text-left table-invoice-id">#STK-2026-042</td>
+                            <td class="table-body-cell text-left">
+                                <div class="billing-primary-label">Fullstack Web Engineering Track - Setup Entry</div>
+                                <span class="billing-sub-meta-tag">Certified Bootcamps Curriculum Material Bundle</span>
+                            </td>
+                            <td class="table-body-cell text-center table-amount-bold">₹10,000</td>
+                            <td class="table-body-cell text-center">
+                                <span class="status-badge-pill badge-green-fill">Settled Success</span>
+                            </td>
+                            <td class="table-body-cell text-right">
+                                <a href="404.html" class="btn-table-action-download">Download PDF</a>
+                            </td>
+                        </tr>
+                        <!-- INVOICE LOG ENTRY 3 -->
+                        <tr class="table-body-row-item">
+                            <td class="table-body-cell text-left table-invoice-id">#STK-2026-011</td>
+                            <td class="table-body-cell text-left">
+                                <div class="billing-primary-label">14-Day Platform Orientation Trial Track</div>
+                                <span class="billing-sub-meta-tag">Baseline Skill Assessment Sandboxes Allocation</span>
+                            </td>
+                            <td class="table-body-cell text-center table-amount-bold">₹0.00</td>
+                            <td class="table-body-cell text-center">
+                                <span class="status-badge-pill badge-green-fill">Settled Success</span>
+                            </td>
+                            <td class="table-body-cell text-right">
+                                <a href="404.html" class="btn-table-action-download">Download PDF</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+<style>
+    /* --- ENHANCED BILLING LEDGERS SECTION STYLING --- */
+
+.billing-section-intro-bar {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 32px;
+}
+
+/* --- Creative 3-Column Financial Snapshot Grid --- */
+.billing-summary-snapshot-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 column blocks desktop row partitioning */
+    gap: 24px;
+    margin-bottom: 32px;
+    width: 100%;
+}
+
+.billing-metric-card {
+    position: relative;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.3s ease;
+}
+
+.billing-card-content-wrap {
+    padding: 24px 28px;
+    position: relative;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.billing-card-top-row {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0px;
+}
+
+.billing-icon-circle-badge {
+    width: 42px; height: 42px;
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.3rem; flex-shrink: 0;
+    margin-bottom: 16px;
+}
+
+.billing-card-top-row .billing-icon-circle-badge { margin-bottom: 0; }
+
+.status-pill-emerald {
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 9999px;
+    background-color: #f0fdf4;
+    color: #16a34a;
+}
+
+.billing-numerical-display {
+    font-size: 2.15rem;
+    font-weight: 800;
+    color: var(--brand-dark-black); /* Font explicitly black format verified */
+    line-height: 1;
+    margin-bottom: 8px;
+    letter-spacing: -0.02em;
+}
+
+.billing-label-title {
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: var(--brand-dark-black);
+    margin-bottom: 4px;
+    line-height: 1.3;
+}
+
+.billing-supporting-desc {
+    font-size: 0.84rem;
+    color: #64748b;
+    line-height: 1.4;
+    text-align: left;
+}
+
+/* --- Full-Width Statement Data Log Table Sheet Framework --- */
+.billing-ledger-card {
+    position: relative;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    overflow: hidden;
+    width: 100%;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.billing-ledger-content-wrap {
+    padding: 32px 28px;
+    position: relative;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.ledger-header-action-row {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.ledger-table-main-title {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--brand-dark-black);
+    letter-spacing: -0.01em;
+}
+
+.btn-download-all-statement {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--brand-teal);
+    border: 1px solid rgba(4, 106, 85, 0.2);
+    background-color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-download-all-statement:hover {
+    background-color: var(--brand-teal);
+    color: #ffffff;
+    border-color: var(--brand-teal);
+}
+
+.billing-data-log-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-invoice-id {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #475569;
+    font-family: monospace, monospace; /* Keeps invoice digits structural hashes neatly aligned */
+}
+
+.table-amount-bold {
+    font-size: 0.98rem;
+    font-weight: 800;
+    color: var(--brand-dark-black);
+}
+
+.billing-primary-label {
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--brand-dark-black);
+    line-height: 1.3;
+}
+
+.billing-sub-meta-tag {
+    font-size: 0.76rem;
+    font-weight: 500;
+    color: #64748b;
+    display: block;
+    margin-top: 2px;
+}
+
+/* Minimalist context download table text buttons */
+.btn-table-action-download {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--brand-dark-black);
+    background-color: transparent;
+    border: 1px solid #e2e8f0;
+    padding: 6px 14px;
+    border-radius: 8px; /* Snug rounded button corners from design snapshot */
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.btn-table-action-download:hover {
+    background-color: var(--brand-dark-black); /* Turns solid black on hover tracking focus */
+    color: #ffffff;
+    border-color: var(--brand-dark-black);
+}
+
+/* --- Comprehensive Fluid Mobile Responsiveness Breakpoints --- */
+@media (max-width: 1024px) {
+    .billing-summary-snapshot-grid {
+        grid-template-columns: repeat(2, 1fr); /* Splits financials info cubes into balanced 2-columns stack tablet views */
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .ledger-header-action-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+    .btn-download-all-statement { width: 100%; text-align: center; }
+}
+
+@media (max-width: 640px) {
+    .billing-summary-snapshot-grid {
+        grid-template-columns: 1fr; /* Forms single vertical column entries stream on mobile smartphone */
+        gap: 16px;
+    }
+    .billing-ledger-content-wrap { padding: 24px 16px; }
+}
+
+</style>
+
+              <!-- VIEWPORT SECTION 4: HELP DESK SUPPORT (Full-Width Support Workspace Block) -->
+<div class="workspace-section-view-node" id="client-support">
+    
+    <!-- A. Section Introduction Header Pane -->
+    <div class="support-section-intro-bar">
+        <h2 class="workspace-section-main-title">Help Desk Support</h2>
+        <p class="overview-section-subtitle">Open active technical help tickets, track resolution status, and access direct help channels with our engineering masters.</p>
+    </div>
+
+    <!-- B. Creative 3-Column Support Snapshot Grid -->
+    <div class="support-summary-snapshot-grid">
+        
+        <!-- COUNTER 1: ACTIVE TICKETS -->
+        <div class="support-metric-card hover-lift-glow-halo">
+            <div class="card-glow-halo-layer"></div>
+            <div class="support-card-content-wrap">
+                <span class="support-icon-circle-badge badge-teal-tint">🎫</span>
+                <div class="support-numerical-display">01<span class="unit-suffix"> Open</span></div>
+                <h3 class="support-label-title">Active Tickets</h3>
+                <p class="support-supporting-desc">Currently being reviewed by engineers.</p>
+            </div>
+        </div>
+
+        <!-- COUNTER 2: AVG RESOLUTION TIME -->
+        <div class="support-metric-card hover-lift-glow-halo">
+            <div class="card-glow-halo-layer"></div>
+            <div class="support-card-content-wrap">
+                <span class="support-icon-circle-badge badge-amber-tint">⚡</span>
+                <div class="support-numerical-display">2.4<span class="unit-suffix"> hrs</span></div>
+                <h3 class="support-label-title">Avg. Resolution Speed</h3>
+                <p class="support-supporting-desc">Vetted priority engineering turn-around time.</p>
+            </div>
+        </div>
+
+        <!-- COUNTER 3: HELP CHANNEL SATISFACTION -->
+        <div class="support-metric-card hover-lift-glow-halo">
+            <div class="card-glow-halo-layer"></div>
+            <div class="support-card-content-wrap">
+                <div class="support-card-top-row">
+                    <span class="support-icon-circle-badge badge-purple-tint">★</span>
+                    <span class="status-pill-emerald">99.2%</span>
+                </div>
+                <div class="support-numerical-display">Top Rate</div>
+                <h3 class="support-label-title">User Satisfaction</h3>
+                <p class="support-supporting-desc">Scored across closed system matrix cases.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- C. Full-Width Interactive Support Split Workspace -->
+    <div class="support-dual-pane-layout">
+        
+        <!-- LEFT PANEL: High-Fidelity Ticket Creation Form -->
+        <div class="support-pane-card support-form-box hover-lift-glow-halo">
+            <div class="card-glow-halo-layer"></div>
+            <div class="pane-content-inner-wrap">
+                <h3 class="sub-pane-main-title">Submit New Support Ticket</h3>
+                
+                <form class="support-interactive-form-mesh" id="client-help-ticket-form" novalidate>
+                    
+                    <div class="form-field-group-box">
+                        <label for="support-ticket-subject" class="field-label-text">TICKET SUBJECT / MODULE ISSUE</label>
+                        <input type="text" id="support-ticket-subject" class="form-input-node" placeholder="e.g. Sandbox Code Compilation Error" required>
+                    </div>
+
+                    <div class="form-field-group-box">
+                        <label for="support-ticket-priority" class="field-label-text">PRIORITY MATRIX LEVEL</label>
+                        <select id="support-ticket-priority" class="form-select-node" required>
+                            <option value="low">Low - General Inquiry</option>
+                            <option value="medium" selected>Medium - Course Block</option>
+                            <option value="high">High - System Interruption</option>
+                        </select>
+                    </div>
+
+                    <div class="form-field-group-box full-width-textarea-box">
+                        <label for="support-ticket-message" class="field-label-text">ELABORATE DESCRIPTION OF PROBLEM</label>
+                        <textarea id="support-ticket-message" class="form-textarea-node" placeholder="Describe any technical tracking errors, framework blocks, traditional system issues, or sandbox lesson package omissions..." required></textarea>
+                    </div>
+
+                    <div class="form-action-button-row">
+                        <button type="submit" class="form-submit-pill-btn">
+                            <span class="submit-btn-text">Transmit Ticket Matrix</span>
+                        </button>
+                    </div>
+
+                </form>
+
+                <div class="form-error-feedback-toast hidden-alert-node" id="support-form-error-toast">
+                    <span class="warning-icon">⚠</span> Please fill the fields correctly
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT PANEL: Active Ticket Track Records Stream -->
+        <div class="support-pane-card support-tracking-box hover-lift-glow-halo">
+            <div class="card-glow-halo-layer"></div>
+            <div class="pane-content-inner-wrap">
+                <h3 class="sub-pane-main-title">Active Tickets Tracking</h3>
+                
+                <div class="active-tickets-pipeline-stack">
+                    
+                    <!-- TICKET ENTRY 1 -->
+                    <div class="ticket-row-box-card">
+                        <div class="ticket-row-header">
+                            <span class="ticket-id-hash">#TK-8492</span>
+                            <span class="ticket-status-badge badge-orange-fill">In Review</span>
+                        </div>
+                        <h4 class="ticket-primary-label">Asynchronous Sandbox Compilation Delay</h4>
+                        <p class="ticket-sub-meta-desc">JavaScript Masterclass • Submitted 1 hour ago by jeevi</p>
+                    </div>
+
+                    <!-- TICKET ENTRY 2 -->
+                    <div class="ticket-row-box-card">
+                        <div class="ticket-row-header">
+                            <span class="ticket-id-hash">#TK-7911</span>
+                            <span class="ticket-status-badge badge-green-fill">Resolved</span>
+                        </div>
+                        <h4 class="ticket-primary-label">Premium Invoice Blueprint Download Error</h4>
+                        <p class="ticket-sub-meta-desc">Billing Ledgers Hub • Resolved yesterday by Architect Team</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<style>
+    /* --- ENHANCED HELP DESK SUPPORT SECTION STYLING --- */
+
+.support-section-intro-bar {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 32px;
+}
+
+/* --- Creative 3-Column Support Snapshot Grid --- */
+.support-summary-snapshot-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 24px;
+    margin-bottom: 32px;
+    width: 100%;
+}
+
+.support-metric-card {
+    position: relative;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.3s ease;
+}
+
+.support-card-content-wrap {
+    padding: 24px 28px;
+    position: relative;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.support-card-top-row {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0px;
+}
+
+.support-icon-circle-badge {
+    width: 42px; height: 42px;
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.3rem; flex-shrink: 0;
+    margin-bottom: 16px;
+}
+
+.support-card-top-row .support-icon-circle-badge { margin-bottom: 0; }
+
+.status-pill-emerald {
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 9999px;
+    background-color: #f0fdf4;
+    color: #16a34a;
+}
+
+.support-numerical-display {
+    font-size: 2.15rem;
+    font-weight: 800;
+    color: var(--brand-dark-black); 
+    line-height: 1;
+    margin-bottom: 8px;
+    letter-spacing: -0.02em;
+}
+
+.support-label-title {
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: var(--brand-dark-black);
+    margin-bottom: 4px;
+    line-height: 1.3;
+}
+
+.support-supporting-desc {
+    font-size: 0.84rem;
+    color: #64748b;
+    line-height: 1.4;
+    text-align: left;
+}
+
+/* --- Full-Width Interactive Support Split Workspace --- */
+.support-dual-pane-layout {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr; 
+    gap: 28px;
+    width: 100%;
+    align-items: start;
+}
+
+.support-pane-card {
+    position: relative;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.pane-content-inner-wrap {
+    padding: 32px 28px;
+    position: relative;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.sub-pane-main-title {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--brand-dark-black);
+    margin-bottom: 24px;
+    letter-spacing: -0.01em;
+}
+
+/* Form Matrix Internals Layout Styles */
+.support-interactive-form-mesh {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.form-field-group-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.field-label-text {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--brand-dark-black);
+    margin-bottom: 8px;
+    letter-spacing: 0.02em;
+}
+
+.form-input-node, .form-select-node, .form-textarea-node {
+    width: 100%;
+    border: 1px solid #cbd5e1;
+    background-color: #f8fafc;
+    border-radius: 10px;
+    padding: 12px 14px;
+    font-size: 0.94rem;
+    color: var(--brand-dark-black);
+    outline: none;
+    transition: all 0.25s ease;
+}
+
+.form-textarea-node { height: 110px; resize: none; font-family: inherit; }
+
+.form-input-node:focus, .form-select-node:focus, .form-textarea-node:focus {
+    background-color: #ffffff;
+    border-color: var(--brand-teal);
+    box-shadow: 0 0 0 4px rgba(4, 106, 85, 0.08);
+}
+
+.form-action-button-row { width: 100%; text-align: left; margin-top: 8px; }
+
+.form-submit-pill-btn {
+    background-color: var(--brand-teal);
+    border: none; outline: none;
+    padding: 12px 28px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.25s, transform 0.2s;
+}
+.submit-btn-text { color: #ffffff; font-size: 0.92rem; font-weight: 700; }
+.form-submit-pill-btn:hover { background-color: var(--brand-dark-black); transform: translateY(-1px); }
+
+/* --- Right Sub-Pane Active Ticket Tracking Internals --- */
+.active-tickets-pipeline-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+}
+
+.ticket-row-box-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #f8fafc;
+    border: 1px solid #f1f5f9;
+    padding: 16px 20px;
+    border-radius: 16px;
+    width: 100%;
+    text-align: left;
+    transition: transform 0.25s ease, border-color 0.25s ease;
+}
+.ticket-row-box-card:hover { transform: translateX(4px); border-color: rgba(4, 106, 85, 0.15); }
+
+.ticket-row-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+.ticket-id-hash { font-size: 0.82rem; font-weight: 800; color: #94a3b8; font-family: monospace; }
+.ticket-status-badge { font-size: 0.72rem; font-weight: 700; padding: 2px 8px; border-radius: 4px; }
+.badge-green-fill { background-color: #e6f0ed; color: var(--brand-teal); }
+.badge-orange-fill { background-color: #fff7ed; color: #f97316; }
+
+.ticket-primary-label { font-size: 1.02rem; font-weight: 700; color: var(--brand-dark-black); line-height: 1.3; }
+.ticket-sub-meta-desc { font-size: 0.78rem; font-weight: 500; color: #64748b; margin-top: 4px; }
+
+/* --- Shaking Alert Feedback Toast --- */
+.form-error-feedback-toast {
+    margin-top: 16px; background-color: #dc2626; color: #ffffff;
+    padding: 10px 24px; border-radius: 9999px; font-size: 0.88rem; font-weight: 700;
+    box-shadow: 0 4px 14px rgba(220, 38, 38, 0.2); display: inline-flex; align-items: center; gap: 6px;
+    animation: toastShake 0.4s cubic-bezier(.36,.07,.19,.97) both;
+}
+@keyframes toastShake { 10%, 90% { transform: translate3d(-1px, 0, 0); } 20%, 80% { transform: translate3d(2px, 0, 0); } 30%, 50%, 70% { transform: translate3d(-4px, 0, 0); } 40%, 60% { transform: translate3d(4px, 0, 0); } }
+
+/* --- Comprehensive Fluid Mobile Responsiveness Breakpoints --- */
+@media (max-width: 1024px) {
+    .support-summary-snapshot-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .support-dual-pane-layout { grid-template-columns: 1fr; gap: 24px; }
+}
+@media (max-width: 640px) {
+    .support-summary-snapshot-grid { grid-template-columns: 1fr; gap: 16px; }
+    .pane-content-inner-wrap { padding: 24px 16px; }
+}
+.hidden-alert-node { display: none !important; }
+
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    const helpForm = document.getElementById("client-help-ticket-form");
+    const supportToast = document.getElementById("support-form-error-toast");
+
+    if (helpForm && supportToast) {
+        helpForm.addEventListener("submit", (event) => {
+            event.preventDefault();
+            
+            const msgInput = document.getElementById("support-ticket-message");
+            const sbjInput = document.getElementById("support-ticket-subject");
+
+            if (msgInput.value.trim() === "" || sbjInput.value.trim() === "") {
+                supportToast.classList.remove("hidden-alert-node");
+                supportToast.style.animation = 'none';
+                supportToast.offsetHeight; 
+                supportToast.style.animation = '';
+                return;
+            }
+
+            supportToast.classList.add("hidden-alert-node");
+            window.location.href = "404.html"; // Routes to fallback on success validation
+        });
+    }
+});
+
+</script>
+            </div>
+        </main>
+
+    </div>
+
+    <style>
+        /* Color System Layout Configurations matching template branding profiles */
+:root {
+    --brand-dark-black: #111314;   /* Typography content black format */
+    --brand-teal: #046a55;        /* Forest Teal Core Portal Theme Identity Color */
+    --brand-amber: #f49b09;       
+    --canvas-base-bg: #f8fafc;
+    --sidebar-width: 260px;
+    --header-height: 70px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
+
+body.dashboard-root-body {
+    background-color: var(--canvas-base-bg);
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden; /* Blocks global window double scrolls bars artifacts glitches */
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- TOP HEADER ROW SYSTEM --- */
+.dashboard-main-header {
+    height: var(--header-height);
+    width: 100%;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 100;
+}
+
+.header-left-pane { display: flex; align-items: center; gap: 16px; }
+
+/* Mobile Hamburger Button Display Rules Default Hidden Widescreen */
+.hamburger-menu-toggle-btn {
+    display: none;
+    background: transparent; border: none; outline: none;
+    cursor: pointer; color: var(--brand-dark-black);
+    width: 36px; height: 36px; align-items: center; justify-content: center;
+    transition: color 0.2s;
+}
+.hamburger-menu-toggle-btn svg { width: 22px; height: 22px; }
+.hamburger-menu-toggle-btn:hover { color: var(--brand-teal); }
+
+/* Brand Refresh Trigger Nodes */
+.header-brand-refresh-trigger {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.header-brand-logo-img { height: 32px; width: auto; object-fit: contain; }
+.header-brand-name-string { font-size: 1.15rem; font-weight: 800; color: var(--brand-dark-black); letter-spacing: -0.02em; }
+
+.header-right-pane { display: flex; align-items: center; gap: 20px; }
+.header-user-welcome-message { font-size: 0.95rem; font-weight: 600; color: #475569; }
+.dynamic-parsed-username-node { color: var(--brand-teal); font-weight: 800; text-transform: capitalize; }
+
+/* Icon Bell Component Wrapper Button */
+.header-icon-bell-notification-btn {
+    width: 36px; height: 36px; color: #64748b; background: transparent;
+    border: none; outline: none; cursor: pointer; display: flex; align-items: center; justify-content: center;
+    position: relative; transition: color 0.2s;
+}
+.header-icon-bell-notification-btn svg { width: 20px; height: 20px; }
+.header-icon-bell-notification-btn:hover { color: var(--brand-teal); }
+.notification-indicator-dot { position: absolute; top: 6px; right: 8px; width: 8px; height: 8px; background-color: var(--brand-amber); border-radius: 50%; border: 1.5px solid #ffffff; }
+
+/* Profile Avatar Bubble Button */
+.header-profile-avatar-window-btn {
+    width: 40px; height: 40px; border-radius: 50%; overflow: hidden;
+    border: 2px solid #e2e8f0; display: block; transition: border-color 0.25s ease;
+}
+.header-profile-avatar-window-btn:hover { border-color: var(--brand-teal); }
+.header-profile-avatar-img { width: 100%; height: 100%; object-fit: cover; }
+
+/* --- CORE WORKSPACE MESH FRAMEWORK --- */
+.dashboard-workspace-mesh {
+    flex: 1; width: 100%; display: flex; position: relative; height: calc(100vh - var(--header-height));
+}
+
+/* --- SIDEBAR PANEL SYSTEM --- */
+.dashboard-sidebar-navigation-panel {
+    width: var(--sidebar-width);
+    background-color: #ffffff;
+    border-right: 1px solid #e2e8f0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 32px 16px 24px 16px;
+    z-index: 90;
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.sidebar-scrollable-nav-menu { display: flex; flex-direction: column; gap: 24px; width: 100%; overflow-y: auto; }
+.sidebar-section-menu-group-wrapper { display: flex; flex-direction: column; width: 100%; }
+
+/* Unified Section Metadata Labels Headlines */
+.sidebar-section-meta-headline {
+    font-size: 0.68rem; font-weight: 800; color: #94a3b8; text-transform: uppercase;
+    letter-spacing: 0.06em; margin-bottom: 8px; padding-left: 12px;
+}
+
+.sidebar-links-pipeline-list { list-style: none; display: flex; flex-direction: column; gap: 4px; }
+
+/* Sidebar Menu Item Row Layout */
+.sidebar-item-row {
+    display: flex; align-items: center; gap: 12px; padding: 12px; border-radius: 10px;
+    color: #64748b; cursor: pointer; transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    user-select: none;
+}
+.sidebar-row-vector-icon { width: 18px; height: 18px; display: inline-flex; align-items: center; justify-content: center; }
+.sidebar-row-vector-icon svg { width: 100%; height: 100%; }
+.sidebar-item-label-text { font-size: 0.92rem; font-weight: 700; }
+
+.sidebar-item-row:hover { background-color: #f8fafc; color: var(--brand-teal); }
+
+/* Active Menu Tracking Highlights Rules */
+.sidebar-item-row.active-menu-row {
+    background-color: #f0fdf4; /* Light forest mint background fill for active option indicators */
+    color: var(--brand-teal);
+}
+
+/* Sidebar Disconnect Logout Area Footer */
+.sidebar-system-logout-action-box { width: 100%; padding-top: 16px; border-top: 1px solid #f1f5f9; }
+
+.sidebar-logout-pill-btn {
+    width: 100%; background: transparent; border: 1px solid #fee2e2; outline: none;
+    padding: 12px; border-radius: 10px; cursor: pointer; display: flex; align-items: center; gap: 12px;
+    color: #dc2626; transition: all 0.2s ease;
+}
+.logout-vector-icon { width: 18px; height: 18px; display: flex; align-items: center; justify-content: center; }
+.logout-vector-icon svg { width: 100%; height: 100%; }
+.logout-btn-label { font-size: 0.92rem; font-weight: 700; }
+
+.sidebar-logout-pill-btn:hover { background-color: #fef2f2; border-color: #fca5a5; transform: translateY(-1px); }
+
+/* --- MAIN WORKSPACE MULTI-SECTION VIEWPORT STAGE --- */
+.dashboard-viewport-main-content-stage {
+    flex: 1; height: 100%; overflow-y: auto; background-color: var(--canvas-base-bg);
+}
+
+.stage-internal-scroller-box { padding: 40px; width: 100%; max-width: 1000px; }
+
+/* Individual Target Content Display Sections Panel Nodes */
+.workspace-section-view-node {
+    display: none; 
+    background-color: #ffffff; border: 1px solid #e2e8f0; border-radius: 20px;
+    padding: 44px; box-shadow: 0 4px 12px rgba(17, 19, 20, 0.01);
+    animation: fadeSectionUpIn 0.45s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes fadeSectionUpIn {
+    0% { opacity: 0; transform: translateY(12px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Active Section Display Visibility Toggles Flags Injected by JavaScript */
+.workspace-section-view-node.active-section-node {
+    display: block !important;
+}
+
+.workspace-section-view-node h2 { font-size: 1.85rem; font-weight: 800; color: var(--brand-dark-black); letter-spacing: -0.02em; }
+
+/* --- PRECISION ADAPTIVE LAYOUT VIEWPORT RESPONSIVE BREAKPOINTS --- */
+@media (max-width: 900px) {
+    .hamburger-menu-toggle-btn { display: inline-flex; } /* Exposes mobile navigation overlay toggles drawer */
+    
+    .dashboard-sidebar-navigation-panel {
+        position: absolute; top: 0; bottom: 0; left: 0;
+        transform: translateX(-100%); /* Slides completely out of view borders default mobile configuration */
+        box-shadow: 15px 0 40px rgba(17, 19, 20, 0.1);
+        border-right: none;
+    }
+    
+    /* Open drawer visibility overlay state class injection */
+    .dashboard-sidebar-navigation-panel.sidebar-drawer-open {
+        transform: translateX(0) !important;
+    }
+    
+    /* Phone Screen Dark Mask Overlay Cover Layer */
+    .mobile-sidebar-backdrop-mask-overlay {
+        position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+        background-color: rgba(15, 17, 21, 0.4); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
+        z-index: 85; transition: opacity 0.3s ease;
+    }
+    
+    .stage-internal-scroller-box { padding: 24px 16px; }
+    .workspace-section-view-node { padding: 32px 20px; border-radius: 16px; }
+}
+
+.hidden-mask { display: none !important; opacity: 0; }
+
+    </style>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    
+    // ==========================================
+    // A. DYNAMIC EMAIL ACCOUNT USERNAME PARSER ENGINE
+    // ==========================================
+    const usernameDisplayNode = document.getElementById("header-display-username");
+
+    // Simulates checking system session storage parameters for valid login accounts data
+    let userSessionEmailString = localStorage.getItem("stackly_user_email") || "jeevi@gmail.com"; 
+
+    if (usernameDisplayNode && userSessionEmailString) {
+        if (userSessionEmailString.includes("@")) {
+            const parsedFirstNameSegment = userSessionEmailString.split("@");
+            
+            // Inject parsed username cleanly into header text container string node
+            usernameDisplayNode.textContent = parsedFirstNameSegment[0];
+        }
+    }
+
+    // ==========================================
+    // B. SECTION-WISE VIEWPORT SWITCHING PIPELINE
+    // ==========================================
+    const sidebarMenuRows = document.querySelectorAll(".sidebar-item-row");
+    const workspaceSectionNodes = document.querySelectorAll(".workspace-section-view-node");
+
+    if (sidebarMenuRows.length > 0 && workspaceSectionNodes.length > 0) {
+        sidebarMenuRows.forEach(clickedRow => {
+            clickedRow.addEventListener("click", () => {
+                
+                sidebarMenuRows.forEach(row => row.classList.remove("active-menu-row"));
+                clickedRow.classList.add("active-menu-row");
+
+                const destinationSectionId = clickedRow.getAttribute("data-target-section");
+
+                workspaceSectionNodes.forEach(sectionBlock => {
+                    if (sectionBlock.getAttribute("id") === destinationSectionId) {
+                        sectionBlock.classList.add("active-section-node");
+                    } else {
+                        sectionBlock.classList.remove("active-section-node");
+                    }
+                });
+
+                closeMobileSidebarDrawerPanel();
+            });
+        });
+    }
+
+    // ==========================================
+    // C. RESPONSIVE MOBILE BURGER DRAWER CONTROLLER
+    // ==========================================
+    const hamburgerTrigger = document.getElementById("mobile-hamburger-trigger");
+    const sidebarPanelDrawer = document.getElementById("dashboard-sidebar-node");
+    const mobileMaskOverlay = document.getElementById("mobile-sidebar-mask");
+
+    if (hamburgerTrigger && sidebarPanelDrawer && mobileMaskOverlay) {
+        hamburgerTrigger.addEventListener("click", (event) => {
+            event.stopPropagation();
+            const isOpen = sidebarPanelDrawer.classList.contains("sidebar-drawer-open");
+            
+            if (isOpen) {
+                closeMobileSidebarDrawerPanel();
+            } else {
+                sidebarPanelDrawer.classList.add("sidebar-drawer-open");
+                mobileMaskOverlay.classList.remove("hidden-mask");
+            }
+        });
+
+        mobileMaskOverlay.addEventListener("click", closeMobileSidebarDrawerPanel);
+    }
+
+    function closeMobileSidebarDrawerPanel() {
+        if (sidebarPanelDrawer && mobileMaskOverlay) {
+            sidebarPanelDrawer.classList.remove("sidebar-drawer-open");
+            mobileMaskOverlay.classList.add("hidden-mask");
+        }
+    }
+
+    // ==========================================
+    // D. SYSTEM CORE INITIALIZATION & REFRESH RE-RUNNERS
+    // ==========================================
+    const brandRefreshTrigger = document.getElementById("brand-refresh-node");
+    const portalLogoutTrigger = document.getElementById("portal-logout-trigger");
+
+    if (brandRefreshTrigger) brandRefreshTrigger.addEventListener("click", () => window.location.reload());
+    if (portalLogoutTrigger) portalLogoutTrigger.addEventListener("click", () => window.location.href = "login.html");
+});
+
+</script>
+
+<style>
+    /* ==========================================
+   DASHBOARD SCROLL FIX — ADD ON
+   ========================================== */
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body.dashboard-root-body {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.dashboard-workspace-mesh {
+    flex: 1 1 auto;
+    width: 100%;
+    height: calc(100vh - var(--header-height));
+    min-height: 0;
+    display: flex;
+    position: relative;
+}
+
+.dashboard-viewport-main-content-stage {
+    flex: 1 1 auto;
+    width: 100%;
+    min-width: 0;
+    min-height: 0;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.stage-internal-scroller-box {
+    width: 100%;
+    max-width: 100%;
+    min-height: max-content;
+    padding: 40px;
+    box-sizing: border-box;
+}
+</style>
+</body>
+</html>

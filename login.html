@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stackly Portal - Welcome Back</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="stackly-portal-body">
+
+    <!-- Main Dual-Pane Authentication Grid Wrapper -->
+    <main class="auth-master-surface-card">
+        
+        <!-- LEFT PANE: Branding, Custom Copy, & Image Panel (Teal Mint Canvas) -->
+        <section class="auth-branding-left-pane">
+            
+            <!-- Muted Floating Vector Backdrop Details -->
+            <svg class="brand-vector vector-top-right" viewBox="0 0 100 100" xmlns="http://w3.org">
+                <path d="M50,10 Q80,10 80,40 T50,70 T20,40 Z" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="4"/>
+            </svg>
+            <svg class="brand-vector vector-bottom-left" viewBox="0 0 100 100" xmlns="http://w3.org">
+                <circle cx="30" cy="70" r="15" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="3"/>
+            </svg>
+
+            <div class="branding-inner-content">
+                <span class="brand-micro-capsule-tag">Verified Sandboxes</span>
+                
+                <h1 class="brand-mega-statement-headline">
+                    Code Well.<br>
+                    <span class="text-glow-accent">Build Better.</span>
+                </h1>
+                
+                <p class="brand-supporting-desc">
+                    Access specialized technology masterclasses, flexible classroom tracking paths, and certified developer guidelines engineered to optimize your engineering milestones.
+                </p>
+
+                <!-- Core Portal Action Presentation Image Component -->
+                <div class="brand-media-frame">
+                    <img src="classroom-team-learning.jpg" alt="Mentors and students building technology tracks together" class="brand-showcase-img" onerror="this.src='https://unsplash.com'">
+                </div>
+            </div>
+
+        </section>
+
+        <!-- RIGHT PANE: Clean Secure Authentication Input Control Panel Forms -->
+        <section class="auth-input-right-pane">
+            
+            <!-- Top Row Navigation: Anchored cleanly to Home Index file -->
+            <div class="top-nav-escape-row">
+                <a href="index.html" class="back-home-anchor-link">
+                    <span class="arrow-vector">←</span> Back to Home
+                </a>
+            </div>
+
+            <div class="auth-form-central-hub-box">
+                
+                <div class="auth-header-block-stack">
+                    <h2 class="auth-main-title-text">Welcome Back</h2>
+                    <p class="auth-sub-desc-text">Sign in to manage your tracks, educational slots, and account sandboxes.</p>
+                </div>
+
+                <!-- Core Form Matrix Processing Validation Interceptions -->
+                <form class="secure-login-inputs-form" id="secure-auth-form" novalidate>
+                    
+                    <!-- ROLE DROPDOWN FIELD SELECTOR (Determines success route targets redirect) -->
+                    <div class="auth-field-group-box">
+                        <label for="auth-user-role" class="field-label-string">Login As</label>
+                        <div class="input-icon-relative-wrap">
+                            <span class="input-vector-marker">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                            </span>
+                            <select id="auth-user-role" class="form-select-node-input" required>
+                                <option value="" disabled selected hidden>Select account type</option>
+                                <option value="admin">Partner Dashboard</option>
+                                <option value="partner">Client Dashboard</option>
+                            </select>
+                            <span class="dropdown-chevron-marker">▼</span>
+                        </div>
+                    </div>
+
+                    <!-- EMAIL INPUT FIELD -->
+                    <div class="auth-field-group-box">
+                        <label for="auth-user-email" class="field-label-string">Email Address</label>
+                        <div class="input-icon-relative-wrap">
+                            <span class="input-vector-marker">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                            </span>
+                            <input type="email" id="auth-user-email" class="form-field-input-node" placeholder="Enter your email" required>
+                        </div>
+                    </div>
+
+                    <!-- PASSWORD INPUT FIELD WITH INTEGRATED INTERACTIVE OBFUSCATION TOGGLE -->
+                    <div class="auth-field-group-box">
+                        <label for="auth-user-password" class="field-label-string">Password</label>
+                        <div class="input-icon-relative-wrap">
+                            <span class="input-vector-marker">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                            </span>
+                            <input type="password" id="auth-user-password" class="form-field-input-node" placeholder="Enter your password" required>
+                            
+                            <!-- Obfuscation eye selector switch toggle -->
+                            <button type="button" class="password-obfuscation-visibility-toggle" id="password-toggle-trigger" aria-label="Toggle password text visibility mask">
+                                <svg id="eye-icon-visible" class="eye-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Forgot Password Link Hook (Targets 404 Route) -->
+                    <div class="forgot-password-link-alignment-row">
+                        <a href="404.html" class="forgot-password-anchor-link">Forgot Password?</a>
+                    </div>
+
+                    <!-- Submit Master Login Action Pill Button -->
+                    <div class="submit-action-trigger-container-row">
+                        <button type="submit" class="auth-submit-core-btn">Sign In</button>
+                    </div>
+
+                </form>
+
+                <!-- OR Social Continued Row Line Badge Divider Section -->
+                <div class="social-row-divider-badge-line">
+                    <span class="divider-text-node">OR CONTINUE WITH</span>
+                </div>
+
+                <!-- Google & Facebook Dual Social Login Grid Handles Arrays (Targets 404 Routes) -->
+                <div class="social-login-flex-row-grid">
+                    <a href="404.html" class="social-login-card-anchor-btn">
+                        <svg class="social-vector-logo" viewBox="0 0 24 24" xmlns="http://w3.org">
+                            <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                            <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                            <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05"/>
+                            <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                        </svg>
+                        <span class="social-btn-label">Google</span>
+                    </a>
+                    
+                    <a href="404.html" class="social-login-card-anchor-btn">
+                        <svg class="social-vector-logo" viewBox="0 0 24 24" fill="#1877F2" xmlns="http://w3.org">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.856.925-1.856 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                        <span class="social-btn-label">Facebook</span>
+                    </a>
+                </div>
+
+                <!-- Registration Signup Redirection Footer Link (Targets signup.html) -->
+                <div class="auth-portal-registration-footer-row">
+                    <p class="registration-prompt-text-string">
+                        Don't have an account? <a href="signup.html" class="signup-redirect-anchor-link">Create Account</a>
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Dynamic Error Feedback Toast Component Overlay -->
+            <div class="auth-error-toast hidden-alert-toast" id="portal-error-toast">
+                <span class="alert-icon-marker">⚠</span> Please fill the fields
+            </div>
+
+        </section>
+
+    </main>
+
+<style>
+    :root {
+    --brand-dark-black: #111314;   /* Explicit high-contrast typography black format */
+    --brand-teal: #046a55;        /* Forest Teal Core Signature Palette */
+    --brand-teal-light-bg: #e6f0ed;/* Ambient background tint share for left panel */
+    --brand-amber: #f49b09;       
+    --input-border-default: #cbd5e1;
+    --input-focus-glow: rgba(4, 106, 85, 0.08);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
+
+body.stackly-portal-body {
+    background-color: #f3f4f6; /* Soft light gray viewport background layer */
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 24px;
+}
+
+/* --- MASTER CONTAINER SURFACE CARD CARD --- */
+.auth-master-surface-card {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 1140px;
+    min-height: 620px;
+    border-radius: 28px;
+    overflow: hidden;
+    display: grid;
+    /* Clean horizontal layout divide shares balance ratio splitting the views */
+    grid-template-columns: 1fr 1fr;
+    box-shadow: 0 20px 50px rgba(17, 19, 20, 0.06);
+}
+
+/* --- LEFT PANEL: Immersive Corporate Branding Area --- */
+.auth-branding-left-pane {
+    background-color: var(--brand-teal-light-bg); /* Soft mint corporate backdrop fill */
+    position: relative;
+    padding: 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.branding-inner-content {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+}
+
+.brand-micro-capsule-tag {
+    display: inline-block;
+    background-color: var(--brand-teal);
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 20px;
+}
+
+.brand-mega-statement-headline {
+    font-size: clamp(2.25rem, 4.5vw, 3.15rem);
+    font-weight: 800;
+    line-height: 1.15;
+    color: var(--brand-dark-black);
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+}
+
+.text-glow-accent {
+    color: var(--brand-teal);
+}
+
+.brand-supporting-desc {
+    font-size: 0.98rem;
+    font-weight: 500;
+    color: #3f4750;
+    line-height: 1.55;
+    margin-bottom: 36px;
+    max-width: 440px;
+}
+
+/* Main Display Canvas Window Controls */
+.brand-media-frame {
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(4, 106, 85, 0.12);
+    aspect-ratio: 1.4 / 1;
+}
+
+.brand-showcase-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Decorative backdrop vector icons positioning profiles */
+.brand-vector { position: absolute; pointer-events: none; z-index: 1; }
+.vector-top-right { top: -20px; right: -20px; width: 140px; height: 140px; opacity: 0.6; }
+.vector-bottom-left { bottom: -10px; left: -10px; width: 100px; height: 100px; opacity: 0.5; }
+
+/* --- RIGHT PANEL: Secure Input Fields Control Center --- */
+.auth-input-right-pane {
+    padding: 48px 56px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    background-color: #ffffff;
+}
+
+/* Escape Navigation Row Links */
+.top-nav-escape-row {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 24px;
+}
+
+.back-home-anchor-link {
+    text-decoration: none;
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--brand-teal);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+.back-home-anchor-link:hover { color: var(--brand-dark-black); transform: translateX(-2px); }
+
+.auth-form-central-hub-box {
+    width: 100%;
+    margin: auto 0;
+}
+
+.auth-header-block-stack {
+    text-align: left;
+    margin-bottom: 28px;
+}
+
+.auth-main-title-text {
+    font-size: 1.85rem;
+    font-weight: 800;
+    color: var(--brand-dark-black);
+    letter-spacing: -0.02em;
+    margin-bottom: 6px;
+}
+
+.auth-sub-desc-text {
+    font-size: 0.94rem;
+    font-weight: 500;
+    color: #64748b;
+}
+
+/* Forms matrix inputs group architectures layout rules */
+.secure-login-inputs-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    width: 100%;
+}
+
+.auth-field-group-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.field-label-string {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--brand-dark-black);
+    margin-bottom: 8px;
+    letter-spacing: 0.01em;
+}
+
+.input-icon-relative-wrap {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+/* Custom Vector Icon Markers placements inside form bounds */
+.input-vector-marker {
+    position: absolute;
+    left: 16px;
+    width: 16px;
+    height: 16px;
+    color: #64748b;
+    pointer-events: none;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.input-vector-marker svg { width: 100%; height: 100%; }
+
+/* Dropdown Role Select Native Input Overriding Styles */
+.form-select-node-input {
+    width: 100%;
+    border: 1px solid var(--input-border-default);
+    background-color: #f8fafc;
+    border-radius: 10px;
+    padding: 13px 40px 13px 44px; /* Space buffer for absolute vector graphic path */
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--brand-dark-black);
+    outline: none;
+    cursor: pointer;
+    appearance: none; /* Strip down default native browser arrows */
+    -webkit-appearance: none;
+    transition: all 0.25s ease;
+}
+
+.dropdown-chevron-marker {
+    position: absolute;
+    right: 16px;
+    font-size: 0.65rem;
+    color: #64748b;
+    pointer-events: none;
+    z-index: 5;
+}
+
+/* Core Field Box Node Inputs Configurations */
+.form-field-input-node {
+    width: 100%;
+    border: 1px solid var(--input-border-default);
+    background-color: #f8fafc;
+    border-radius: 10px;
+    padding: 13px 40px 13px 44px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--brand-dark-black);
+    outline: none;
+    transition: all 0.25s ease;
+}
+
+.form-select-node-input:focus, .form-field-input-node:focus {
+    background-color: #ffffff;
+    border-color: var(--brand-teal);
+    box-shadow: 0 0 0 4px var(--input-focus-glow);
+}
+
+.form-field-input-node::placeholder { color: #94a3b8; }
+
+/* Interactive hidden password mask indicator switch trigger layout */
+.password-obfuscation-visibility-toggle {
+    position: absolute;
+    right: 14px;
+    background: transparent;
+    border: none; outline: none;
+    cursor: pointer;
+    color: #64748b;
+    display: flex; align-items: center; justify-content: center;
+    padding: 4px;
+    z-index: 5;
+    transition: color 0.2s;
+}
+.password-obfuscation-visibility-toggle:hover { color: var(--brand-teal); }
+.eye-svg { width: 18px; height: 18px; }
+
+/* Forgot Password Link Hooks Row */
+.forgot-password-link-alignment-row {
+    width: 100%;
+    text-align: right;
+    margin-top: -4px;
+}
+
+.forgot-password-anchor-link {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--brand-teal);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.forgot-password-anchor-link:hover { color: var(--brand-dark-black); text-decoration: underline; }
+
+/* --- Submit Sign-In Master Core Button Box --- */
+.submit-action-trigger-container-row { width: 100%; margin-top: 10px; }
+
+.auth-submit-core-btn {
+    width: 100%;
+    background-color: var(--brand-teal); /* Signature Forest Teal solid background fill */
+    border: none; outline: none;
+    color: #ffffff;
+    padding: 14px;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(4, 106, 85, 0.25);
+    transition: background-color 0.25s, transform 0.2s, box-shadow 0.25s;
+}
+.auth-submit-core-btn:hover { background-color: var(--brand-dark-black); box-shadow: 0 6px 16px rgba(17, 19, 20, 0.18); transform: translateY(-1px); }
+.auth-submit-core-btn:active { transform: translateY(0); }
+
+/* --- OR Social Continued Divider Badge Line --- */
+.social-row-divider-badge-line {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    margin: 28px 0 20px 0;
+    display: flex; align-items: center; justify-content: center;
+}
+.social-row-divider-badge-line::before {
+    content: ''; position: absolute; left: 0; width: 100%; height: 1px; background-color: #e2e8f0; z-index: 1;
+}
+.divider-text-node {
+    background-color: #ffffff; position: relative; z-index: 5; padding: 0 12px; font-size: 0.68rem; font-weight: 800; color: #94a3b8; letter-spacing: 0.05em;
+}
+
+/* --- Social Login Grid Row Handles Arrays Matrix --- */
+.social-login-flex-row-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    width: 100%;
+}
+
+.social-login-card-anchor-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: #ffffff;
+    border: 1px solid var(--input-border-default);
+    border-radius: 10px;
+    padding: 12px;
+    text-decoration: none;
+    transition: border-color 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.social-vector-logo { width: 16px; height: 16px; flex-shrink: 0; }
+.social-btn-label { font-size: 0.92rem; font-weight: 700; color: var(--brand-dark-black); }
+
+.social-login-card-anchor-btn:hover {
+    border-color: #cbd5e1;
+    background-color: #f8fafc;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+}
+
+/* Registration Signup Redirection Footers Row Link Box */
+.auth-portal-registration-footer-row {
+    width: 100%;
+    text-align: center;
+    margin-top: 32px;
+}
+
+.registration-prompt-text-string {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #64748b;
+}
+
+.signup-redirect-anchor-link {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--brand-teal);
+    text-decoration: none;
+    transition: color 0.2s;
+}.signup-redirect-anchor-link:hover { color: var(--brand-amber); text-decoration: underline; }
+
+.auth-error-toast {position: absolute;bottom: 24px;left: 56px;background-color: #dc2626;
+color: #ffffff;padding: 10px 24px;border-radius: 9999px;font-size: 0.92rem;font-weight: 700;
+box-shadow: 0 6px 20px rgba(220, 38, 38, 0.25);display: inline-flex;align-items: center;gap: 8px;z-index: 100;
+animation: alertShake 0.4s cubic-bezier(.36,.07,.19,.97) both;}.alert-icon-marker { font-size: 1.05rem; }
+@keyframes alertShake {10%, 90% { transform: translate3d(-1px, 0, 0); }20%, 80% { transform: translate3d(2px, 0, 0); }
+30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }40%, 60% { transform: translate3d(4px, 0, 0); }}
+@media (max-width: 900px) {body.stackly-portal-body { padding: 16px 12px; }.auth-master-surface-card { grid-template-columns: 1fr; 
+    border-radius: 20px; }.auth-branding-left-pane { display: none; } 
+.auth-input-right-pane { padding: 40px 24px; }.auth-error-toast { left: 24px; bottom: 16px; }}.hidden-alert-toast { display: none !important; }
+
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    // 1. Selector Mapping Configurations
+
+    const authForm = document.getElementById("secure-auth-form");
+    const roleSelect = document.getElementById("auth-user-role");
+    const emailInput = document.getElementById("auth-user-email");
+    const passwordInput = document.getElementById("auth-user-password");
+    const passwordToggleBtn = document.getElementById("password-toggle-trigger");
+    const errorToast = document.getElementById("portal-error-toast");
+
+
+    // 2. DYNAMIC PASSWORD OBFUSCATION MASK SWITCH TOGGLE
+
+    if (passwordToggleBtn && passwordInput) {
+
+        passwordToggleBtn.addEventListener("click", () => {
+
+            const isMasked = passwordInput.getAttribute("type") === "password";
+
+            if (isMasked) {
+
+                passwordInput.setAttribute("type", "text");
+
+                passwordToggleBtn.innerHTML = `
+                    <svg id="eye-icon-hidden" class="eye-svg" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8
+                        a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4
+                        c7 0 11 8 11 8a18.5 18.4 0 0 1-2.16 3.19
+                        m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
+                        <line x1="1" y1="1" x2="23" y2="23"></line>
+                    </svg>
+                `;
+
+            } else {
+
+                passwordInput.setAttribute("type", "password");
+
+                passwordToggleBtn.innerHTML = `
+                    <svg id="eye-icon-visible" class="eye-svg" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                        <circle cx="12" cy="12" r="3"></circle>
+                    </svg>
+                `;
+
+            }
+
+        });
+
+    }
+
+
+    // 3. MASTER ROUTING VALIDATION INTERCEPT ENGINE
+
+    if (authForm && errorToast) {
+
+        authForm.addEventListener("submit", (event) => {
+
+            event.preventDefault();
+
+            const selectedRole = roleSelect ? roleSelect.value : "";
+            const emailValue = emailInput ? emailInput.value.trim() : "";
+            const passwordValue = passwordInput ? passwordInput.value.trim() : "";
+
+
+            // Evaluation Loop A: Ensure all fields are filled
+
+            if (
+                selectedRole === "" ||
+                emailValue === "" ||
+                passwordValue === ""
+            ) {
+                triggerToastFeedbackAlert();
+                return;
+            }
+
+
+            // Evaluation Loop B: Validate email format
+
+            const emailPatternRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!emailPatternRegex.test(emailValue)) {
+                triggerToastFeedbackAlert();
+                return;
+            }
+
+
+            // Hide error message after successful validation
+
+            errorToast.classList.add("hidden-alert-toast");
+
+
+            // Save login email for dashboard username display
+
+            localStorage.setItem("stackly_user_email", emailValue);
+
+
+            // Evaluation Loop C: Dashboard Routing
+
+            if (selectedRole === "admin") {
+
+                // Admin / L&D Manager Dashboard
+                window.location.href = "partner-dashboard.html";
+
+            } else if (selectedRole === "partner") {
+
+                // Partner / Trainee Operator Dashboard
+                window.location.href = "client-dashboard.html";
+
+            } else {
+
+                // Unknown role
+                triggerToastFeedbackAlert();
+                return;
+            }
+
+        });
+
+
+        // Helper trigger loop for error toast
+
+        function triggerToastFeedbackAlert() {
+
+            errorToast.classList.remove("hidden-alert-toast");
+
+            errorToast.style.animation = "none";
+
+            errorToast.offsetHeight;
+
+            errorToast.style.animation = "";
+
+        }
+
+
+        // Hide warning when user changes fields
+
+        [roleSelect, emailInput, passwordInput].forEach(fieldNode => {
+
+            if (fieldNode) {
+
+                fieldNode.addEventListener("input", () => {
+
+                    if (!errorToast.classList.contains("hidden-alert-toast")) {
+                        errorToast.classList.add("hidden-alert-toast");
+                    }
+
+                });
+
+            }
+
+        });
+
+    }
+
+});
+</script>
